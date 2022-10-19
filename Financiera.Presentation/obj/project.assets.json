@@ -1,0 +1,151 @@
+{
+  "version": 3,
+  "targets": {
+    "net5.0-windows7.0": {
+      "Guna.UI2.WinForms/2.0.3.5": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Guna.UI2.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Guna.UI2.dll": {}
+        }
+      },
+      "RJCodeAdvance.RJControls/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/RJCodeAdvance.RJControls.dll": {}
+        },
+        "runtime": {
+          "lib/net45/RJCodeAdvance.RJControls.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Guna.UI2.WinForms/2.0.3.5": {
+      "sha512": "nd6IAGX4u+sCx9i6PeBfkb6Y+xoayIsoMhndlJoN1L5kE6QbYjDMSHiF+9/nkFhcKx+eNaXzemyKbCY4W7lBEA==",
+      "type": "package",
+      "path": "guna.ui2.winforms/2.0.3.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "guna.ui2.winforms.2.0.3.5.nupkg.sha512",
+        "guna.ui2.winforms.nuspec",
+        "icon.png",
+        "lib/net40/Guna.UI2.dll"
+      ]
+    },
+    "RJCodeAdvance.RJControls/1.0.0": {
+      "sha512": "O+drkZ7lKfMdRRgXKiy2Z/ENhU5Ee2j2mXSzHWwEN2thtRDrWjoUpUvUm9gSFX8susKj1yeVmtMG3qYeNBvmBw==",
+      "type": "package",
+      "path": "rjcodeadvance.rjcontrols/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/RJCodeAdvance.RJControls.dll",
+        "rjcodeadvance.rjcontrols.1.0.0.nupkg.sha512",
+        "rjcodeadvance.rjcontrols.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net5.0-windows7.0": [
+      "Guna.UI2.WinForms >= 2.0.3.5",
+      "RJCodeAdvance.RJControls >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Administrator\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\Financiera.Presentation\\Financiera.Presentation.csproj",
+      "projectName": "Financiera.Presentation",
+      "projectPath": "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\Financiera.Presentation\\Financiera.Presentation.csproj",
+      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\Financiera.Presentation\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net5.0-windows7.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net5.0-windows7.0": {
+          "targetAlias": "net5.0-windows",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net5.0-windows7.0": {
+        "targetAlias": "net5.0-windows",
+        "dependencies": {
+          "Guna.UI2.WinForms": {
+            "target": "Package",
+            "version": "[2.0.3.5, )"
+          },
+          "RJCodeAdvance.RJControls": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WindowsForms": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+      }
+    }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"Guna.UI2.WinForms 2.0.3.5\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\" en lugar de la plataforma de destino del proyecto \"net5.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "libraryId": "Guna.UI2.WinForms",
+      "targetGraphs": [
+        "net5.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"RJCodeAdvance.RJControls 1.0.0\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\" en lugar de la plataforma de destino del proyecto \"net5.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "libraryId": "RJCodeAdvance.RJControls",
+      "targetGraphs": [
+        "net5.0-windows7.0"
+      ]
+    }
+  ]
+}

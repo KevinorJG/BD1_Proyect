@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "dgSpecHash": "mYebGogfpQtcGRB6UQyaQwGhdcPFqVoFdJvBrekx4d6sBaeDpGCtmEW8Pyp5JBu7cX8M6e1ocC6oLfQfw/qMUg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\Financiera.Presentation\\Financiera.Presentation.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Administrator\\.nuget\\packages\\guna.ui2.winforms\\2.0.3.5\\guna.ui2.winforms.2.0.3.5.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\rjcodeadvance.rjcontrols\\1.0.0\\rjcodeadvance.rjcontrols.1.0.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"Guna.UI2.WinForms 2.0.3.5\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\" en lugar de la plataforma de destino del proyecto \"net5.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "libraryId": "Guna.UI2.WinForms",
+      "targetGraphs": [
+        "net5.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"RJCodeAdvance.RJControls 1.0.0\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\" en lugar de la plataforma de destino del proyecto \"net5.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "libraryId": "RJCodeAdvance.RJControls",
+      "targetGraphs": [
+        "net5.0-windows7.0"
+      ]
+    }
+  ]
+}
