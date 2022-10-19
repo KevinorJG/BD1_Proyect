@@ -63,9 +63,19 @@ namespace Financiera.Presentation.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap button_iniciar_sesion {
+        internal static System.Drawing.Bitmap asset {
             get {
-                object obj = ResourceManager.GetObject("button_iniciar-sesion", resourceCulture);
+                object obj = ResourceManager.GetObject("asset", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bar_chart {
+            get {
+                object obj = ResourceManager.GetObject("bar_chart", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +93,9 @@ namespace Financiera.Presentation.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Gradient {
+        internal static System.Drawing.Bitmap economics {
             get {
-                object obj = ResourceManager.GetObject("Gradient", resourceCulture);
+                object obj = ResourceManager.GetObject("economics", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +103,9 @@ namespace Financiera.Presentation.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Gradients {
+        internal static System.Drawing.Bitmap id_card {
             get {
-                object obj = ResourceManager.GetObject("Gradients", resourceCulture);
+                object obj = ResourceManager.GetObject("id-card", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +113,9 @@ namespace Financiera.Presentation.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Gradientsd {
+        internal static System.Drawing.Bitmap minimize_sign {
             get {
-                object obj = ResourceManager.GetObject("Gradientsd", resourceCulture);
+                object obj = ResourceManager.GetObject("minimize-sign", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -116,6 +126,16 @@ namespace Financiera.Presentation.Properties {
         internal static System.Drawing.Bitmap password {
             get {
                 object obj = ResourceManager.GetObject("password", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pie_chart {
+            get {
+                object obj = ResourceManager.GetObject("pie_chart", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

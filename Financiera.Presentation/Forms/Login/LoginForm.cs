@@ -61,23 +61,35 @@ namespace Financiera.Presentation.Forms.Login
         {
 
             Graphics g = e.Graphics;
-            //Pen pen = new Pen(Color.FromArgb(255, 101, 179));
-
-            
             Rectangle area = new Rectangle(0, 0, this.Width, this.Height);
             LinearGradientBrush lgb = new LinearGradientBrush
-           (area, (Color.FromArgb(255, 101, 179), Color.FromArgb(255, 89, 192), Color.FromArgb(255, 78, 205), Color.FromArgb(255, 69, 217), Color.FromArgb(255, 63, 230)).Item1, 
-                
+           (area, (Color.FromArgb(139,162,255), Color.FromArgb(255, 89, 192), Color.FromArgb(255, 78, 205), Color.FromArgb(255, 69, 217), Color.FromArgb(255, 63, 230)).Item1,
+
                (Color.FromArgb(242, 60, 242), Color.FromArgb(211, 63, 254), Color.FromArgb(173, 70, 255), Color.FromArgb(123, 79, 255), Color.FromArgb(0, 88, 255), Color.FromArgb(0, 96, 255)).Item2, LinearGradientMode.BackwardDiagonal);
             g.FillRectangle(lgb, area);
 
-           
-            
+
+
         }
 
         private void btLogin_Click(object sender, EventArgs e)
         {
            
+        }
+
+        private void btMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void LoginForm_ResizeBegin(object sender, EventArgs e)
+        {
+            this.Opacity = 0.5;
+        }
+
+        private void LoginForm_ResizeEnd(object sender, EventArgs e)
+        {
+            this.Opacity = 1.00;
         }
     }
 }

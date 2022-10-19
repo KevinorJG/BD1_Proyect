@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mYebGogfpQtcGRB6UQyaQwGhdcPFqVoFdJvBrekx4d6sBaeDpGCtmEW8Pyp5JBu7cX8M6e1ocC6oLfQfw/qMUg==",
+  "dgSpecHash": "jCLmM3fsq94kiGPrMMJNmOh5PtBl8PIZf7qZoymYage1P+OjunruGweD2CmViWnyEGFqYCN3PxqntGyGmc//OQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\Financiera.Presentation\\Financiera.Presentation.csproj",
+  "projectFilePath": "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\BD1_Proyect\\Financiera.Presentation\\Financiera.Presentation.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\guna.ui2.winforms\\2.0.3.5\\guna.ui2.winforms.2.0.3.5.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\rjcodeadvance.rjcontrols\\1.0.0\\rjcodeadvance.rjcontrols.1.0.0.nupkg.sha512"

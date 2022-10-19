@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\Financiera.Infraestructure\\Financiera.Infraestructure.csproj",
+      "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\BD1_Proyect\\Financiera.Infraestructure\\Financiera.Infraestructure.csproj",
       "projectName": "Financiera.Infraestructure",
-      "projectPath": "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\Financiera.Infraestructure\\Financiera.Infraestructure.csproj",
+      "projectPath": "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\BD1_Proyect\\Financiera.Infraestructure\\Financiera.Infraestructure.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\Financiera.Infraestructure\\obj\\",
+      "outputPath": "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\BD1_Proyect\\Financiera.Infraestructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
