@@ -155,6 +155,7 @@
             this.btLogin.Text = "Iniciar Sesión";
             this.btLogin.TextColor = System.Drawing.Color.White;
             this.btLogin.UseVisualStyleBackColor = false;
+            this.btLogin.Click += new System.EventHandler(this.btLogin_Click_1);
             // 
             // linkLabel1
             // 
@@ -216,7 +217,7 @@
             this.txtPassword.Multiline = false;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txtPassword.PasswordChar = false;
+            this.txtPassword.PasswordChar = true;
             this.txtPassword.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtPassword.PlaceholderText = "Contraseña";
             this.txtPassword.Size = new System.Drawing.Size(211, 31);

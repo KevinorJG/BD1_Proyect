@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Financiera.Commons.Processes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Timers;
 using System.Windows.Forms;
@@ -15,7 +17,8 @@ namespace Financiera.Presentation.Forms.Login
 {
     public partial class LoginForm : Form
     {
-       
+        protected Connection connection = new Connection();
+        public static Thread? threadMain;
         public LoginForm()
         {
             InitializeComponent();
@@ -63,19 +66,14 @@ namespace Financiera.Presentation.Forms.Login
             Graphics g = e.Graphics;
             Rectangle area = new Rectangle(0, 0, this.Width, this.Height);
             LinearGradientBrush lgb = new LinearGradientBrush
-           (area, (Color.FromArgb(139,162,255), Color.FromArgb(255, 89, 192), Color.FromArgb(255, 78, 205), Color.FromArgb(255, 69, 217), Color.FromArgb(255, 63, 230)).Item1,
+           (area, (Color.FromArgb(139, 162, 255), Color.FromArgb(255, 89, 192), Color.FromArgb(255, 78, 205), Color.FromArgb(255, 69, 217), Color.FromArgb(255, 63, 230)).Item1,
 
                (Color.FromArgb(242, 60, 242), Color.FromArgb(211, 63, 254), Color.FromArgb(173, 70, 255), Color.FromArgb(123, 79, 255), Color.FromArgb(0, 88, 255), Color.FromArgb(0, 96, 255)).Item2, LinearGradientMode.BackwardDiagonal);
             g.FillRectangle(lgb, area);
 
 
 
-        }
-
-        private void btLogin_Click(object sender, EventArgs e)
-        {
-           
-        }
+        }    
 
         private void btMinimize_Click(object sender, EventArgs e)
         {
@@ -90,6 +88,34 @@ namespace Financiera.Presentation.Forms.Login
         private void LoginForm_ResizeEnd(object sender, EventArgs e)
         {
             this.Opacity = 1.00;
+        }
+
+        private void btLogin_Click_1(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(btLogin.Text) && !string.IsNullOrEmpty(txtUser.Texts) && !string.IsNullOrEmpty(txtPassword.Texts))
+            {
+                string dni = txtDni.Texts, login = txtUser.Texts, password = txtPassword.Texts;
+
+                connection.Connect(dni, password, login);
+
+                if (Connection.State == ConnectionState.Open)
+                {
+                    MessageBox.Show("Conectado");
+                    this.Close();
+                    threadMain = new Thread(new ThreadStart(Program.FormMain));
+                    threadMain.SetApartmentState(ApartmentState.STA);
+                    threadMain.Start();
+                }
+                if (Connection.State == ConnectionState.Closed || Connection.StatusRol == false)
+                {
+
+                    MessageBox.Show("No Conectado");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Asegurese de llenar los campos", "Campos vacios", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
