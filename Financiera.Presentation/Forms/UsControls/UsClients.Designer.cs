@@ -44,9 +44,9 @@
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.btAgg = new RJCodeAdvance.RJControls.RJButton();
             this.panelPrinc = new System.Windows.Forms.Panel();
+            this.rjDatePicker1 = new RJCodeAdvance.RJControls.RJDatePicker();
             this.timerMenu = new System.Windows.Forms.Timer(this.components);
             this.timerMenuClose = new System.Windows.Forms.Timer(this.components);
-            this.rjDatePicker1 = new RJCodeAdvance.RJControls.RJDatePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPhoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.panelPrinc.SuspendLayout();
@@ -314,6 +314,19 @@
             this.panelPrinc.Size = new System.Drawing.Size(798, 457);
             this.panelPrinc.TabIndex = 10;
             // 
+            // rjDatePicker1
+            // 
+            this.rjDatePicker1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjDatePicker1.BorderSize = 0;
+            this.rjDatePicker1.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rjDatePicker1.Location = new System.Drawing.Point(511, 230);
+            this.rjDatePicker1.MinimumSize = new System.Drawing.Size(4, 35);
+            this.rjDatePicker1.Name = "rjDatePicker1";
+            this.rjDatePicker1.Size = new System.Drawing.Size(200, 35);
+            this.rjDatePicker1.SkinColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjDatePicker1.TabIndex = 10;
+            this.rjDatePicker1.TextColor = System.Drawing.Color.White;
+            // 
             // timerMenu
             // 
             this.timerMenu.Tick += new System.EventHandler(this.timerMenu_Tick);
@@ -321,19 +334,6 @@
             // timerMenuClose
             // 
             this.timerMenuClose.Tick += new System.EventHandler(this.timerMenuClose_Tick);
-            // 
-            // rjDatePicker1
-            // 
-            this.rjDatePicker1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rjDatePicker1.BorderSize = 0;
-            this.rjDatePicker1.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rjDatePicker1.Location = new System.Drawing.Point(511, 230);
-            this.rjDatePicker1.MinimumSize = new System.Drawing.Size(0, 35);
-            this.rjDatePicker1.Name = "rjDatePicker1";
-            this.rjDatePicker1.Size = new System.Drawing.Size(200, 35);
-            this.rjDatePicker1.SkinColor = System.Drawing.Color.MediumSlateBlue;
-            this.rjDatePicker1.TabIndex = 10;
-            this.rjDatePicker1.TextColor = System.Drawing.Color.White;
             // 
             // UsClients
             // 

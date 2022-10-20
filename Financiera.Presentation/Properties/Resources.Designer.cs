@@ -63,16 +63,6 @@ namespace Financiera.Presentation.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap asset {
-            get {
-                object obj = ResourceManager.GetObject("asset", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap bar_chart {
             get {
                 object obj = ResourceManager.GetObject("bar_chart", resourceCulture);
@@ -193,16 +183,6 @@ namespace Financiera.Presentation.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap options__1_ {
-            get {
-                object obj = ResourceManager.GetObject("options (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap password {
             get {
                 object obj = ResourceManager.GetObject("password", resourceCulture);
@@ -263,9 +243,9 @@ namespace Financiera.Presentation.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap seo__1_ {
+        internal static System.Drawing.Bitmap Search2 {
             get {
-                object obj = ResourceManager.GetObject("seo (1)", resourceCulture);
+                object obj = ResourceManager.GetObject("Search2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
