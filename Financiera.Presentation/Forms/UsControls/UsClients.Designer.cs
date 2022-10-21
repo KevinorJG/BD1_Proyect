@@ -38,7 +38,6 @@
             this.txtDirection = new RJCodeAdvance.RJControls.RJTextBox();
             this.txtPhone = new RJCodeAdvance.RJControls.RJTextBox();
             this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.txtDate = new RJCodeAdvance.RJControls.RJTextBox();
             this.txtNationality = new RJCodeAdvance.RJControls.RJTextBox();
             this.txtDni = new RJCodeAdvance.RJControls.RJTextBox();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -47,9 +46,11 @@
             this.rjDatePicker1 = new RJCodeAdvance.RJControls.RJDatePicker();
             this.timerMenu = new System.Windows.Forms.Timer(this.components);
             this.timerMenuClose = new System.Windows.Forms.Timer(this.components);
+            this.pboxLoad = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPhoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.panelPrinc.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxLoad)).BeginInit();
             this.SuspendLayout();
             // 
             // pbxPhoto
@@ -156,28 +157,6 @@
             this.txtPhone.Texts = "";
             this.txtPhone.UnderlinedStyle = false;
             // 
-            // txtDate
-            // 
-            this.txtDate.BackColor = System.Drawing.SystemColors.Window;
-            this.txtDate.BorderColor = System.Drawing.Color.Silver;
-            this.txtDate.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtDate.BorderRadius = 0;
-            this.txtDate.BorderSize = 2;
-            this.txtDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtDate.Location = new System.Drawing.Point(326, 205);
-            this.txtDate.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDate.Multiline = false;
-            this.txtDate.Name = "txtDate";
-            this.txtDate.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txtDate.PasswordChar = false;
-            this.txtDate.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtDate.PlaceholderText = "Dia/Mes/Año";
-            this.txtDate.Size = new System.Drawing.Size(108, 31);
-            this.txtDate.TabIndex = 8;
-            this.txtDate.Texts = "";
-            this.txtDate.UnderlinedStyle = false;
-            // 
             // txtNationality
             // 
             this.txtNationality.BackColor = System.Drawing.SystemColors.Window;
@@ -248,7 +227,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.Location = new System.Drawing.Point(27, 292);
+            this.guna2DataGridView1.Location = new System.Drawing.Point(58, 292);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
             this.guna2DataGridView1.ReadOnly = true;
             this.guna2DataGridView1.RowHeadersVisible = false;
@@ -282,12 +261,12 @@
             this.btAgg.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.btAgg.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
             this.btAgg.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btAgg.BorderRadius = 0;
+            this.btAgg.BorderRadius = 5;
             this.btAgg.BorderSize = 0;
             this.btAgg.FlatAppearance.BorderSize = 0;
             this.btAgg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btAgg.ForeColor = System.Drawing.Color.White;
-            this.btAgg.Location = new System.Drawing.Point(522, 153);
+            this.btAgg.Location = new System.Drawing.Point(575, 153);
             this.btAgg.Name = "btAgg";
             this.btAgg.Size = new System.Drawing.Size(150, 40);
             this.btAgg.TabIndex = 9;
@@ -298,9 +277,10 @@
             // 
             // panelPrinc
             // 
+            this.panelPrinc.Controls.Add(this.pboxLoad);
+            this.panelPrinc.Controls.Add(this.guna2DataGridView1);
             this.panelPrinc.Controls.Add(this.rjDatePicker1);
             this.panelPrinc.Controls.Add(this.btAgg);
-            this.panelPrinc.Controls.Add(this.txtDate);
             this.panelPrinc.Controls.Add(this.txtNationality);
             this.panelPrinc.Controls.Add(this.pbxPhoto);
             this.panelPrinc.Controls.Add(this.txtNames);
@@ -319,11 +299,11 @@
             this.rjDatePicker1.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rjDatePicker1.BorderSize = 0;
             this.rjDatePicker1.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rjDatePicker1.Location = new System.Drawing.Point(511, 230);
+            this.rjDatePicker1.Location = new System.Drawing.Point(326, 205);
             this.rjDatePicker1.MinimumSize = new System.Drawing.Size(4, 35);
             this.rjDatePicker1.Name = "rjDatePicker1";
-            this.rjDatePicker1.Size = new System.Drawing.Size(200, 35);
-            this.rjDatePicker1.SkinColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjDatePicker1.Size = new System.Drawing.Size(219, 35);
+            this.rjDatePicker1.SkinColor = System.Drawing.Color.Silver;
             this.rjDatePicker1.TabIndex = 10;
             this.rjDatePicker1.TextColor = System.Drawing.Color.White;
             // 
@@ -335,11 +315,21 @@
             // 
             this.timerMenuClose.Tick += new System.EventHandler(this.timerMenuClose_Tick);
             // 
+            // pboxLoad
+            // 
+            this.pboxLoad.BackColor = System.Drawing.Color.Transparent;
+            this.pboxLoad.Image = global::Financiera.Presentation.Properties.Resources.Loader;
+            this.pboxLoad.Location = new System.Drawing.Point(593, 205);
+            this.pboxLoad.Name = "pboxLoad";
+            this.pboxLoad.Size = new System.Drawing.Size(100, 50);
+            this.pboxLoad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pboxLoad.TabIndex = 15;
+            this.pboxLoad.TabStop = false;
+            // 
             // UsClients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.guna2DataGridView1);
             this.Controls.Add(this.panelPrinc);
             this.Name = "UsClients";
             this.Size = new System.Drawing.Size(798, 457);
@@ -347,6 +337,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxPhoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
             this.panelPrinc.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pboxLoad)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -359,7 +350,6 @@
         private RJCodeAdvance.RJControls.RJTextBox txtDirection;
         private RJCodeAdvance.RJControls.RJTextBox txtPhone;
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
-        private RJCodeAdvance.RJControls.RJTextBox txtDate;
         private RJCodeAdvance.RJControls.RJTextBox txtNationality;
         private RJCodeAdvance.RJControls.RJTextBox txtDni;
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
@@ -368,5 +358,6 @@
         private System.Windows.Forms.Timer timerMenu;
         private System.Windows.Forms.Timer timerMenuClose;
         private RJCodeAdvance.RJControls.RJDatePicker rjDatePicker1;
+        private System.Windows.Forms.PictureBox pboxLoad;
     }
 }

@@ -30,7 +30,7 @@ namespace Financiera.Presentation.Forms.UsControls
 
         private void UsClients_Load(object sender, EventArgs e)
         {
-         
+            pboxLoad.Visible = false;
         }
 
 
@@ -39,9 +39,9 @@ namespace Financiera.Presentation.Forms.UsControls
         }
 
 
-        private void btAgg_Click(object sender, EventArgs e)
+        private  void btAgg_Click(object sender, EventArgs e)
         {
-
+            pboxLoad.Visible = true;
         }
     }
 }

@@ -10,5 +10,8 @@
     <Compile Update="Forms\UsControls\UsClients.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Forms\UsControls\UsCounts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

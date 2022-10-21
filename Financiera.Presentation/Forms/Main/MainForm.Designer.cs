@@ -45,22 +45,19 @@
             this.pbCards = new System.Windows.Forms.PictureBox();
             this.lbCards = new System.Windows.Forms.Label();
             this.lbCounts = new System.Windows.Forms.Label();
-            this.pbCounts = new RJCodeAdvance.RJControls.RJCircularPictureBox();
+            this.pboxCounts = new RJCodeAdvance.RJControls.RJCircularPictureBox();
             this.lbClients = new System.Windows.Forms.Label();
             this.pboxClients = new RJCodeAdvance.RJControls.RJCircularPictureBox();
             this.timerOpen = new System.Windows.Forms.Timer(this.components);
-            this.timerPanelOptions = new System.Windows.Forms.Timer(this.components);
             this.panelMain = new System.Windows.Forms.Panel();
             this.BorderlessFormMain = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
-            this.timePanelOptionClose = new System.Windows.Forms.Timer(this.components);
-            this.timerMenu = new System.Windows.Forms.Timer(this.components);
-            this.timerMenuClose = new System.Windows.Forms.Timer(this.components);
+            this.timerOpenUsCounts = new System.Windows.Forms.Timer(this.components);
             this.panelActions.SuspendLayout();
             this.panelOptions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCards)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCounts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxCounts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxClients)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,11 +77,11 @@
             // btMinimize
             // 
             this.btMinimize.BackColor = System.Drawing.Color.Transparent;
-            this.btMinimize.BackgroundImage = global::Financiera.Presentation.Properties.Resources.minimize_sign;
+            this.btMinimize.BackgroundImage = global::Financiera.Presentation.Properties.Resources.point_green;
             this.btMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btMinimize.Dock = System.Windows.Forms.DockStyle.Right;
             this.btMinimize.FlatAppearance.BorderSize = 0;
-            this.btMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(190)))), ((int)(((byte)(215)))));
+            this.btMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(88, 214, 141);
             this.btMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btMinimize.ForeColor = System.Drawing.Color.White;
             this.btMinimize.Location = new System.Drawing.Point(744, 0);
@@ -98,11 +95,11 @@
             // btClose
             // 
             this.btClose.BackColor = System.Drawing.Color.Transparent;
-            this.btClose.BackgroundImage = global::Financiera.Presentation.Properties.Resources.remove;
+            this.btClose.BackgroundImage = global::Financiera.Presentation.Properties.Resources.point_red;
             this.btClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btClose.Dock = System.Windows.Forms.DockStyle.Right;
             this.btClose.FlatAppearance.BorderSize = 0;
-            this.btClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(231, 76, 60);
             this.btClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btClose.ForeColor = System.Drawing.Color.White;
             this.btClose.Location = new System.Drawing.Point(794, 0);
@@ -127,7 +124,7 @@
             this.panelOptions.Controls.Add(this.pbCards);
             this.panelOptions.Controls.Add(this.lbCards);
             this.panelOptions.Controls.Add(this.lbCounts);
-            this.panelOptions.Controls.Add(this.pbCounts);
+            this.panelOptions.Controls.Add(this.pboxCounts);
             this.panelOptions.Controls.Add(this.lbClients);
             this.panelOptions.Controls.Add(this.pboxClients);
             this.panelOptions.Dock = System.Windows.Forms.DockStyle.Left;
@@ -245,24 +242,25 @@
             this.lbCounts.Text = "Cuentas";
             this.lbCounts.MouseEnter += new System.EventHandler(this.lbCounts_MouseEnter);
             // 
-            // pbCounts
+            // pboxCounts
             // 
-            this.pbCounts.BackColor = System.Drawing.Color.Transparent;
-            this.pbCounts.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.pbCounts.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.pbCounts.BorderColor2 = System.Drawing.Color.HotPink;
-            this.pbCounts.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.pbCounts.BorderSize = 0;
-            this.pbCounts.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbCounts.GradientAngle = 50F;
-            this.pbCounts.Image = global::Financiera.Presentation.Properties.Resources.count;
-            this.pbCounts.Location = new System.Drawing.Point(16, 106);
-            this.pbCounts.Name = "pbCounts";
-            this.pbCounts.Size = new System.Drawing.Size(50, 50);
-            this.pbCounts.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbCounts.TabIndex = 2;
-            this.pbCounts.TabStop = false;
-            this.pbCounts.MouseEnter += new System.EventHandler(this.pbCounts_MouseEnter);
+            this.pboxCounts.BackColor = System.Drawing.Color.Transparent;
+            this.pboxCounts.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.pboxCounts.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.pboxCounts.BorderColor2 = System.Drawing.Color.HotPink;
+            this.pboxCounts.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.pboxCounts.BorderSize = 0;
+            this.pboxCounts.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pboxCounts.GradientAngle = 50F;
+            this.pboxCounts.Image = global::Financiera.Presentation.Properties.Resources.count;
+            this.pboxCounts.Location = new System.Drawing.Point(16, 106);
+            this.pboxCounts.Name = "pboxCounts";
+            this.pboxCounts.Size = new System.Drawing.Size(50, 50);
+            this.pboxCounts.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pboxCounts.TabIndex = 2;
+            this.pboxCounts.TabStop = false;
+            this.pboxCounts.Click += new System.EventHandler(this.pbCounts_Click);
+            this.pboxCounts.MouseEnter += new System.EventHandler(this.pbCounts_MouseEnter);
             // 
             // lbClients
             // 
@@ -291,18 +289,13 @@
             this.pboxClients.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pboxClients.TabIndex = 0;
             this.pboxClients.TabStop = false;
-            this.pboxClients.Click += new System.EventHandler(this.rjCircularPictureBox1_Click);
+            this.pboxClients.Click += new System.EventHandler(this.pboxClients_Click);
             this.pboxClients.MouseEnter += new System.EventHandler(this.pboxClients_MouseEnter);
             // 
             // timerOpen
             // 
             this.timerOpen.Interval = 10;
             this.timerOpen.Tick += new System.EventHandler(this.timerOpen_Tick);
-            // 
-            // timerPanelOptions
-            // 
-            this.timerPanelOptions.Interval = 10;
-            this.timerPanelOptions.Tick += new System.EventHandler(this.timerPanelOptions_Tick);
             // 
             // panelMain
             // 
@@ -319,19 +312,10 @@
             this.BorderlessFormMain.DockIndicatorTransparencyValue = 0.6D;
             this.BorderlessFormMain.TransparentWhileDrag = true;
             // 
-            // timePanelOptionClose
+            // timerOpenUsCounts
             // 
-            this.timePanelOptionClose.Interval = 10;
-            this.timePanelOptionClose.Tick += new System.EventHandler(this.timePanelOptionClose_Tick);
-            // 
-            // timerMenu
-            // 
-            this.timerMenu.Interval = 10;
-            this.timerMenu.Tick += new System.EventHandler(this.timerMenu_Tick);
-            // 
-            // timerMenuClose
-            // 
-            this.timerMenuClose.Tick += new System.EventHandler(this.timerMenuClose_Tick);
+            this.timerOpenUsCounts.Interval = 10;
+            this.timerOpenUsCounts.Tick += new System.EventHandler(this.timerOpenUsCounts_Tick);
             // 
             // MainForm
             // 
@@ -354,7 +338,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCards)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCounts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxCounts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxClients)).EndInit();
             this.ResumeLayout(false);
 
@@ -369,24 +353,21 @@
         private System.Windows.Forms.Panel panelOptions;
         private RJCodeAdvance.RJControls.RJCircularPictureBox pboxClients;
         private System.Windows.Forms.Timer timerOpen;
-        private System.Windows.Forms.Timer timerPanelOptions;
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.Label lbClients;
         private System.Windows.Forms.PictureBox pbCards;
         private System.Windows.Forms.Label lbCards;
         private System.Windows.Forms.Label lbCounts;
-        private RJCodeAdvance.RJControls.RJCircularPictureBox pbCounts;
+        private RJCodeAdvance.RJControls.RJCircularPictureBox pboxCounts;
         private System.Windows.Forms.PictureBox pbLogout;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2BorderlessForm BorderlessFormMain;
-        private System.Windows.Forms.Timer timePanelOptionClose;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Timer timerMenu;
-        private System.Windows.Forms.Timer timerMenuClose;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pbxSearch;
         private System.Windows.Forms.Label lbBusqueda;
+        private System.Windows.Forms.Timer timerOpenUsCounts;
     }
 }
