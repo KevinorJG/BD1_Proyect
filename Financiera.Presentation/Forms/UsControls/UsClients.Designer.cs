@@ -43,10 +43,14 @@
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.btAgg = new RJCodeAdvance.RJControls.RJButton();
             this.panelPrinc = new System.Windows.Forms.Panel();
-            this.rjDatePicker1 = new RJCodeAdvance.RJControls.RJDatePicker();
+            this.txtSearch = new RJCodeAdvance.RJControls.RJTextBox();
+            this.btSearchClient = new RJCodeAdvance.RJControls.RJButton();
+            this.rjButton1 = new RJCodeAdvance.RJControls.RJButton();
+            this.btDeleteClient = new RJCodeAdvance.RJControls.RJButton();
+            this.pboxLoad = new System.Windows.Forms.PictureBox();
+            this.pickerDate = new RJCodeAdvance.RJControls.RJDatePicker();
             this.timerMenu = new System.Windows.Forms.Timer(this.components);
             this.timerMenuClose = new System.Windows.Forms.Timer(this.components);
-            this.pboxLoad = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPhoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.panelPrinc.SuspendLayout();
@@ -61,10 +65,11 @@
             this.pbxPhoto.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
             this.pbxPhoto.BorderSize = 2;
             this.pbxPhoto.GradientAngle = 50F;
+            this.pbxPhoto.Image = global::Financiera.Presentation.Properties.Resources.value;
             this.pbxPhoto.Location = new System.Drawing.Point(27, 23);
             this.pbxPhoto.Name = "pbxPhoto";
             this.pbxPhoto.Size = new System.Drawing.Size(100, 100);
-            this.pbxPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxPhoto.TabIndex = 0;
             this.pbxPhoto.TabStop = false;
             this.pbxPhoto.Click += new System.EventHandler(this.pbxPhoto_Click);
@@ -100,7 +105,7 @@
             this.txtSurnames.BorderSize = 2;
             this.txtSurnames.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtSurnames.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtSurnames.Location = new System.Drawing.Point(159, 92);
+            this.txtSurnames.Location = new System.Drawing.Point(440, 48);
             this.txtSurnames.Margin = new System.Windows.Forms.Padding(4);
             this.txtSurnames.Multiline = false;
             this.txtSurnames.Name = "txtSurnames";
@@ -122,7 +127,7 @@
             this.txtDirection.BorderSize = 2;
             this.txtDirection.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtDirection.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtDirection.Location = new System.Drawing.Point(433, 48);
+            this.txtDirection.Location = new System.Drawing.Point(706, 48);
             this.txtDirection.Margin = new System.Windows.Forms.Padding(4);
             this.txtDirection.Multiline = true;
             this.txtDirection.Name = "txtDirection";
@@ -130,7 +135,7 @@
             this.txtDirection.PasswordChar = false;
             this.txtDirection.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtDirection.PlaceholderText = "Dirección";
-            this.txtDirection.Size = new System.Drawing.Size(239, 52);
+            this.txtDirection.Size = new System.Drawing.Size(239, 75);
             this.txtDirection.TabIndex = 5;
             this.txtDirection.Texts = "";
             this.txtDirection.UnderlinedStyle = false;
@@ -144,7 +149,7 @@
             this.txtPhone.BorderSize = 2;
             this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtPhone.Location = new System.Drawing.Point(27, 153);
+            this.txtPhone.Location = new System.Drawing.Point(159, 92);
             this.txtPhone.Margin = new System.Windows.Forms.Padding(4);
             this.txtPhone.Multiline = false;
             this.txtPhone.Name = "txtPhone";
@@ -166,7 +171,7 @@
             this.txtNationality.BorderSize = 2;
             this.txtNationality.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtNationality.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtNationality.Location = new System.Drawing.Point(326, 153);
+            this.txtNationality.Location = new System.Drawing.Point(440, 136);
             this.txtNationality.Margin = new System.Windows.Forms.Padding(4);
             this.txtNationality.Multiline = false;
             this.txtNationality.Name = "txtNationality";
@@ -188,7 +193,7 @@
             this.txtDni.BorderSize = 2;
             this.txtDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtDni.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtDni.Location = new System.Drawing.Point(27, 205);
+            this.txtDni.Location = new System.Drawing.Point(440, 92);
             this.txtDni.Margin = new System.Windows.Forms.Padding(4);
             this.txtDni.Multiline = false;
             this.txtDni.Name = "txtDni";
@@ -200,6 +205,7 @@
             this.txtDni.TabIndex = 6;
             this.txtDni.Texts = "";
             this.txtDni.UnderlinedStyle = false;
+            this.txtDni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDni_KeyPress);
             // 
             // guna2DataGridView1
             // 
@@ -227,12 +233,12 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.Location = new System.Drawing.Point(58, 292);
+            this.guna2DataGridView1.Location = new System.Drawing.Point(42, 280);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
             this.guna2DataGridView1.ReadOnly = true;
             this.guna2DataGridView1.RowHeadersVisible = false;
             this.guna2DataGridView1.RowTemplate.Height = 25;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(684, 150);
+            this.guna2DataGridView1.Size = new System.Drawing.Size(953, 150);
             this.guna2DataGridView1.TabIndex = 9;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -266,9 +272,9 @@
             this.btAgg.FlatAppearance.BorderSize = 0;
             this.btAgg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btAgg.ForeColor = System.Drawing.Color.White;
-            this.btAgg.Location = new System.Drawing.Point(575, 153);
+            this.btAgg.Location = new System.Drawing.Point(600, 207);
             this.btAgg.Name = "btAgg";
-            this.btAgg.Size = new System.Drawing.Size(150, 40);
+            this.btAgg.Size = new System.Drawing.Size(110, 31);
             this.btAgg.TabIndex = 9;
             this.btAgg.Text = "Registrar";
             this.btAgg.TextColor = System.Drawing.Color.White;
@@ -277,9 +283,13 @@
             // 
             // panelPrinc
             // 
+            this.panelPrinc.Controls.Add(this.txtSearch);
+            this.panelPrinc.Controls.Add(this.btSearchClient);
+            this.panelPrinc.Controls.Add(this.rjButton1);
+            this.panelPrinc.Controls.Add(this.btDeleteClient);
             this.panelPrinc.Controls.Add(this.pboxLoad);
             this.panelPrinc.Controls.Add(this.guna2DataGridView1);
-            this.panelPrinc.Controls.Add(this.rjDatePicker1);
+            this.panelPrinc.Controls.Add(this.pickerDate);
             this.panelPrinc.Controls.Add(this.btAgg);
             this.panelPrinc.Controls.Add(this.txtNationality);
             this.panelPrinc.Controls.Add(this.pbxPhoto);
@@ -291,21 +301,109 @@
             this.panelPrinc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelPrinc.Location = new System.Drawing.Point(0, 0);
             this.panelPrinc.Name = "panelPrinc";
-            this.panelPrinc.Size = new System.Drawing.Size(798, 457);
+            this.panelPrinc.Size = new System.Drawing.Size(1036, 462);
             this.panelPrinc.TabIndex = 10;
             // 
-            // rjDatePicker1
+            // txtSearch
             // 
-            this.rjDatePicker1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rjDatePicker1.BorderSize = 0;
-            this.rjDatePicker1.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rjDatePicker1.Location = new System.Drawing.Point(326, 205);
-            this.rjDatePicker1.MinimumSize = new System.Drawing.Size(4, 35);
-            this.rjDatePicker1.Name = "rjDatePicker1";
-            this.rjDatePicker1.Size = new System.Drawing.Size(219, 35);
-            this.rjDatePicker1.SkinColor = System.Drawing.Color.Silver;
-            this.rjDatePicker1.TabIndex = 10;
-            this.rjDatePicker1.TextColor = System.Drawing.Color.White;
+            this.txtSearch.BackColor = System.Drawing.SystemColors.Window;
+            this.txtSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.txtSearch.BorderColor = System.Drawing.Color.Silver;
+            this.txtSearch.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtSearch.BorderRadius = 0;
+            this.txtSearch.BorderSize = 2;
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtSearch.Location = new System.Drawing.Point(42, 207);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSearch.Multiline = false;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtSearch.PasswordChar = false;
+            this.txtSearch.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtSearch.PlaceholderText = "Cédula del cliente";
+            this.txtSearch.Size = new System.Drawing.Size(398, 31);
+            this.txtSearch.TabIndex = 19;
+            this.txtSearch.Texts = "";
+            this.txtSearch.UnderlinedStyle = false;
+            // 
+            // btSearchClient
+            // 
+            this.btSearchClient.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btSearchClient.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btSearchClient.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btSearchClient.BorderRadius = 5;
+            this.btSearchClient.BorderSize = 0;
+            this.btSearchClient.FlatAppearance.BorderSize = 0;
+            this.btSearchClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btSearchClient.ForeColor = System.Drawing.Color.White;
+            this.btSearchClient.Location = new System.Drawing.Point(464, 207);
+            this.btSearchClient.Name = "btSearchClient";
+            this.btSearchClient.Size = new System.Drawing.Size(110, 31);
+            this.btSearchClient.TabIndex = 18;
+            this.btSearchClient.Text = "Buscar";
+            this.btSearchClient.TextColor = System.Drawing.Color.White;
+            this.btSearchClient.UseVisualStyleBackColor = false;
+            // 
+            // rjButton1
+            // 
+            this.rjButton1.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjButton1.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton1.BorderRadius = 5;
+            this.rjButton1.BorderSize = 0;
+            this.rjButton1.FlatAppearance.BorderSize = 0;
+            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton1.ForeColor = System.Drawing.Color.White;
+            this.rjButton1.Location = new System.Drawing.Point(740, 207);
+            this.rjButton1.Name = "rjButton1";
+            this.rjButton1.Size = new System.Drawing.Size(110, 31);
+            this.rjButton1.TabIndex = 17;
+            this.rjButton1.Text = "Actualizar";
+            this.rjButton1.TextColor = System.Drawing.Color.White;
+            this.rjButton1.UseVisualStyleBackColor = false;
+            // 
+            // btDeleteClient
+            // 
+            this.btDeleteClient.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btDeleteClient.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btDeleteClient.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btDeleteClient.BorderRadius = 5;
+            this.btDeleteClient.BorderSize = 0;
+            this.btDeleteClient.FlatAppearance.BorderSize = 0;
+            this.btDeleteClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btDeleteClient.ForeColor = System.Drawing.Color.White;
+            this.btDeleteClient.Location = new System.Drawing.Point(885, 207);
+            this.btDeleteClient.Name = "btDeleteClient";
+            this.btDeleteClient.Size = new System.Drawing.Size(110, 31);
+            this.btDeleteClient.TabIndex = 16;
+            this.btDeleteClient.Text = "Eliminar";
+            this.btDeleteClient.TextColor = System.Drawing.Color.White;
+            this.btDeleteClient.UseVisualStyleBackColor = false;
+            // 
+            // pboxLoad
+            // 
+            this.pboxLoad.BackColor = System.Drawing.Color.Transparent;
+            this.pboxLoad.Image = global::Financiera.Presentation.Properties.Resources.Loader;
+            this.pboxLoad.Location = new System.Drawing.Point(706, 130);
+            this.pboxLoad.Name = "pboxLoad";
+            this.pboxLoad.Size = new System.Drawing.Size(100, 50);
+            this.pboxLoad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pboxLoad.TabIndex = 15;
+            this.pboxLoad.TabStop = false;
+            // 
+            // pickerDate
+            // 
+            this.pickerDate.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.pickerDate.BorderSize = 0;
+            this.pickerDate.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.pickerDate.Location = new System.Drawing.Point(159, 147);
+            this.pickerDate.MinimumSize = new System.Drawing.Size(4, 35);
+            this.pickerDate.Name = "pickerDate";
+            this.pickerDate.Size = new System.Drawing.Size(233, 35);
+            this.pickerDate.SkinColor = System.Drawing.Color.Silver;
+            this.pickerDate.TabIndex = 10;
+            this.pickerDate.TextColor = System.Drawing.Color.White;
             // 
             // timerMenu
             // 
@@ -315,24 +413,13 @@
             // 
             this.timerMenuClose.Tick += new System.EventHandler(this.timerMenuClose_Tick);
             // 
-            // pboxLoad
-            // 
-            this.pboxLoad.BackColor = System.Drawing.Color.Transparent;
-            this.pboxLoad.Image = global::Financiera.Presentation.Properties.Resources.Loader;
-            this.pboxLoad.Location = new System.Drawing.Point(593, 205);
-            this.pboxLoad.Name = "pboxLoad";
-            this.pboxLoad.Size = new System.Drawing.Size(100, 50);
-            this.pboxLoad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pboxLoad.TabIndex = 15;
-            this.pboxLoad.TabStop = false;
-            // 
             // UsClients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelPrinc);
             this.Name = "UsClients";
-            this.Size = new System.Drawing.Size(798, 457);
+            this.Size = new System.Drawing.Size(1036, 462);
             this.Load += new System.EventHandler(this.UsClients_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxPhoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
@@ -357,7 +444,11 @@
         private System.Windows.Forms.Panel panelPrinc;
         private System.Windows.Forms.Timer timerMenu;
         private System.Windows.Forms.Timer timerMenuClose;
-        private RJCodeAdvance.RJControls.RJDatePicker rjDatePicker1;
+        private RJCodeAdvance.RJControls.RJDatePicker pickerDate;
         private System.Windows.Forms.PictureBox pboxLoad;
+        private RJCodeAdvance.RJControls.RJTextBox txtSearch;
+        private RJCodeAdvance.RJControls.RJButton btSearchClient;
+        private RJCodeAdvance.RJControls.RJButton rjButton1;
+        private RJCodeAdvance.RJControls.RJButton btDeleteClient;
     }
 }

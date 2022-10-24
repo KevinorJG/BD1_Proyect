@@ -1,4 +1,5 @@
-﻿using Financiera.Domain.Enums;
+﻿using Financiera.AppCore.IServices;
+using Financiera.Domain.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace Financiera.Presentation.Forms.UsControls
 {
     public partial class UsCounts : UserControl
     {
+        protected IAccountServices AccountServices;
         public UsCounts()
         {
             InitializeComponent();
@@ -22,6 +24,18 @@ namespace Financiera.Presentation.Forms.UsControls
         {
             cbTypeCoin.DataSource = Enum.GetValues(typeof(TypeCoin));
             cbTyCount.DataSource = Enum.GetValues(typeof(TypeCounts));
+        }
+
+        private void txtDniClient_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                MessageBox.Show("xd");
+            }
+        }
+        public void SetServices(IAccountServices accountServices )
+        {
+            this.AccountServices = accountServices;
         }
     }
 }

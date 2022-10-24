@@ -1,0 +1,15 @@
+C:\Users\Administrator\Desktop\Repositorio Github\Financiera_DBProyect\BD1_Proyect\Financiera.Infraestructure\bin\Debug\net5.0\Financiera.Infraestructure.deps.json
+C:\Users\Administrator\Desktop\Repositorio Github\Financiera_DBProyect\BD1_Proyect\Financiera.Infraestructure\bin\Debug\net5.0\Financiera.Infraestructure.dll
+C:\Users\Administrator\Desktop\Repositorio Github\Financiera_DBProyect\BD1_Proyect\Financiera.Infraestructure\bin\Debug\net5.0\Financiera.Infraestructure.pdb
+C:\Users\Administrator\Desktop\Repositorio Github\Financiera_DBProyect\BD1_Proyect\Financiera.Infraestructure\bin\Debug\net5.0\Financiera.Domain.dll
+C:\Users\Administrator\Desktop\Repositorio Github\Financiera_DBProyect\BD1_Proyect\Financiera.Infraestructure\bin\Debug\net5.0\Financiera.Domain.pdb
+C:\Users\Administrator\Desktop\Repositorio Github\Financiera_DBProyect\BD1_Proyect\Financiera.Infraestructure\obj\Debug\net5.0\Financiera.Infraestructure.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\Repositorio Github\Financiera_DBProyect\BD1_Proyect\Financiera.Infraestructure\obj\Debug\net5.0\Financiera.Infraestructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Desktop\Repositorio Github\Financiera_DBProyect\BD1_Proyect\Financiera.Infraestructure\obj\Debug\net5.0\Financiera.Infraestructure.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\Repositorio Github\Financiera_DBProyect\BD1_Proyect\Financiera.Infraestructure\obj\Debug\net5.0\Financiera.Infraestructure.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\Repositorio Github\Financiera_DBProyect\BD1_Proyect\Financiera.Infraestructure\obj\Debug\net5.0\Financiera.Infraestructure.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\Repositorio Github\Financiera_DBProyect\BD1_Proyect\Financiera.Infraestructure\obj\Debug\net5.0\Financiera.Infraestructure.csproj.CopyComplete
+C:\Users\Administrator\Desktop\Repositorio Github\Financiera_DBProyect\BD1_Proyect\Financiera.Infraestructure\obj\Debug\net5.0\Financiera.Infraestructure.dll
+C:\Users\Administrator\Desktop\Repositorio Github\Financiera_DBProyect\BD1_Proyect\Financiera.Infraestructure\obj\Debug\net5.0\refint\Financiera.Infraestructure.dll
+C:\Users\Administrator\Desktop\Repositorio Github\Financiera_DBProyect\BD1_Proyect\Financiera.Infraestructure\obj\Debug\net5.0\Financiera.Infraestructure.pdb
+C:\Users\Administrator\Desktop\Repositorio Github\Financiera_DBProyect\BD1_Proyect\Financiera.Infraestructure\obj\Debug\net5.0\ref\Financiera.Infraestructure.dll

@@ -13,16 +13,20 @@ namespace Financiera.Presentation
 { 
     internal static class Program
     {
-        static Thread? threadMain;
+        static public Thread? threadLog = new Thread(new ThreadStart(FormLog));
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
         [STAThread()]
         static void Main()
         {
+            try
+            {
+                threadLog.Start();
+            }
+            catch { }
+
             
-            threadMain = new Thread(new ThreadStart(FormLog));
-            threadMain.Start();
         }
         public static void FormLog()
         {

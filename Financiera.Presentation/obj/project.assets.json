@@ -1578,6 +1578,19 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "Financiera.AppCore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Financiera.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Financiera.AppCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Financiera.AppCore.dll": {}
+        }
+      },
       "Financiera.Commons/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -1595,11 +1608,28 @@
       "Financiera.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.17",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.17"
+        },
         "compile": {
           "bin/placeholder/Financiera.Domain.dll": {}
         },
         "runtime": {
           "bin/placeholder/Financiera.Domain.dll": {}
+        }
+      },
+      "Financiera.Infraestructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Financiera.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Financiera.Infraestructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Financiera.Infraestructure.dll": {}
         }
       }
     }
@@ -6020,6 +6050,11 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "Financiera.AppCore/1.0.0": {
+      "type": "project",
+      "path": "../Financiera.AppCore/Financiera.AppCore.csproj",
+      "msbuildProject": "../Financiera.AppCore/Financiera.AppCore.csproj"
+    },
     "Financiera.Commons/1.0.0": {
       "type": "project",
       "path": "../Financiera.Commons/Financiera.Commons.csproj",
@@ -6029,11 +6064,18 @@
       "type": "project",
       "path": "../Financiera.Domain/Financiera.Domain.csproj",
       "msbuildProject": "../Financiera.Domain/Financiera.Domain.csproj"
+    },
+    "Financiera.Infraestructure/1.0.0": {
+      "type": "project",
+      "path": "../Financiera.Infraestructure/Financiera.Infraestructure.csproj",
+      "msbuildProject": "../Financiera.Infraestructure/Financiera.Infraestructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
+      "Financiera.AppCore >= 1.0.0",
       "Financiera.Commons >= 1.0.0",
+      "Financiera.Infraestructure >= 1.0.0",
       "Guna.UI2.WinForms >= 2.0.3.5",
       "Microsoft.EntityFrameworkCore >= 5.0.17",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.17",
@@ -6068,8 +6110,14 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
+            "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\BD1_Proyect\\Financiera.AppCore\\Financiera.AppCore.csproj": {
+              "projectPath": "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\BD1_Proyect\\Financiera.AppCore\\Financiera.AppCore.csproj"
+            },
             "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\BD1_Proyect\\Financiera.Commons\\Financiera.Commons.csproj": {
               "projectPath": "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\BD1_Proyect\\Financiera.Commons\\Financiera.Commons.csproj"
+            },
+            "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\BD1_Proyect\\Financiera.Infraestructure\\Financiera.Infraestructure.csproj": {
+              "projectPath": "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\BD1_Proyect\\Financiera.Infraestructure\\Financiera.Infraestructure.csproj"
             }
           }
         }

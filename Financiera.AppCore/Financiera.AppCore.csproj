@@ -5,8 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="IServices\" />
-    <Folder Include="Services\" />
+    <ProjectReference Include="..\Financiera.Domain\Financiera.Domain.csproj" />
   </ItemGroup>
 
 </Project>

@@ -2,6 +2,11 @@
 using Microsoft.EntityFrameworkCore;
 using System.Windows.Forms;
 using Financiera.Presentation.Forms.Main;
+using Financiera.Domain.ContextDB;
+using Financiera.Domain.Interfaces;
+using Financiera.Infraestructure.Repository;
+using Financiera.AppCore.IServices;
+using Financiera.AppCore.Services;
 
 namespace Financiera.Presentation.DependencyApp
 {
@@ -13,25 +18,19 @@ namespace Financiera.Presentation.DependencyApp
         {
 
             services = new ServiceCollection();
-            //services.AddDbContext<ENSUENO_DBContext>(options =>
-            //{
-            //    options.UseSqlServer(Connection);
-            //});
-            //services.AddScoped<IClientRepository, ClientRepository>();
-            //services.AddScoped<IClientServices, ClientService>();
+            services.AddDbContext<FinancieraContext>(options =>
+            {
+                options.UseSqlServer(Connection);
+            });
+            services.AddScoped<IFinancieraContext, FinancieraContext>();
+            services.AddScoped<IClientRepository, ClientRepository>();
+            services.AddScoped<IClientServices, ClientService>();
 
-            //services.AddScoped<IEmployeeRepository, EmployeeRepository>();
-            //services.AddScoped<IEmployeeServices, EmployeeService>();
+            services.AddScoped<IAccountRepository, AccountRepository>();
+            services.AddScoped<IAccountServices, AccountService>();
 
-            //services.AddScoped<IProductRepository, ProductRepository>();
-            //services.AddScoped<IProductServices, ProductService>();
-
-            //services.AddScoped<IFactureRepository, FactureRepository>();
-            //services.AddScoped<IFactureServices, FactureService>();
-
-            //services.AddScoped<IDetail_FactureRepository, Detail_FactureRepository>();
-            //services.AddScoped<IDetail_FactureServices, Detail_FactureService>();
-
+            services.AddScoped<ICardRepository, CardRepository>();
+            services.AddScoped<ICardServices, CardServices>();
 
             services.AddScoped<MainForm>();
 

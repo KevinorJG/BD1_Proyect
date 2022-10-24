@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtAmount = new RJCodeAdvance.RJControls.RJTextBox();
             this.cbTypeCoin = new RJCodeAdvance.RJControls.RJComboBox();
             this.cbTyCount = new RJCodeAdvance.RJControls.RJComboBox();
@@ -38,9 +38,17 @@
             this.lbCounts = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
+            this.dvgAccounts = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.txtDniClient = new RJCodeAdvance.RJControls.RJTextBox();
+            this.pbxPhoto = new RJCodeAdvance.RJControls.RJCircularPictureBox();
+            this.pickerDate = new RJCodeAdvance.RJControls.RJDatePicker();
+            this.txtSearch = new RJCodeAdvance.RJControls.RJTextBox();
+            this.btSearchAcc = new RJCodeAdvance.RJControls.RJButton();
+            this.btUptAcc = new RJCodeAdvance.RJControls.RJButton();
+            this.btDeleteAcc = new RJCodeAdvance.RJControls.RJButton();
+            this.btAgg = new RJCodeAdvance.RJControls.RJButton();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgAccounts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxPhoto)).BeginInit();
             this.SuspendLayout();
             // 
             // txtAmount
@@ -52,7 +60,7 @@
             this.txtAmount.BorderSize = 2;
             this.txtAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtAmount.Location = new System.Drawing.Point(139, 143);
+            this.txtAmount.Location = new System.Drawing.Point(197, 50);
             this.txtAmount.Margin = new System.Windows.Forms.Padding(4);
             this.txtAmount.Multiline = false;
             this.txtAmount.Name = "txtAmount";
@@ -76,7 +84,7 @@
             this.cbTypeCoin.IconColor = System.Drawing.Color.RoyalBlue;
             this.cbTypeCoin.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.cbTypeCoin.ListTextColor = System.Drawing.Color.DimGray;
-            this.cbTypeCoin.Location = new System.Drawing.Point(475, 46);
+            this.cbTypeCoin.Location = new System.Drawing.Point(724, 51);
             this.cbTypeCoin.MinimumSize = new System.Drawing.Size(200, 30);
             this.cbTypeCoin.Name = "cbTypeCoin";
             this.cbTypeCoin.Padding = new System.Windows.Forms.Padding(1);
@@ -95,7 +103,7 @@
             this.cbTyCount.IconColor = System.Drawing.Color.RoyalBlue;
             this.cbTyCount.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.cbTyCount.ListTextColor = System.Drawing.Color.DimGray;
-            this.cbTyCount.Location = new System.Drawing.Point(176, 46);
+            this.cbTyCount.Location = new System.Drawing.Point(482, 50);
             this.cbTyCount.MinimumSize = new System.Drawing.Size(200, 30);
             this.cbTyCount.Name = "cbTyCount";
             this.cbTyCount.Padding = new System.Windows.Forms.Padding(1);
@@ -106,7 +114,7 @@
             // TgbtStatus
             // 
             this.TgbtStatus.AutoSize = true;
-            this.TgbtStatus.Location = new System.Drawing.Point(630, 152);
+            this.TgbtStatus.Location = new System.Drawing.Point(630, 120);
             this.TgbtStatus.MinimumSize = new System.Drawing.Size(45, 22);
             this.TgbtStatus.Name = "TgbtStatus";
             this.TgbtStatus.OffBackColor = System.Drawing.Color.Salmon;
@@ -121,99 +129,244 @@
             // 
             this.lbCounts.AutoSize = true;
             this.lbCounts.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbCounts.Location = new System.Drawing.Point(405, 51);
+            this.lbCounts.Location = new System.Drawing.Point(794, 28);
             this.lbCounts.Name = "lbCounts";
-            this.lbCounts.Size = new System.Drawing.Size(67, 20);
+            this.lbCounts.Size = new System.Drawing.Size(64, 20);
             this.lbCounts.TabIndex = 20;
-            this.lbCounts.Text = "Moneda:";
+            this.lbCounts.Text = "Moneda";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(62, 51);
+            this.label1.Location = new System.Drawing.Point(530, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 20);
+            this.label1.Size = new System.Drawing.Size(108, 20);
             this.label1.TabIndex = 21;
-            this.label1.Text = "Tipo de cuenta:";
+            this.label1.Text = "Tipo de cuenta";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(482, 154);
+            this.label2.Location = new System.Drawing.Point(482, 122);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(142, 20);
             this.label2.TabIndex = 22;
             this.label2.Text = "Estado de la cuenta:";
             // 
-            // label3
+            // dvgAccounts
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(62, 151);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 20);
-            this.label3.TabIndex = 23;
-            this.label3.Text = "Apertura:";
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dvgAccounts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dvgAccounts.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dvgAccounts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dvgAccounts.ColumnHeadersHeight = 4;
+            this.dvgAccounts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dvgAccounts.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dvgAccounts.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dvgAccounts.Location = new System.Drawing.Point(44, 273);
+            this.dvgAccounts.Name = "dvgAccounts";
+            this.dvgAccounts.RowHeadersVisible = false;
+            this.dvgAccounts.RowTemplate.Height = 25;
+            this.dvgAccounts.Size = new System.Drawing.Size(953, 150);
+            this.dvgAccounts.TabIndex = 24;
+            this.dvgAccounts.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dvgAccounts.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dvgAccounts.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dvgAccounts.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dvgAccounts.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dvgAccounts.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dvgAccounts.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dvgAccounts.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dvgAccounts.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dvgAccounts.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dvgAccounts.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dvgAccounts.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dvgAccounts.ThemeStyle.HeaderStyle.Height = 4;
+            this.dvgAccounts.ThemeStyle.ReadOnly = false;
+            this.dvgAccounts.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dvgAccounts.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dvgAccounts.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dvgAccounts.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dvgAccounts.ThemeStyle.RowsStyle.Height = 25;
+            this.dvgAccounts.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dvgAccounts.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // guna2DataGridView1
+            // txtDniClient
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.guna2DataGridView1.ColumnHeadersHeight = 4;
-            this.guna2DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.Location = new System.Drawing.Point(62, 271);
-            this.guna2DataGridView1.Name = "guna2DataGridView1";
-            this.guna2DataGridView1.RowHeadersVisible = false;
-            this.guna2DataGridView1.RowTemplate.Height = 25;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(652, 150);
-            this.guna2DataGridView1.TabIndex = 24;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView1.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 4;
-            this.guna2DataGridView1.ThemeStyle.ReadOnly = false;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.Height = 25;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.txtDniClient.BackColor = System.Drawing.SystemColors.Window;
+            this.txtDniClient.BorderColor = System.Drawing.Color.Silver;
+            this.txtDniClient.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtDniClient.BorderRadius = 0;
+            this.txtDniClient.BorderSize = 2;
+            this.txtDniClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtDniClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtDniClient.Location = new System.Drawing.Point(197, 111);
+            this.txtDniClient.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDniClient.Multiline = false;
+            this.txtDniClient.Name = "txtDniClient";
+            this.txtDniClient.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtDniClient.PasswordChar = false;
+            this.txtDniClient.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtDniClient.PlaceholderText = "Cédula del cliente";
+            this.txtDniClient.Size = new System.Drawing.Size(239, 31);
+            this.txtDniClient.TabIndex = 25;
+            this.txtDniClient.Texts = "";
+            this.txtDniClient.UnderlinedStyle = false;
+            this.txtDniClient.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDniClient_KeyPress);
+            // 
+            // pbxPhoto
+            // 
+            this.pbxPhoto.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.pbxPhoto.BorderColor = System.Drawing.Color.Violet;
+            this.pbxPhoto.BorderColor2 = System.Drawing.Color.Yellow;
+            this.pbxPhoto.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.pbxPhoto.BorderSize = 2;
+            this.pbxPhoto.GradientAngle = 50F;
+            this.pbxPhoto.Image = global::Financiera.Presentation.Properties.Resources.value;
+            this.pbxPhoto.Location = new System.Drawing.Point(27, 23);
+            this.pbxPhoto.Name = "pbxPhoto";
+            this.pbxPhoto.Size = new System.Drawing.Size(100, 100);
+            this.pbxPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxPhoto.TabIndex = 26;
+            this.pbxPhoto.TabStop = false;
+            // 
+            // pickerDate
+            // 
+            this.pickerDate.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.pickerDate.BorderSize = 0;
+            this.pickerDate.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.pickerDate.Location = new System.Drawing.Point(724, 113);
+            this.pickerDate.MinimumSize = new System.Drawing.Size(4, 35);
+            this.pickerDate.Name = "pickerDate";
+            this.pickerDate.Size = new System.Drawing.Size(233, 35);
+            this.pickerDate.SkinColor = System.Drawing.Color.Silver;
+            this.pickerDate.TabIndex = 27;
+            this.pickerDate.TextColor = System.Drawing.Color.White;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.BackColor = System.Drawing.SystemColors.Window;
+            this.txtSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.txtSearch.BorderColor = System.Drawing.Color.Silver;
+            this.txtSearch.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtSearch.BorderRadius = 0;
+            this.txtSearch.BorderSize = 2;
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtSearch.Location = new System.Drawing.Point(44, 217);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSearch.Multiline = false;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtSearch.PasswordChar = false;
+            this.txtSearch.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtSearch.PlaceholderText = "Cédula del cliente";
+            this.txtSearch.Size = new System.Drawing.Size(398, 31);
+            this.txtSearch.TabIndex = 32;
+            this.txtSearch.Texts = "";
+            this.txtSearch.UnderlinedStyle = false;
+            // 
+            // btSearchAcc
+            // 
+            this.btSearchAcc.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btSearchAcc.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btSearchAcc.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btSearchAcc.BorderRadius = 5;
+            this.btSearchAcc.BorderSize = 0;
+            this.btSearchAcc.FlatAppearance.BorderSize = 0;
+            this.btSearchAcc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btSearchAcc.ForeColor = System.Drawing.Color.White;
+            this.btSearchAcc.Location = new System.Drawing.Point(466, 217);
+            this.btSearchAcc.Name = "btSearchAcc";
+            this.btSearchAcc.Size = new System.Drawing.Size(110, 31);
+            this.btSearchAcc.TabIndex = 31;
+            this.btSearchAcc.Text = "Buscar";
+            this.btSearchAcc.TextColor = System.Drawing.Color.White;
+            this.btSearchAcc.UseVisualStyleBackColor = false;
+            // 
+            // btUptAcc
+            // 
+            this.btUptAcc.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btUptAcc.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btUptAcc.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btUptAcc.BorderRadius = 5;
+            this.btUptAcc.BorderSize = 0;
+            this.btUptAcc.FlatAppearance.BorderSize = 0;
+            this.btUptAcc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btUptAcc.ForeColor = System.Drawing.Color.White;
+            this.btUptAcc.Location = new System.Drawing.Point(742, 217);
+            this.btUptAcc.Name = "btUptAcc";
+            this.btUptAcc.Size = new System.Drawing.Size(110, 31);
+            this.btUptAcc.TabIndex = 30;
+            this.btUptAcc.Text = "Actualizar";
+            this.btUptAcc.TextColor = System.Drawing.Color.White;
+            this.btUptAcc.UseVisualStyleBackColor = false;
+            // 
+            // btDeleteAcc
+            // 
+            this.btDeleteAcc.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btDeleteAcc.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btDeleteAcc.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btDeleteAcc.BorderRadius = 5;
+            this.btDeleteAcc.BorderSize = 0;
+            this.btDeleteAcc.FlatAppearance.BorderSize = 0;
+            this.btDeleteAcc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btDeleteAcc.ForeColor = System.Drawing.Color.White;
+            this.btDeleteAcc.Location = new System.Drawing.Point(887, 217);
+            this.btDeleteAcc.Name = "btDeleteAcc";
+            this.btDeleteAcc.Size = new System.Drawing.Size(110, 31);
+            this.btDeleteAcc.TabIndex = 29;
+            this.btDeleteAcc.Text = "Eliminar";
+            this.btDeleteAcc.TextColor = System.Drawing.Color.White;
+            this.btDeleteAcc.UseVisualStyleBackColor = false;
+            // 
+            // btAgg
+            // 
+            this.btAgg.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btAgg.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btAgg.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btAgg.BorderRadius = 5;
+            this.btAgg.BorderSize = 0;
+            this.btAgg.FlatAppearance.BorderSize = 0;
+            this.btAgg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btAgg.ForeColor = System.Drawing.Color.White;
+            this.btAgg.Location = new System.Drawing.Point(602, 217);
+            this.btAgg.Name = "btAgg";
+            this.btAgg.Size = new System.Drawing.Size(110, 31);
+            this.btAgg.TabIndex = 28;
+            this.btAgg.Text = "Registrar";
+            this.btAgg.TextColor = System.Drawing.Color.White;
+            this.btAgg.UseVisualStyleBackColor = false;
             // 
             // UsCounts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.guna2DataGridView1);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.btSearchAcc);
+            this.Controls.Add(this.btUptAcc);
+            this.Controls.Add(this.btDeleteAcc);
+            this.Controls.Add(this.btAgg);
+            this.Controls.Add(this.pickerDate);
+            this.Controls.Add(this.pbxPhoto);
+            this.Controls.Add(this.txtDniClient);
+            this.Controls.Add(this.dvgAccounts);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbCounts);
@@ -222,9 +375,10 @@
             this.Controls.Add(this.cbTypeCoin);
             this.Controls.Add(this.txtAmount);
             this.Name = "UsCounts";
-            this.Size = new System.Drawing.Size(798, 457);
+            this.Size = new System.Drawing.Size(1036, 462);
             this.Load += new System.EventHandler(this.UsCounts_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgAccounts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxPhoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,7 +392,14 @@
         private System.Windows.Forms.Label lbCounts;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
+        private Guna.UI2.WinForms.Guna2DataGridView dvgAccounts;
+        private RJCodeAdvance.RJControls.RJTextBox txtDniClient;
+        private RJCodeAdvance.RJControls.RJCircularPictureBox pbxPhoto;
+        private RJCodeAdvance.RJControls.RJDatePicker pickerDate;
+        private RJCodeAdvance.RJControls.RJTextBox txtSearch;
+        private RJCodeAdvance.RJControls.RJButton btSearchAcc;
+        private RJCodeAdvance.RJControls.RJButton btUptAcc;
+        private RJCodeAdvance.RJControls.RJButton btDeleteAcc;
+        private RJCodeAdvance.RJControls.RJButton btAgg;
     }
 }

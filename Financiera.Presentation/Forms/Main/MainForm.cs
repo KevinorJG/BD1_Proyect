@@ -1,4 +1,6 @@
-﻿using Financiera.Presentation.Forms.UsControls;
+﻿using Financiera.AppCore.IServices;
+using Financiera.Presentation.Forms.Login;
+using Financiera.Presentation.Forms.UsControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +10,7 @@ using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,10 +18,18 @@ namespace Financiera.Presentation.Forms.Main
 {
     public partial class MainForm : Form
     {
+        protected readonly IClientServices clientServices;
+        protected readonly IAccountServices accountServices;
+        protected readonly ICardServices cardServices;
         UsClients usClients = new UsClients();
         UsCounts usAcounts = new UsCounts();
-        public MainForm()
+        UsCards usCards = new UsCards();
+       
+        public MainForm(IClientServices clientServices, IAccountServices accountServices, ICardServices cardServices)
         {
+            this.clientServices = clientServices;
+            this.accountServices = accountServices;
+            this.cardServices = cardServices;
             InitializeComponent();
         }
 
@@ -64,10 +75,13 @@ namespace Financiera.Presentation.Forms.Main
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-           
-            usClients.Width = 0;          
-            usAcounts.Width = 0;
-           
+            try
+            {
+                Program.threadLog.Interrupt();
+                Program.threadLog.Join();
+            }
+            catch { }
+            
         }
 
         private void timerOpen_Tick(object sender, EventArgs e)
@@ -84,17 +98,6 @@ namespace Financiera.Presentation.Forms.Main
             }
         }
 
-        private void rjCircularPictureBox1_Click(object sender, EventArgs e)
-        {
-            var ls = panelMain.Controls.Contains(usAcounts);
-            if (ls == true)
-            {
-                panelMain.Controls.Remove(usAcounts);
-                timerOpen.Start();
-            }
-           
-           
-        }
 
         private void panelOptions_Paint(object sender, PaintEventArgs e)
         {
@@ -191,6 +194,7 @@ namespace Financiera.Presentation.Forms.Main
             {
                 case "pboxClients":                  
                     this.panelMain.Controls.Clear();
+                    usClients.SetServices(clientServices);
                     this.panelMain.Controls.Add(usClients);
                     usClients.Width = 0;
                     timerOpen.Start();
@@ -199,11 +203,16 @@ namespace Financiera.Presentation.Forms.Main
                 case "pboxCounts":
                     this.panelMain.Controls.Clear();                 
                     this.panelMain.Controls.Add(usAcounts);
+                    usAcounts.SetServices(accountServices);
                     usAcounts.Width = 0;
                     timerOpenUsCounts.Start();
                     break;
                 case "pboxCards":
-
+                    this.panelMain.Controls.Clear();
+                    this.panelMain.Controls.Add(usCards);
+                    usCards.SetServices(cardServices);
+                    usCards.Width = 0;
+                    timerOpenCard.Start();
                     break;
             }
         }
@@ -211,6 +220,39 @@ namespace Financiera.Presentation.Forms.Main
         private void pboxClients_Click(object sender, EventArgs e)
         {
             OnClick(sender, e);
+        }
+
+        private void timerOpenCard_Tick(object sender, EventArgs e)
+        {
+            if (usCards.Width <= panelMain.Width - 1)
+            {
+                usCards.Width += 50;
+
+            }
+            else
+            {
+                timerOpenCard.Stop();
+            }
+        }
+
+        private void pbCards_Click(object sender, EventArgs e)
+        {
+            OnClick(sender, e);
+        }
+
+        private void pbLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+           
+            try
+            {
+                Program.threadLog.Interrupt();
+                Program.threadLog.Join();
+                Thread threadlog = new Thread(new ThreadStart(Program.FormLog));
+                threadlog.Start();
+            }
+            catch { }
+            
         }
     }
 }

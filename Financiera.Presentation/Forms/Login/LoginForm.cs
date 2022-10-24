@@ -101,7 +101,8 @@ namespace Financiera.Presentation.Forms.Login
                 if (Connection.State == ConnectionState.Open)
                 {
                     MessageBox.Show("Conectado");
-                    this.Close();
+                    this.Close();                  
+                    
                     threadMain = new Thread(new ThreadStart(Program.FormMain));
                     threadMain.SetApartmentState(ApartmentState.STA);
                     threadMain.Start();

@@ -49,6 +49,7 @@ namespace Financiera.Commons.Processes
                         command.CommandText = "select Roll from Employees where Dni = @value";
                         command.CommandType = CommandType.Text;
                         command.Parameters.AddWithValue("@value", dni);
+                       
                         SqlDataReader reader = command.ExecuteReader();
 
                         while (reader.Read() == true)
