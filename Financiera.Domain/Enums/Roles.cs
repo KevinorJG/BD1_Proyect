@@ -8,7 +8,7 @@ namespace Financiera.Domain.Enums
 {
     public enum Roles
     {
-        Cajero,
+        Empleado,
         Administrador
     }
 }

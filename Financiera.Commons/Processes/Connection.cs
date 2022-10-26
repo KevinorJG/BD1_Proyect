@@ -54,9 +54,9 @@ namespace Financiera.Commons.Processes
 
                         while (reader.Read() == true)
                         {
-                            if (reader["Roll"].ToString() == Roles.Cajero.ToString())
+                            if (reader["Roll"].ToString() == Roles.Empleado.ToString())
                             {
-                                Roles = Roles.Cajero;
+                                Roles = Roles.Empleado;
                                 StatusRol = true;
                             }
                             if (reader["Roll"].ToString() == Roles.Administrador.ToString())

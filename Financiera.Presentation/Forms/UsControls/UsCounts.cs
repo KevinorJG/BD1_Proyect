@@ -1,13 +1,6 @@
 ﻿using Financiera.AppCore.IServices;
 using Financiera.Domain.Enums;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Financiera.Presentation.Forms.UsControls
@@ -33,7 +26,7 @@ namespace Financiera.Presentation.Forms.UsControls
                 MessageBox.Show("xd");
             }
         }
-        public void SetServices(IAccountServices accountServices )
+        public void SetServices(IAccountServices accountServices)
         {
             this.AccountServices = accountServices;
         }

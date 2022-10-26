@@ -1,16 +1,10 @@
 ﻿using Financiera.Commons.Processes;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
-using System.Timers;
 using System.Windows.Forms;
 
 namespace Financiera.Presentation.Forms.Login
@@ -22,7 +16,7 @@ namespace Financiera.Presentation.Forms.Login
         public LoginForm()
         {
             InitializeComponent();
-            
+
         }
         #region Methods
 
@@ -39,7 +33,7 @@ namespace Financiera.Presentation.Forms.Login
 
         private void btClose_Click_1(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -58,6 +52,8 @@ namespace Financiera.Presentation.Forms.Login
             timerLogin.Interval = 2; //replace 10 with whatever you want
             timerLogin.Tick += IncreaseOpacity;
             timerLogin.Start();//timer1.Start();
+
+
         }
 
         private void LoginForm_Paint_1(object sender, PaintEventArgs e)
@@ -73,7 +69,7 @@ namespace Financiera.Presentation.Forms.Login
 
 
 
-        }    
+        }
 
         private void btMinimize_Click(object sender, EventArgs e)
         {
@@ -101,11 +97,10 @@ namespace Financiera.Presentation.Forms.Login
                 if (Connection.State == ConnectionState.Open)
                 {
                     MessageBox.Show("Conectado");
-                    this.Close();                  
-                    
-                    threadMain = new Thread(new ThreadStart(Program.FormMain));
-                    threadMain.SetApartmentState(ApartmentState.STA);
-                    threadMain.Start();
+                    this.Close();
+                    //threadMain = new Thread(new ThreadStart(Program.FormMain));
+                    //threadMain.SetApartmentState(ApartmentState.STA);
+                    //threadMain.Start();
                 }
                 if (Connection.State == ConnectionState.Closed || Connection.StatusRol == false)
                 {

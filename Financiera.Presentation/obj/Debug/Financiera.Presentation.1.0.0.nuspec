@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Financiera.Presentation</id>
+    <version>1.0.0</version>
+    <authors>Financiera.Presentation</authors>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework="net5.0-windows7.0">
+        <dependency id="Financiera.AppCore" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="Financiera.Commons" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="Financiera.Infraestructure" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="Guna.UI2.WinForms" version="2.0.3.5" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore" version="5.0.17" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore.SqlServer" version="5.0.17" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.DependencyInjection" version="6.0.1" exclude="Build,Analyzers" />
+        <dependency id="RJCodeAdvance.RJControls" version="1.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework="net5.0-windows7.0">
+        <frameworkReference name="Microsoft.WindowsDesktop.App.WindowsForms" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+  <files>
+    <file src="C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Presentation\bin\Debug\net5.0-windows\Financiera.Presentation.runtimeconfig.json" target="lib\net5.0-windows7.0\Financiera.Presentation.runtimeconfig.json" />
+    <file src="C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Presentation\bin\Debug\net5.0-windows\Financiera.Presentation.dll" target="lib\net5.0-windows7.0\Financiera.Presentation.dll" />
+  </files>
+</package>

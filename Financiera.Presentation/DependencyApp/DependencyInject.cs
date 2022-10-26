@@ -1,12 +1,12 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.EntityFrameworkCore;
-using System.Windows.Forms;
-using Financiera.Presentation.Forms.Main;
+﻿using Financiera.AppCore.IServices;
+using Financiera.AppCore.Services;
 using Financiera.Domain.ContextDB;
 using Financiera.Domain.Interfaces;
 using Financiera.Infraestructure.Repository;
-using Financiera.AppCore.IServices;
-using Financiera.AppCore.Services;
+using Financiera.Presentation.Forms.Main;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using System.Windows.Forms;
 
 namespace Financiera.Presentation.DependencyApp
 {
@@ -39,9 +39,9 @@ namespace Financiera.Presentation.DependencyApp
 
             using (var serivceScope = services.BuildServiceProvider())
             {
-                Application.SetHighDpiMode(HighDpiMode.SystemAware);
-                Application.EnableVisualStyles();
-                Application.SetCompatibleTextRenderingDefault(false);
+                //Application.SetHighDpiMode(HighDpiMode.SystemAware);
+                //Application.EnableVisualStyles();
+                //Application.SetCompatibleTextRenderingDefault(false);
                 var main = serivceScope.GetRequiredService<MainForm>();
                 Application.Run(main);
 

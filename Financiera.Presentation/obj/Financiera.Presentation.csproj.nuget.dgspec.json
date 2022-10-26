@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\BD1_Proyect\\Financiera.Presentation\\Financiera.Presentation.csproj": {}
+    "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Presentation\\Financiera.Presentation.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\BD1_Proyect\\Financiera.AppCore\\Financiera.AppCore.csproj": {
+    "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.AppCore\\Financiera.AppCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\BD1_Proyect\\Financiera.AppCore\\Financiera.AppCore.csproj",
+        "projectUniqueName": "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.AppCore\\Financiera.AppCore.csproj",
         "projectName": "Financiera.AppCore",
-        "projectPath": "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\BD1_Proyect\\Financiera.AppCore\\Financiera.AppCore.csproj",
+        "projectPath": "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.AppCore\\Financiera.AppCore.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\BD1_Proyect\\Financiera.AppCore\\obj\\",
+        "outputPath": "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.AppCore\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\BD1_Proyect\\Financiera.Domain\\Financiera.Domain.csproj": {
-                "projectPath": "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\BD1_Proyect\\Financiera.Domain\\Financiera.Domain.csproj"
+              "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Domain\\Financiera.Domain.csproj": {
+                "projectPath": "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Domain\\Financiera.Domain.csproj"
               }
             }
           }
@@ -62,14 +62,14 @@
         }
       }
     },
-    "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\BD1_Proyect\\Financiera.Commons\\Financiera.Commons.csproj": {
+    "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Commons\\Financiera.Commons.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\BD1_Proyect\\Financiera.Commons\\Financiera.Commons.csproj",
+        "projectUniqueName": "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Commons\\Financiera.Commons.csproj",
         "projectName": "Financiera.Commons",
-        "projectPath": "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\BD1_Proyect\\Financiera.Commons\\Financiera.Commons.csproj",
+        "projectPath": "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Commons\\Financiera.Commons.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\BD1_Proyect\\Financiera.Commons\\obj\\",
+        "outputPath": "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Commons\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -86,8 +86,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\BD1_Proyect\\Financiera.Domain\\Financiera.Domain.csproj": {
-                "projectPath": "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\BD1_Proyect\\Financiera.Domain\\Financiera.Domain.csproj"
+              "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Domain\\Financiera.Domain.csproj": {
+                "projectPath": "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Domain\\Financiera.Domain.csproj"
               }
             }
           }
@@ -126,14 +126,14 @@
         }
       }
     },
-    "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\BD1_Proyect\\Financiera.Domain\\Financiera.Domain.csproj": {
+    "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Domain\\Financiera.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\BD1_Proyect\\Financiera.Domain\\Financiera.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Domain\\Financiera.Domain.csproj",
         "projectName": "Financiera.Domain",
-        "projectPath": "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\BD1_Proyect\\Financiera.Domain\\Financiera.Domain.csproj",
+        "projectPath": "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Domain\\Financiera.Domain.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\BD1_Proyect\\Financiera.Domain\\obj\\",
+        "outputPath": "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -196,14 +196,14 @@
         }
       }
     },
-    "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\BD1_Proyect\\Financiera.Infraestructure\\Financiera.Infraestructure.csproj": {
+    "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Infraestructure\\Financiera.Infraestructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\BD1_Proyect\\Financiera.Infraestructure\\Financiera.Infraestructure.csproj",
+        "projectUniqueName": "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Infraestructure\\Financiera.Infraestructure.csproj",
         "projectName": "Financiera.Infraestructure",
-        "projectPath": "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\BD1_Proyect\\Financiera.Infraestructure\\Financiera.Infraestructure.csproj",
+        "projectPath": "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Infraestructure\\Financiera.Infraestructure.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\BD1_Proyect\\Financiera.Infraestructure\\obj\\",
+        "outputPath": "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Infraestructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -220,8 +220,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\BD1_Proyect\\Financiera.Domain\\Financiera.Domain.csproj": {
-                "projectPath": "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\BD1_Proyect\\Financiera.Domain\\Financiera.Domain.csproj"
+              "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Domain\\Financiera.Domain.csproj": {
+                "projectPath": "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Domain\\Financiera.Domain.csproj"
               }
             }
           }
@@ -254,14 +254,14 @@
         }
       }
     },
-    "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\BD1_Proyect\\Financiera.Presentation\\Financiera.Presentation.csproj": {
+    "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Presentation\\Financiera.Presentation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\BD1_Proyect\\Financiera.Presentation\\Financiera.Presentation.csproj",
+        "projectUniqueName": "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Presentation\\Financiera.Presentation.csproj",
         "projectName": "Financiera.Presentation",
-        "projectPath": "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\BD1_Proyect\\Financiera.Presentation\\Financiera.Presentation.csproj",
+        "projectPath": "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Presentation\\Financiera.Presentation.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\BD1_Proyect\\Financiera.Presentation\\obj\\",
+        "outputPath": "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Presentation\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -278,14 +278,14 @@
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
             "projectReferences": {
-              "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\BD1_Proyect\\Financiera.AppCore\\Financiera.AppCore.csproj": {
-                "projectPath": "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\BD1_Proyect\\Financiera.AppCore\\Financiera.AppCore.csproj"
+              "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.AppCore\\Financiera.AppCore.csproj": {
+                "projectPath": "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.AppCore\\Financiera.AppCore.csproj"
               },
-              "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\BD1_Proyect\\Financiera.Commons\\Financiera.Commons.csproj": {
-                "projectPath": "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\BD1_Proyect\\Financiera.Commons\\Financiera.Commons.csproj"
+              "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Commons\\Financiera.Commons.csproj": {
+                "projectPath": "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Commons\\Financiera.Commons.csproj"
               },
-              "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\BD1_Proyect\\Financiera.Infraestructure\\Financiera.Infraestructure.csproj": {
-                "projectPath": "C:\\Users\\Administrator\\Desktop\\Repositorio Github\\Financiera_DBProyect\\BD1_Proyect\\Financiera.Infraestructure\\Financiera.Infraestructure.csproj"
+              "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Infraestructure\\Financiera.Infraestructure.csproj": {
+                "projectPath": "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Infraestructure\\Financiera.Infraestructure.csproj"
               }
             }
           }

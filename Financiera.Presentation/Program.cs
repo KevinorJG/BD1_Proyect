@@ -1,16 +1,12 @@
 using Financiera.Commons.Processes;
 using Financiera.Presentation.DependencyApp;
 using Financiera.Presentation.Forms.Login;
-using Financiera.Presentation.Forms.Main;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Financiera.Presentation
-{ 
+{
     internal static class Program
     {
         static public Thread? threadLog = new Thread(new ThreadStart(FormLog));
@@ -26,7 +22,7 @@ namespace Financiera.Presentation
             }
             catch { }
 
-            
+
         }
         public static void FormLog()
         {
@@ -34,6 +30,7 @@ namespace Financiera.Presentation
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoginForm());
+            FormMain();
         }
         public static void FormMain()
         {

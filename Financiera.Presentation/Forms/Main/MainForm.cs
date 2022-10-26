@@ -1,17 +1,7 @@
 ﻿using Financiera.AppCore.IServices;
-using Financiera.Presentation.Forms.Login;
 using Financiera.Presentation.Forms.UsControls;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Financiera.Presentation.Forms.Main
@@ -24,7 +14,7 @@ namespace Financiera.Presentation.Forms.Main
         UsClients usClients = new UsClients();
         UsCounts usAcounts = new UsCounts();
         UsCards usCards = new UsCards();
-       
+
         public MainForm(IClientServices clientServices, IAccountServices accountServices, ICardServices cardServices)
         {
             this.clientServices = clientServices;
@@ -39,8 +29,8 @@ namespace Financiera.Presentation.Forms.Main
             if (result == DialogResult.Yes)
             {
                 Application.Exit();
-            } 
-            
+            }
+
         }
 
         private void btMinimize_Click(object sender, EventArgs e)
@@ -61,15 +51,15 @@ namespace Financiera.Presentation.Forms.Main
 
         private void MainForm_Paint(object sender, PaintEventArgs e)
         {
-           // Graphics g = e.Graphics;
-           // Rectangle area = new Rectangle(0, 0, this.Width, this.Height);
-           // LinearGradientBrush lgb = new LinearGradientBrush
-           //(area, (Color.FromArgb(210, 230, 216), Color.FromArgb(207, 231, 219), Color.FromArgb(205, 231, 221), Color.FromArgb(204, 231, 224), Color.FromArgb(202, 231, 227), Color.FromArgb(201, 231, 229), Color.FromArgb(201, 231, 232), Color.FromArgb(201, 231, 234)
-           //, Color.FromArgb(201, 231, 237), Color.FromArgb(202, 230, 239), Color.FromArgb(203, 230, 240), Color.FromArgb(205, 229, 242)).Item1,
+            // Graphics g = e.Graphics;
+            // Rectangle area = new Rectangle(0, 0, this.Width, this.Height);
+            // LinearGradientBrush lgb = new LinearGradientBrush
+            //(area, (Color.FromArgb(210, 230, 216), Color.FromArgb(207, 231, 219), Color.FromArgb(205, 231, 221), Color.FromArgb(204, 231, 224), Color.FromArgb(202, 231, 227), Color.FromArgb(201, 231, 229), Color.FromArgb(201, 231, 232), Color.FromArgb(201, 231, 234)
+            //, Color.FromArgb(201, 231, 237), Color.FromArgb(202, 230, 239), Color.FromArgb(203, 230, 240), Color.FromArgb(205, 229, 242)).Item1,
 
-           //    (Color.FromArgb(207, 228, 243), Color.FromArgb(210, 228, 244), Color.FromArgb(212, 227, 245), Color.FromArgb(215, 226, 245), Color.FromArgb(218, 225, 245), Color.FromArgb(221, 224, 244), Color.FromArgb(225, 223, 243)
-           //    , Color.FromArgb(228, 223, 242), Color.FromArgb(231, 222, 241), Color.FromArgb(234, 221, 239), Color.FromArgb(237, 220, 237)).Item2, LinearGradientMode.BackwardDiagonal);
-           // g.FillRectangle(lgb, area);
+            //    (Color.FromArgb(207, 228, 243), Color.FromArgb(210, 228, 244), Color.FromArgb(212, 227, 245), Color.FromArgb(215, 226, 245), Color.FromArgb(218, 225, 245), Color.FromArgb(221, 224, 244), Color.FromArgb(225, 223, 243)
+            //    , Color.FromArgb(228, 223, 242), Color.FromArgb(231, 222, 241), Color.FromArgb(234, 221, 239), Color.FromArgb(237, 220, 237)).Item2, LinearGradientMode.BackwardDiagonal);
+            // g.FillRectangle(lgb, area);
 
         }
 
@@ -81,16 +71,16 @@ namespace Financiera.Presentation.Forms.Main
                 Program.threadLog.Join();
             }
             catch { }
-            
+
         }
 
         private void timerOpen_Tick(object sender, EventArgs e)
         {
-            
-            if(usClients.Width <= panelMain.Width-1)
+
+            if (usClients.Width <= panelMain.Width - 1)
             {
                 usClients.Width += 50;
-               
+
             }
             else
             {
@@ -106,17 +96,17 @@ namespace Financiera.Presentation.Forms.Main
 
         private void panelOptions_MouseEnter(object sender, EventArgs e)
         {
-           //timerPanelOptions.Start();
+            //timerPanelOptions.Start();
 
         }
 
-       
+
 
         private void panelOptions_MouseLeave(object sender, EventArgs e)
         {
 
             panelOptions.Width = 82;
-            
+
         }
 
         #region CLoseAnimation
@@ -163,14 +153,14 @@ namespace Financiera.Presentation.Forms.Main
 
         private void timerMenuClose_Tick(object sender, EventArgs e)
         {
-           
+
         }
 
         private void pbCounts_Click(object sender, EventArgs e)
         {
             OnClick(sender, e);
-           
-           
+
+
         }
 
         private void timerOpenUsCounts_Tick(object sender, EventArgs e)
@@ -192,7 +182,7 @@ namespace Financiera.Presentation.Forms.Main
 
             switch (bt.Name)
             {
-                case "pboxClients":                  
+                case "pboxClients":
                     this.panelMain.Controls.Clear();
                     usClients.SetServices(clientServices);
                     this.panelMain.Controls.Add(usClients);
@@ -201,12 +191,14 @@ namespace Financiera.Presentation.Forms.Main
                     break;
 
                 case "pboxCounts":
-                    this.panelMain.Controls.Clear();                 
+                    this.panelMain.Controls.Clear();
+
                     this.panelMain.Controls.Add(usAcounts);
                     usAcounts.SetServices(accountServices);
                     usAcounts.Width = 0;
                     timerOpenUsCounts.Start();
                     break;
+
                 case "pboxCards":
                     this.panelMain.Controls.Clear();
                     this.panelMain.Controls.Add(usCards);
@@ -243,16 +235,23 @@ namespace Financiera.Presentation.Forms.Main
         private void pbLogout_Click(object sender, EventArgs e)
         {
             this.Close();
-           
+            this.Dispose();
+            Optimize();
+            var d = Program.threadLog;
             try
             {
                 Program.threadLog.Interrupt();
                 Program.threadLog.Join();
-                Thread threadlog = new Thread(new ThreadStart(Program.FormLog));
-                threadlog.Start();
+
+
             }
-            catch { }
-            
+            catch { Application.Restart(); }
+
+        }
+        public void Optimize()
+        {
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
         }
     }
 }
