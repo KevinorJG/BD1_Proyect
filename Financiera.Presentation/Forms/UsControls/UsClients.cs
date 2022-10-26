@@ -27,7 +27,7 @@ namespace Financiera.Presentation.Forms.UsControls
 
         private void UsClients_Load(object sender, EventArgs e)
         {
-            pboxLoad.Visible = false;
+            //pboxLoad.Visible = false;
         }
 
 

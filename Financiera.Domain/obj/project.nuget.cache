@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "gOP9OoesNL+I/7/w1XkMb4eY6BQ1vWLlZjUSKbCE8/JMcCNl0knP+n2jPmKOXMwfklwGaST4zuIqpTTlAdbaew==",
+  "dgSpecHash": "uaJZO8RrMQHv0D7+SPVCz4hxNtpoSCBBvsvPL8OchBCmcAotsK8lJ9i18jwWaJxDFwpBV9l2+ZXvYEEPgjcecA==",
   "success": true,
   "projectFilePath": "C:\\Users\\JADPA-12\\Desktop\\Nueva carpeta\\BD1_Proyect\\Financiera.Domain\\Financiera.Domain.csproj",
   "expectedPackageFiles": [
@@ -99,10 +99,7 @@
     "C:\\Users\\JADPA-12\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\JADPA-12\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\JADPA-12\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\JADPA-12\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
-    "C:\\Users\\JADPA-12\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\JADPA-12\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\JADPA-12\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
+    "C:\\Users\\JADPA-12\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }

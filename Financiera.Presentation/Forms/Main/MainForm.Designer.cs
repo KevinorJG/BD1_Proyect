@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panelActions = new System.Windows.Forms.Panel();
+            this.lbRol = new System.Windows.Forms.Label();
+            this.lbUser = new System.Windows.Forms.Label();
             this.btMinimize = new System.Windows.Forms.Button();
             this.btClose = new System.Windows.Forms.Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
@@ -63,6 +65,8 @@
             // 
             this.panelActions.BackColor = System.Drawing.Color.Silver;
             this.panelActions.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panelActions.Controls.Add(this.lbRol);
+            this.panelActions.Controls.Add(this.lbUser);
             this.panelActions.Controls.Add(this.btMinimize);
             this.panelActions.Controls.Add(this.btClose);
             this.panelActions.Dock = System.Windows.Forms.DockStyle.Top;
@@ -71,6 +75,24 @@
             this.panelActions.Size = new System.Drawing.Size(1118, 23);
             this.panelActions.TabIndex = 1;
             this.panelActions.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelActions_MouseDown);
+            // 
+            // lbRol
+            // 
+            this.lbRol.AutoSize = true;
+            this.lbRol.Location = new System.Drawing.Point(140, 4);
+            this.lbRol.Name = "lbRol";
+            this.lbRol.Size = new System.Drawing.Size(27, 15);
+            this.lbRol.TabIndex = 3;
+            this.lbRol.Text = "Rol:";
+            // 
+            // lbUser
+            // 
+            this.lbUser.AutoSize = true;
+            this.lbUser.Location = new System.Drawing.Point(3, 4);
+            this.lbUser.Name = "lbUser";
+            this.lbUser.Size = new System.Drawing.Size(50, 15);
+            this.lbUser.TabIndex = 2;
+            this.lbUser.Text = "Usuario:";
             // 
             // btMinimize
             // 
@@ -143,7 +165,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel3.Location = new System.Drawing.Point(0, 279);
+            this.panel3.Location = new System.Drawing.Point(-4, 283);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(202, 1);
             this.panel3.TabIndex = 15;
@@ -151,7 +173,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel2.Location = new System.Drawing.Point(0, 187);
+            this.panel2.Location = new System.Drawing.Point(-4, 191);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(202, 1);
             this.panel2.TabIndex = 14;
@@ -159,7 +181,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel1.Location = new System.Drawing.Point(0, 94);
+            this.panel1.Location = new System.Drawing.Point(-4, 98);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(202, 1);
             this.panel1.TabIndex = 13;
@@ -191,7 +213,7 @@
             // 
             this.pboxCards.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pboxCards.Image = global::Financiera.Presentation.Properties.Resources.credit_card;
-            this.pboxCards.Location = new System.Drawing.Point(16, 200);
+            this.pboxCards.Location = new System.Drawing.Point(12, 204);
             this.pboxCards.Name = "pboxCards";
             this.pboxCards.Size = new System.Drawing.Size(50, 50);
             this.pboxCards.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -203,7 +225,7 @@
             // lbCards
             // 
             this.lbCards.AutoSize = true;
-            this.lbCards.Location = new System.Drawing.Point(17, 253);
+            this.lbCards.Location = new System.Drawing.Point(13, 257);
             this.lbCards.Name = "lbCards";
             this.lbCards.Size = new System.Drawing.Size(46, 15);
             this.lbCards.TabIndex = 5;
@@ -213,7 +235,7 @@
             // lbCounts
             // 
             this.lbCounts.AutoSize = true;
-            this.lbCounts.Location = new System.Drawing.Point(16, 161);
+            this.lbCounts.Location = new System.Drawing.Point(12, 165);
             this.lbCounts.Name = "lbCounts";
             this.lbCounts.Size = new System.Drawing.Size(50, 15);
             this.lbCounts.TabIndex = 3;
@@ -231,7 +253,7 @@
             this.pboxCounts.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pboxCounts.GradientAngle = 50F;
             this.pboxCounts.Image = global::Financiera.Presentation.Properties.Resources.count;
-            this.pboxCounts.Location = new System.Drawing.Point(16, 106);
+            this.pboxCounts.Location = new System.Drawing.Point(12, 110);
             this.pboxCounts.Name = "pboxCounts";
             this.pboxCounts.Size = new System.Drawing.Size(50, 50);
             this.pboxCounts.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -243,7 +265,7 @@
             // lbClients
             // 
             this.lbClients.AutoSize = true;
-            this.lbClients.Location = new System.Drawing.Point(17, 69);
+            this.lbClients.Location = new System.Drawing.Point(13, 73);
             this.lbClients.Name = "lbClients";
             this.lbClients.Size = new System.Drawing.Size(49, 15);
             this.lbClients.TabIndex = 1;
@@ -261,7 +283,7 @@
             this.pboxClients.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pboxClients.GradientAngle = 50F;
             this.pboxClients.Image = global::Financiera.Presentation.Properties.Resources.client;
-            this.pboxClients.Location = new System.Drawing.Point(17, 14);
+            this.pboxClients.Location = new System.Drawing.Point(13, 18);
             this.pboxClients.Name = "pboxClients";
             this.pboxClients.Size = new System.Drawing.Size(50, 50);
             this.pboxClients.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -316,6 +338,7 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.MainForm_Paint);
             this.panelActions.ResumeLayout(false);
+            this.panelActions.PerformLayout();
             this.panelOptions.ResumeLayout(false);
             this.panelOptions.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogout)).EndInit();
@@ -350,5 +373,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Timer timerOpenUsCounts;
         private System.Windows.Forms.Timer timerOpenCard;
+        private System.Windows.Forms.Label lbRol;
+        private System.Windows.Forms.Label lbUser;
     }
 }

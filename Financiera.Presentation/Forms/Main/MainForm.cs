@@ -1,4 +1,5 @@
 ﻿using Financiera.AppCore.IServices;
+using Financiera.Domain.Entities;
 using Financiera.Presentation.Forms.UsControls;
 using System;
 using System.Runtime.InteropServices;
@@ -67,6 +68,9 @@ namespace Financiera.Presentation.Forms.Main
         {
             try
             {
+               
+                lbUser.Text = "Usuario: "+User.Name;
+                lbRol.Text = "Rol: "+ User.Rol;
                 Program.threadLog.Interrupt();
                 Program.threadLog.Join();
             }

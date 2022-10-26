@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Financiera.Domain.Entities;
 using Financiera.Domain.Enums;
 
 namespace Financiera.Commons.Processes
@@ -46,7 +47,7 @@ namespace Financiera.Commons.Processes
                         State = ConnectionState.Open;//Indica que la conexion de abrio
                         StringConnection = builder.ConnectionString;//obtiene la cadena de conexion para poder utilizarla luego
                         SqlCommand command = new SqlCommand(connection.ConnectionString, connection);
-                        command.CommandText = "select Roll from Employees where Dni = @value";
+                        command.CommandText = "select Roll,Names from Employees where Dni = @value";
                         command.CommandType = CommandType.Text;
                         command.Parameters.AddWithValue("@value", dni);
                        
@@ -57,12 +58,18 @@ namespace Financiera.Commons.Processes
                             if (reader["Roll"].ToString() == Roles.Empleado.ToString())
                             {
                                 Roles = Roles.Empleado;
+                                User.Rol = "Empleado";
                                 StatusRol = true;
                             }
                             if (reader["Roll"].ToString() == Roles.Administrador.ToString())
                             {
                                 Roles = Roles.Administrador;
+                                User.Rol = Roles.Administrador.ToString();
                                 StatusRol = true;
+                            }
+                            if(reader["Names"].ToString() != null)
+                            {
+                                User.Name = reader["Names"].ToString();
                             }
 
                         }
