@@ -28,7 +28,7 @@ namespace Financiera.Commons.Processes
 
             builder = new SqlConnectionStringBuilder()
             {
-                DataSource = "KEVINOR\\SQLEXPRESS",
+                DataSource = "JADPA-12\\SQLSERVER2019",
                 InitialCatalog = "Financiera",
                 UserID = login,
                 Password = pass,

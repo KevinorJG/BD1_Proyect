@@ -37,8 +37,7 @@ namespace Financiera.Domain.ContextDB
         {
             SqlParameter[]? param = null;
             int result = 0;
-            using (var transaction = Database.BeginTransaction())
-            {
+            
                 try
                 {
                     param = new SqlParameter[] {
@@ -99,14 +98,13 @@ namespace Financiera.Domain.ContextDB
                     var execute = Database.ExecuteSqlRawAsync("[dbo].[sp_InsertClient] @name,@lastnames,@direction,@phone,@birthdate,@nationality,@dni", param);
                     await execute;
                     result = execute.Result;
-                    transaction.Commit();
-
+                   
                 }
                 catch (Exception ex)
                 {
-                    transaction.Rollback();
+                   
                 }
-            }
+            
 
 
             return result;

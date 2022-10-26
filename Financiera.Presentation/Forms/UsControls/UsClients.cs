@@ -11,7 +11,6 @@ namespace Financiera.Presentation.Forms.UsControls
 
         public UsClients()
         {
-
             InitializeComponent();
         }
 
@@ -39,6 +38,7 @@ namespace Financiera.Presentation.Forms.UsControls
 
         private async void btAgg_Click(object sender, EventArgs e)
         {
+            
             Client client = new Client()
             {
                 Names = txtNames.Texts,
@@ -46,8 +46,8 @@ namespace Financiera.Presentation.Forms.UsControls
                 Identification = txtDni.Texts,
                 Nationality = txtNationality.Texts,
                 BirthDate = DateTime.Parse(pickerDate.Text),
-                Phone = txtPhone.Text,
-                Direction = txtDirection.Text,
+                Phone = txtPhone.Texts.ToString(),
+                Direction = txtDirection.Texts.ToString(),
             };
 
 

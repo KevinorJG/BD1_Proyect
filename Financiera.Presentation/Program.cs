@@ -30,7 +30,11 @@ namespace Financiera.Presentation
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoginForm());
-            FormMain();
+            if(Connection.StringConnection != null || String.IsNullOrWhiteSpace(Connection.StringConnection))
+            {
+                FormMain();
+            }
+            
         }
         public static void FormMain()
         {

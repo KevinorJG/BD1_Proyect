@@ -47,14 +47,13 @@
             this.btSearchClient = new RJCodeAdvance.RJControls.RJButton();
             this.rjButton1 = new RJCodeAdvance.RJControls.RJButton();
             this.btDeleteClient = new RJCodeAdvance.RJControls.RJButton();
-            this.pboxLoad = new System.Windows.Forms.PictureBox();
             this.pickerDate = new RJCodeAdvance.RJControls.RJDatePicker();
             this.timerMenu = new System.Windows.Forms.Timer(this.components);
             this.timerMenuClose = new System.Windows.Forms.Timer(this.components);
+            this.Is_A = new Guna.UI2.WinForms.Guna2CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPhoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.panelPrinc.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxLoad)).BeginInit();
             this.SuspendLayout();
             // 
             // pbxPhoto
@@ -283,11 +282,11 @@
             // 
             // panelPrinc
             // 
+            this.panelPrinc.Controls.Add(this.Is_A);
             this.panelPrinc.Controls.Add(this.txtSearch);
             this.panelPrinc.Controls.Add(this.btSearchClient);
             this.panelPrinc.Controls.Add(this.rjButton1);
             this.panelPrinc.Controls.Add(this.btDeleteClient);
-            this.panelPrinc.Controls.Add(this.pboxLoad);
             this.panelPrinc.Controls.Add(this.guna2DataGridView1);
             this.panelPrinc.Controls.Add(this.pickerDate);
             this.panelPrinc.Controls.Add(this.btAgg);
@@ -381,17 +380,6 @@
             this.btDeleteClient.TextColor = System.Drawing.Color.White;
             this.btDeleteClient.UseVisualStyleBackColor = false;
             // 
-            // pboxLoad
-            // 
-            this.pboxLoad.BackColor = System.Drawing.Color.Transparent;
-            this.pboxLoad.Image = global::Financiera.Presentation.Properties.Resources.Loader;
-            this.pboxLoad.Location = new System.Drawing.Point(706, 130);
-            this.pboxLoad.Name = "pboxLoad";
-            this.pboxLoad.Size = new System.Drawing.Size(100, 50);
-            this.pboxLoad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pboxLoad.TabIndex = 15;
-            this.pboxLoad.TabStop = false;
-            // 
             // pickerDate
             // 
             this.pickerDate.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -413,6 +401,23 @@
             // 
             this.timerMenuClose.Tick += new System.EventHandler(this.timerMenuClose_Tick);
             // 
+            // Is_A
+            // 
+            this.Is_A.AutoSize = true;
+            this.Is_A.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Is_A.CheckedState.BorderRadius = 0;
+            this.Is_A.CheckedState.BorderThickness = 0;
+            this.Is_A.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Is_A.Location = new System.Drawing.Point(706, 148);
+            this.Is_A.Name = "Is_A";
+            this.Is_A.Size = new System.Drawing.Size(79, 19);
+            this.Is_A.TabIndex = 20;
+            this.Is_A.Text = "Extranjero";
+            this.Is_A.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.Is_A.UncheckedState.BorderRadius = 0;
+            this.Is_A.UncheckedState.BorderThickness = 0;
+            this.Is_A.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            // 
             // UsClients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -424,7 +429,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxPhoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
             this.panelPrinc.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pboxLoad)).EndInit();
+            this.panelPrinc.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -445,10 +450,10 @@
         private System.Windows.Forms.Timer timerMenu;
         private System.Windows.Forms.Timer timerMenuClose;
         private RJCodeAdvance.RJControls.RJDatePicker pickerDate;
-        private System.Windows.Forms.PictureBox pboxLoad;
         private RJCodeAdvance.RJControls.RJTextBox txtSearch;
         private RJCodeAdvance.RJControls.RJButton btSearchClient;
         private RJCodeAdvance.RJControls.RJButton rjButton1;
         private RJCodeAdvance.RJControls.RJButton btDeleteClient;
+        private Guna.UI2.WinForms.Guna2CheckBox Is_A;
     }
 }

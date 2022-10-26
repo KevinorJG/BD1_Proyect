@@ -5929,19 +5929,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Administrator\\.nuget\\packages\\": {}
+    "C:\\Users\\JADPA-12\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Commons\\Financiera.Commons.csproj",
+      "projectUniqueName": "C:\\Users\\JADPA-12\\Desktop\\Nueva carpeta\\BD1_Proyect\\Financiera.Commons\\Financiera.Commons.csproj",
       "projectName": "Financiera.Commons",
-      "projectPath": "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Commons\\Financiera.Commons.csproj",
-      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Commons\\obj\\",
+      "projectPath": "C:\\Users\\JADPA-12\\Desktop\\Nueva carpeta\\BD1_Proyect\\Financiera.Commons\\Financiera.Commons.csproj",
+      "packagesPath": "C:\\Users\\JADPA-12\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\JADPA-12\\Desktop\\Nueva carpeta\\BD1_Proyect\\Financiera.Commons\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\JADPA-12\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5955,8 +5955,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Domain\\Financiera.Domain.csproj": {
-              "projectPath": "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Domain\\Financiera.Domain.csproj"
+            "C:\\Users\\JADPA-12\\Desktop\\Nueva carpeta\\BD1_Proyect\\Financiera.Domain\\Financiera.Domain.csproj": {
+              "projectPath": "C:\\Users\\JADPA-12\\Desktop\\Nueva carpeta\\BD1_Proyect\\Financiera.Domain\\Financiera.Domain.csproj"
             }
           }
         }
@@ -5986,12 +5986,26 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[5.0.0, 5.0.0]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[5.0.0, 5.0.0]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[5.0.0, 5.0.0]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
