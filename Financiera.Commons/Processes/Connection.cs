@@ -29,7 +29,7 @@ namespace Financiera.Commons.Processes
 
             builder = new SqlConnectionStringBuilder()
             {
-                DataSource = "JADPA-12\\SQLSERVER2019",
+                DataSource = "KEVINOR\\SQLEXPRESS",
                 InitialCatalog = "Financiera",
                 UserID = login,
                 Password = pass,
@@ -47,10 +47,18 @@ namespace Financiera.Commons.Processes
                         State = ConnectionState.Open;//Indica que la conexion de abrio
                         StringConnection = builder.ConnectionString;//obtiene la cadena de conexion para poder utilizarla luego
                         SqlCommand command = new SqlCommand(connection.ConnectionString, connection);
-                        command.CommandText = "select Roll,Names from Employees where Dni = @value";
-                        command.CommandType = CommandType.Text;
-                        command.Parameters.AddWithValue("@value", dni);
-                       
+                        command.CommandText = "sp_ValidarAcceso";
+                        command.CommandType = CommandType.StoredProcedure;
+                        //SqlParameter sqlParameter = new SqlParameter()
+                        //{
+                        //    ParameterName = "@dni",
+                        //    SqlDbType = System.Data.SqlDbType.NVarChar,
+                        //    Size = 15,
+                        //    Direction = System.Data.ParameterDirection.Input,
+                        //    Value = dni
+                        //};
+                        command.Parameters.AddWithValue("@dni", dni);
+                        //command.Parameters.Add(sqlParameter);
                         SqlDataReader reader = command.ExecuteReader();
 
                         while (reader.Read() == true)
