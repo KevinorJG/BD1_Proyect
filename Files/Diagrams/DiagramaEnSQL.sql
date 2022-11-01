@@ -96,21 +96,25 @@ add foreign key (id_Emloyee) references Employees(Id_Employee)
 
 --Cliente a Transac
 Alter table EmployeeTransaction
-add foreign key (id_Client) references Client(Id_Client)
+add foreign key (id_Client) references Clients(Id_Client)
 --Cards a Cliente
 Alter table Cards
-add foreign key (id_Client) references Client(Id_Client)
+add foreign key (id_Client) references Clients(Id_Client)
 --Cards a CardsDetail
 Alter table CardDetails
 add foreign key (id_Card) references Cards(Id_Card)
 --Cliente a cuenta 
 Alter table Accounts
-add foreign key (id_Client) references Client(Id_Client)
+add foreign key (id_Client) references Clients(Id_Client)
 --Cuenta a Hideline
 Alter table Accounts
-add foreign key (id_Hideline) references Hideline(Id_Hideline)
+add foreign key (Id_Hideline) references Hideline(Id_Hideline)
 --Cuenta a dettale de cuenta
 Alter table AccountDetails
 add foreign key (id_Account) references Accounts(Id_Account)
 
+alter table Accounts
+add Id_Hideline int
+
+ALTER AUTHORIZATION ON DATABASE::[Financiera] TO [sa]
 

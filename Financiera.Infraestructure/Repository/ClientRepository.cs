@@ -18,6 +18,12 @@ namespace Financiera.Infraestructure.Repository
             Db = db;
         }
 
+        public async Task<int> GetClientByDni(string dni)
+        {
+            var result = Db.GetClientByDni(dni);
+            return await result;
+        }
+
         public async Task<int> Save(Client client)
         {
            var result = Db.InsertClient(client);

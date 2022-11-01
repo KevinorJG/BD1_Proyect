@@ -12,5 +12,6 @@ namespace Financiera.Domain.Interfaces
         Task<int> InsertClient(Client entity);
         Task<bool> UpdateClient(Client entity);
         Task<bool> DeleteClient(int id);
+        Task<int> GetClientByDni(string dni);
     }
 }

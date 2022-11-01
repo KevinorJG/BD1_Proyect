@@ -10,5 +10,6 @@ namespace Financiera.Domain.Interfaces
     public interface IClientRepository : IRepository<Client>
     {
       Task<int> Save(Client client);
+      Task<int> GetClientByDni(string dni);
     }
 }

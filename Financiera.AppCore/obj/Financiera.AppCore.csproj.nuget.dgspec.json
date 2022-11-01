@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\JADPA-12\\Desktop\\Nueva carpeta\\BD1_Proyect\\Financiera.AppCore\\Financiera.AppCore.csproj": {}
+    "C:\\Users\\CCBB-19\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.AppCore\\Financiera.AppCore.csproj": {}
   },
   "projects": {
-    "C:\\Users\\JADPA-12\\Desktop\\Nueva carpeta\\BD1_Proyect\\Financiera.AppCore\\Financiera.AppCore.csproj": {
+    "C:\\Users\\CCBB-19\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.AppCore\\Financiera.AppCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\JADPA-12\\Desktop\\Nueva carpeta\\BD1_Proyect\\Financiera.AppCore\\Financiera.AppCore.csproj",
+        "projectUniqueName": "C:\\Users\\CCBB-19\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.AppCore\\Financiera.AppCore.csproj",
         "projectName": "Financiera.AppCore",
-        "projectPath": "C:\\Users\\JADPA-12\\Desktop\\Nueva carpeta\\BD1_Proyect\\Financiera.AppCore\\Financiera.AppCore.csproj",
-        "packagesPath": "C:\\Users\\JADPA-12\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\JADPA-12\\Desktop\\Nueva carpeta\\BD1_Proyect\\Financiera.AppCore\\obj\\",
+        "projectPath": "C:\\Users\\CCBB-19\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.AppCore\\Financiera.AppCore.csproj",
+        "packagesPath": "C:\\Users\\CCBB-19\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\CCBB-19\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.AppCore\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\JADPA-12\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\CCBB-19\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,14 +26,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\JADPA-12\\Desktop\\Nueva carpeta\\BD1_Proyect\\Financiera.Domain\\Financiera.Domain.csproj": {
-                "projectPath": "C:\\Users\\JADPA-12\\Desktop\\Nueva carpeta\\BD1_Proyect\\Financiera.Domain\\Financiera.Domain.csproj"
+              "C:\\Users\\CCBB-19\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Domain\\Financiera.Domain.csproj": {
+                "projectPath": "C:\\Users\\CCBB-19\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Domain\\Financiera.Domain.csproj"
               }
             }
           }
@@ -49,44 +54,35 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\JADPA-12\\Desktop\\Nueva carpeta\\BD1_Proyect\\Financiera.Domain\\Financiera.Domain.csproj": {
+    "C:\\Users\\CCBB-19\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Domain\\Financiera.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\JADPA-12\\Desktop\\Nueva carpeta\\BD1_Proyect\\Financiera.Domain\\Financiera.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\CCBB-19\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Domain\\Financiera.Domain.csproj",
         "projectName": "Financiera.Domain",
-        "projectPath": "C:\\Users\\JADPA-12\\Desktop\\Nueva carpeta\\BD1_Proyect\\Financiera.Domain\\Financiera.Domain.csproj",
-        "packagesPath": "C:\\Users\\JADPA-12\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\JADPA-12\\Desktop\\Nueva carpeta\\BD1_Proyect\\Financiera.Domain\\obj\\",
+        "projectPath": "C:\\Users\\CCBB-19\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Domain\\Financiera.Domain.csproj",
+        "packagesPath": "C:\\Users\\CCBB-19\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\CCBB-19\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\JADPA-12\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\CCBB-19\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -94,6 +90,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -133,7 +130,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -142,7 +140,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

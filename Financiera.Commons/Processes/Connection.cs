@@ -29,7 +29,7 @@ namespace Financiera.Commons.Processes
 
             builder = new SqlConnectionStringBuilder()
             {
-                DataSource = "KEVINOR\\SQLEXPRESS",
+                DataSource = "DESKTOP-PN7GC5I\\CCBB19",
                 InitialCatalog = "Financiera",
                 UserID = login,
                 Password = pass,
@@ -49,16 +49,7 @@ namespace Financiera.Commons.Processes
                         SqlCommand command = new SqlCommand(connection.ConnectionString, connection);
                         command.CommandText = "sp_ValidarAcceso";
                         command.CommandType = CommandType.StoredProcedure;
-                        //SqlParameter sqlParameter = new SqlParameter()
-                        //{
-                        //    ParameterName = "@dni",
-                        //    SqlDbType = System.Data.SqlDbType.NVarChar,
-                        //    Size = 15,
-                        //    Direction = System.Data.ParameterDirection.Input,
-                        //    Value = dni
-                        //};
                         command.Parameters.AddWithValue("@dni", dni);
-                        //command.Parameters.Add(sqlParameter);
                         SqlDataReader reader = command.ExecuteReader();
 
                         while (reader.Read() == true)
