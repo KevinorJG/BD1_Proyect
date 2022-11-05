@@ -23,7 +23,7 @@ id_Client int not null,
 
 )
 --3
-create table Client
+create table Clients
 (
 Id_Client int primary key not null,
 Names nvarchar(50),
@@ -92,11 +92,11 @@ TransactionDate date
 )
 --Empleado a empleado transac
 Alter table EmployeeTransaction
-add foreign key (id_Emloyee) references Employees(Id_Employee)
+add foreign key (id_Employee) references Employees(Id_Employee)
 
 --Cliente a Transac
 Alter table EmployeeTransaction
-add foreign key (id_Client) references Clients(Id_Client)
+add foreign key (id_Client) references Client(Id_Client)
 --Cards a Cliente
 Alter table Cards
 add foreign key (id_Client) references Clients(Id_Client)
@@ -118,3 +118,4 @@ add Id_Hideline int
 
 ALTER AUTHORIZATION ON DATABASE::[Financiera] TO [sa]
 
+drop table EmployeeTransaction

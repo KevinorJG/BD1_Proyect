@@ -29,7 +29,7 @@ namespace Financiera.Commons.Processes
 
             builder = new SqlConnectionStringBuilder()
             {
-                DataSource = "DESKTOP-PN7GC5I\\CCBB19",
+                DataSource = "KEVINOR\\SQLEXPRESS",
                 InitialCatalog = "Financiera",
                 UserID = login,
                 Password = pass,
@@ -49,26 +49,27 @@ namespace Financiera.Commons.Processes
                         SqlCommand command = new SqlCommand(connection.ConnectionString, connection);
                         command.CommandText = "sp_ValidarAcceso";
                         command.CommandType = CommandType.StoredProcedure;
-                        command.Parameters.AddWithValue("@dni", dni);
+                        command.Parameters.AddWithValue("@usario", dni);
                         SqlDataReader reader = command.ExecuteReader();
 
                         while (reader.Read() == true)
                         {
-                            if (reader["Roll"].ToString() == Roles.Empleado.ToString())
+                            if(reader["Resultado"].ToString() == "Acceso Exitoso")
                             {
-                                Roles = Roles.Empleado;
-                                User.Rol = "Empleado";
-                                StatusRol = true;
-                            }
-                            if (reader["Roll"].ToString() == Roles.Administrador.ToString())
-                            {
-                                Roles = Roles.Administrador;
-                                User.Rol = Roles.Administrador.ToString();
-                                StatusRol = true;
-                            }
-                            if(reader["Names"].ToString() != null)
-                            {
-                                User.Name = reader["Names"].ToString();
+                                if (reader["Roll"].ToString() == Roles.Empleado.ToString())
+                                {                                
+                                    User.Rol = Roles.Empleado.ToString();
+                                    StatusRol = true;
+                                }
+                                if (reader["Roll"].ToString() == Roles.Administrador.ToString())
+                                {
+                                    User.Rol = Roles.Administrador.ToString();
+                                    StatusRol = true;
+                                }
+                                if (reader["NameEmployee"].ToString() != null)
+                                {
+                                    User.Name = reader["NamesEmployee"].ToString();
+                                }
                             }
 
                         }
