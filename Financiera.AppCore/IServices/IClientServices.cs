@@ -10,6 +10,7 @@ namespace Financiera.AppCore.IServices
     public interface IClientServices : IService<Client>
     {
         Task<int> Save(Client client);
+        Task<bool> Validate(string login);
 
     }
 }

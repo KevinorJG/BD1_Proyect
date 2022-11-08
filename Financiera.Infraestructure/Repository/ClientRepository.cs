@@ -30,6 +30,12 @@ namespace Financiera.Infraestructure.Repository
             return await result;
         }
 
-        
+       
+
+        public async Task<bool> Validate(string login)
+        {
+            var result = Db.Validate(login);
+            return await result;
+        }
     }
 }

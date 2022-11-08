@@ -47,29 +47,38 @@ namespace Financiera.Commons.Processes
                         State = ConnectionState.Open;//Indica que la conexion de abrio
                         StringConnection = builder.ConnectionString;//obtiene la cadena de conexion para poder utilizarla luego
                         SqlCommand command = new SqlCommand(connection.ConnectionString, connection);
-                        command.CommandText = "sp_ValidarAcceso";
+                        command.CommandText = "sp_ValidarAcceso";                       
                         command.CommandType = CommandType.StoredProcedure;
-                        command.Parameters.AddWithValue("@usario", dni);
+                        command.Parameters.AddWithValue("@usuario", dni);
                         SqlDataReader reader = command.ExecuteReader();
 
                         while (reader.Read() == true)
                         {
+                            
                             if(reader["Resultado"].ToString() == "Acceso Exitoso")
                             {
-                                if (reader["Roll"].ToString() == Roles.Empleado.ToString())
-                                {                                
-                                    User.Rol = Roles.Empleado.ToString();
-                                    StatusRol = true;
+                               if((reader["Roll"].ToString() == login))
+                               {
+                                    if (reader["NameEmployee"].ToString() != null)
+                                    {
+                                        User.Name = reader["NameEmployee"].ToString();
+                                    }
+                                    if (reader["Roll"].ToString() == Roles.Empleado.ToString())
+                                    {
+                                        User.Rol = Roles.Empleado.ToString();
+                                        StatusRol = true;
+                                    }
+                                    if (reader["Roll"].ToString() == Roles.Administrador.ToString())
+                                    {
+                                        User.Rol = Roles.Administrador.ToString();
+                                        StatusRol = true;
+                                    }
                                 }
-                                if (reader["Roll"].ToString() == Roles.Administrador.ToString())
-                                {
-                                    User.Rol = Roles.Administrador.ToString();
-                                    StatusRol = true;
-                                }
-                                if (reader["NameEmployee"].ToString() != null)
-                                {
-                                    User.Name = reader["NamesEmployee"].ToString();
-                                }
+                                
+                            }
+                            if (reader["Resultado"].ToString() == "Acceso Denegado")
+                            {
+                                State = ConnectionState.Closed;
                             }
 
                         }
@@ -81,7 +90,7 @@ namespace Financiera.Commons.Processes
             }
             catch (Exception ex)
             {
-
+                State = ConnectionState.Closed;
             }
             connection.Dispose();
             connection.Close();

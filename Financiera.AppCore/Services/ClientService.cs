@@ -23,5 +23,9 @@ namespace Financiera.AppCore.Services
           return await repository.Save(client);
         }
 
+        public async Task<bool> Validate(string login)
+        {
+           return await repository.Validate(login);
+        }
     }
 }

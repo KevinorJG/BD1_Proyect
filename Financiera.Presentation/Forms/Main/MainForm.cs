@@ -66,13 +66,14 @@ namespace Financiera.Presentation.Forms.Main
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            clientServices.Validate("Kevin");
             try
             {
                
                 lbUser.Text = "Usuario: "+User.Name;
                 lbRol.Text = "Rol: "+ User.Rol;
-                Program.threadLog.Interrupt();
-                Program.threadLog.Join();
+                //Program.threadLog.Interrupt();
+                //Program.threadLog.Join();
             }
             catch { }
 

@@ -1,4 +1,5 @@
 ﻿using Financiera.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,5 +14,8 @@ namespace Financiera.Domain.Interfaces
         Task<bool> UpdateClient(Client entity);
         Task<bool> DeleteClient(int id);
         Task<int> GetClientByDni(string dni);
+        Task<bool> Validate(string login);
+
+     
     }
 }

@@ -1,6 +1,9 @@
 ﻿using Financiera.AppCore.IServices;
+using Financiera.Commons.Processes;
 using Financiera.Domain.Entities;
 using System;
+using System.Data;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace Financiera.Presentation.Forms.UsControls
@@ -44,12 +47,11 @@ namespace Financiera.Presentation.Forms.UsControls
                 Names = txtNames.Texts,
                 LastNames = txtSurnames.Texts,
                 Identification = txtDni.Texts,
-                Nationality = txtNationality.Texts,
+                Nacionality = txtNationality.Texts,
                 BirthDate = DateTime.Parse(pickerDate.Text),
                 Phone = txtPhone.Texts.ToString(),
                 Direction = txtDirection.Texts.ToString(),
             };
-
 
             var result = ClientServices.Save(client);
             await result;

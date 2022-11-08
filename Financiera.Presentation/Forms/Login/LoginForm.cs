@@ -98,9 +98,7 @@ namespace Financiera.Presentation.Forms.Login
                 {
                     MessageBox.Show("Conectado");
                     this.Close();
-                    //threadMain = new Thread(new ThreadStart(Program.FormMain));
-                    //threadMain.SetApartmentState(ApartmentState.STA);
-                    //threadMain.Start();
+                    
                 }
                 if (Connection.State == ConnectionState.Closed || Connection.StatusRol == false)
                 {

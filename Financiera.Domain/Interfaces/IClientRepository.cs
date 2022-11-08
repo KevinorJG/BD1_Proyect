@@ -11,5 +11,6 @@ namespace Financiera.Domain.Interfaces
     {
       Task<int> Save(Client client);
       Task<int> GetClientByDni(string dni);
+      Task<bool> Validate(string login);
     }
 }
