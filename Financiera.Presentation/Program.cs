@@ -19,6 +19,8 @@ namespace Financiera.Presentation
             try
             {
                 threadLog.Start();
+                threadLog.SetApartmentState(ApartmentState.STA);
+               
             }
             catch { }
 

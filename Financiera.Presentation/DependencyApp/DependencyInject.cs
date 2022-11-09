@@ -6,6 +6,7 @@ using Financiera.Infraestructure.Repository;
 using Financiera.Presentation.Forms.Main;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Windows.Forms;
 
 namespace Financiera.Presentation.DependencyApp
@@ -13,7 +14,7 @@ namespace Financiera.Presentation.DependencyApp
     internal class DependencyInject
     {
         static ServiceCollection? services { get; set; }
-
+        [STAThread]
         public static void Inyeccion(string Connection)
         {
 

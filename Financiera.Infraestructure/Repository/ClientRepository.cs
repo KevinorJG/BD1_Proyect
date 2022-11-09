@@ -3,6 +3,7 @@ using Financiera.Domain.Entities;
 using Financiera.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,24 +19,24 @@ namespace Financiera.Infraestructure.Repository
             Db = db;
         }
 
-        public async Task<int> GetClientByDni(string dni)
+        public Client GetClientByDni(string dni)
+        {         
+            return  Db.GetClientByDni(dni); ;
+        }
+
+        public DataTable GetClients()
         {
-            var result = Db.GetClientByDni(dni);
-            return await result;
+           return Db.GetClients();
         }
 
         public async Task<int> Save(Client client)
         {
-           var result = Db.InsertClient(client);
-            return await result;
+            return await Db.InsertClient(client);
         }
 
-       
-
-        public async Task<bool> Validate(string login)
+        public async Task<bool> UpdateClient(Client entity, int id)
         {
-            var result = Db.Validate(login);
-            return await result;
+           return await Db.UpdateClient(entity,id);
         }
     }
 }

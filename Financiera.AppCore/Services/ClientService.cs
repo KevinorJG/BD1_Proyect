@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,14 +19,24 @@ namespace Financiera.AppCore.Services
             this.repository = repository;
         }
 
+        public Client GetClientByDni(string dni)
+        {
+            return repository.GetClientByDni(dni);
+        }
+
+        public DataTable GetClients()
+        {
+            return repository.GetClients();
+        }
+
         public async Task<int> Save(Client client)
         {
           return await repository.Save(client);
         }
 
-        public async Task<bool> Validate(string login)
+        public async Task<bool> UpdateClient(Client entity, int id)
         {
-           return await repository.Validate(login);
+            return await repository.UpdateClient(entity,id);
         }
     }
 }

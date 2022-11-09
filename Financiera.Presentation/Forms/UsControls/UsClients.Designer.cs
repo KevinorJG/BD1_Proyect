@@ -29,30 +29,29 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pbxPhoto = new RJCodeAdvance.RJControls.RJCircularPictureBox();
-            this.txtNames = new RJCodeAdvance.RJControls.RJTextBox();
-            this.txtSurnames = new RJCodeAdvance.RJControls.RJTextBox();
-            this.txtDirection = new RJCodeAdvance.RJControls.RJTextBox();
-            this.txtPhone = new RJCodeAdvance.RJControls.RJTextBox();
             this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.txtNationality = new RJCodeAdvance.RJControls.RJTextBox();
-            this.txtDni = new RJCodeAdvance.RJControls.RJTextBox();
-            this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.dvgClients = new Guna.UI2.WinForms.Guna2DataGridView();
             this.btAgg = new RJCodeAdvance.RJControls.RJButton();
             this.panelPrinc = new System.Windows.Forms.Panel();
+            this.txtDirection = new System.Windows.Forms.TextBox();
+            this.txtNationality = new System.Windows.Forms.TextBox();
+            this.txtDni = new System.Windows.Forms.TextBox();
+            this.txtSurnames = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.txtNames = new System.Windows.Forms.TextBox();
             this.txtSearch = new RJCodeAdvance.RJControls.RJTextBox();
             this.btSearchClient = new RJCodeAdvance.RJControls.RJButton();
-            this.rjButton1 = new RJCodeAdvance.RJControls.RJButton();
+            this.btUpdate = new RJCodeAdvance.RJControls.RJButton();
             this.btDeleteClient = new RJCodeAdvance.RJControls.RJButton();
             this.pickerDate = new RJCodeAdvance.RJControls.RJDatePicker();
             this.timerMenu = new System.Windows.Forms.Timer(this.components);
             this.timerMenuClose = new System.Windows.Forms.Timer(this.components);
-            this.Is_A = new Guna.UI2.WinForms.Guna2CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPhoto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgClients)).BeginInit();
             this.panelPrinc.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,193 +72,61 @@
             this.pbxPhoto.TabStop = false;
             this.pbxPhoto.Click += new System.EventHandler(this.pbxPhoto_Click);
             // 
-            // txtNames
+            // dvgClients
             // 
-            this.txtNames.BackColor = System.Drawing.SystemColors.Window;
-            this.txtNames.BorderColor = System.Drawing.Color.Silver;
-            this.txtNames.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtNames.BorderRadius = 0;
-            this.txtNames.BorderSize = 2;
-            this.txtNames.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtNames.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtNames.Location = new System.Drawing.Point(159, 48);
-            this.txtNames.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNames.Multiline = false;
-            this.txtNames.Name = "txtNames";
-            this.txtNames.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txtNames.PasswordChar = false;
-            this.txtNames.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtNames.PlaceholderText = "Nombres";
-            this.txtNames.Size = new System.Drawing.Size(239, 31);
-            this.txtNames.TabIndex = 2;
-            this.txtNames.Texts = "";
-            this.txtNames.UnderlinedStyle = false;
-            // 
-            // txtSurnames
-            // 
-            this.txtSurnames.BackColor = System.Drawing.SystemColors.Window;
-            this.txtSurnames.BorderColor = System.Drawing.Color.Silver;
-            this.txtSurnames.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtSurnames.BorderRadius = 0;
-            this.txtSurnames.BorderSize = 2;
-            this.txtSurnames.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtSurnames.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtSurnames.Location = new System.Drawing.Point(440, 48);
-            this.txtSurnames.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSurnames.Multiline = false;
-            this.txtSurnames.Name = "txtSurnames";
-            this.txtSurnames.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txtSurnames.PasswordChar = false;
-            this.txtSurnames.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtSurnames.PlaceholderText = "Apellidos";
-            this.txtSurnames.Size = new System.Drawing.Size(239, 31);
-            this.txtSurnames.TabIndex = 3;
-            this.txtSurnames.Texts = "";
-            this.txtSurnames.UnderlinedStyle = false;
-            // 
-            // txtDirection
-            // 
-            this.txtDirection.BackColor = System.Drawing.SystemColors.Window;
-            this.txtDirection.BorderColor = System.Drawing.Color.Silver;
-            this.txtDirection.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtDirection.BorderRadius = 0;
-            this.txtDirection.BorderSize = 2;
-            this.txtDirection.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtDirection.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtDirection.Location = new System.Drawing.Point(706, 48);
-            this.txtDirection.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDirection.Multiline = true;
-            this.txtDirection.Name = "txtDirection";
-            this.txtDirection.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txtDirection.PasswordChar = false;
-            this.txtDirection.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtDirection.PlaceholderText = "Dirección";
-            this.txtDirection.Size = new System.Drawing.Size(239, 75);
-            this.txtDirection.TabIndex = 5;
-            this.txtDirection.Texts = "";
-            this.txtDirection.UnderlinedStyle = false;
-            // 
-            // txtPhone
-            // 
-            this.txtPhone.BackColor = System.Drawing.SystemColors.Window;
-            this.txtPhone.BorderColor = System.Drawing.Color.Silver;
-            this.txtPhone.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtPhone.BorderRadius = 0;
-            this.txtPhone.BorderSize = 2;
-            this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtPhone.Location = new System.Drawing.Point(159, 92);
-            this.txtPhone.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPhone.Multiline = false;
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txtPhone.PasswordChar = false;
-            this.txtPhone.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtPhone.PlaceholderText = "Telefono";
-            this.txtPhone.Size = new System.Drawing.Size(239, 31);
-            this.txtPhone.TabIndex = 4;
-            this.txtPhone.Texts = "";
-            this.txtPhone.UnderlinedStyle = false;
-            // 
-            // txtNationality
-            // 
-            this.txtNationality.BackColor = System.Drawing.SystemColors.Window;
-            this.txtNationality.BorderColor = System.Drawing.Color.Silver;
-            this.txtNationality.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtNationality.BorderRadius = 0;
-            this.txtNationality.BorderSize = 2;
-            this.txtNationality.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtNationality.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtNationality.Location = new System.Drawing.Point(440, 136);
-            this.txtNationality.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNationality.Multiline = false;
-            this.txtNationality.Name = "txtNationality";
-            this.txtNationality.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txtNationality.PasswordChar = false;
-            this.txtNationality.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtNationality.PlaceholderText = "Nacionalidad";
-            this.txtNationality.Size = new System.Drawing.Size(159, 31);
-            this.txtNationality.TabIndex = 7;
-            this.txtNationality.Texts = "";
-            this.txtNationality.UnderlinedStyle = false;
-            // 
-            // txtDni
-            // 
-            this.txtDni.BackColor = System.Drawing.SystemColors.Window;
-            this.txtDni.BorderColor = System.Drawing.Color.Silver;
-            this.txtDni.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtDni.BorderRadius = 0;
-            this.txtDni.BorderSize = 2;
-            this.txtDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtDni.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtDni.Location = new System.Drawing.Point(440, 92);
-            this.txtDni.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDni.Multiline = false;
-            this.txtDni.Name = "txtDni";
-            this.txtDni.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txtDni.PasswordChar = false;
-            this.txtDni.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtDni.PlaceholderText = "Cédula";
-            this.txtDni.Size = new System.Drawing.Size(239, 31);
-            this.txtDni.TabIndex = 6;
-            this.txtDni.Texts = "";
-            this.txtDni.UnderlinedStyle = false;
-            this.txtDni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDni_KeyPress);
-            // 
-            // guna2DataGridView1
-            // 
-            this.guna2DataGridView1.AllowUserToAddRows = false;
-            this.guna2DataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.guna2DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.guna2DataGridView1.ColumnHeadersHeight = 4;
-            this.guna2DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.Location = new System.Drawing.Point(42, 280);
-            this.guna2DataGridView1.Name = "guna2DataGridView1";
-            this.guna2DataGridView1.ReadOnly = true;
-            this.guna2DataGridView1.RowHeadersVisible = false;
-            this.guna2DataGridView1.RowTemplate.Height = 25;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(953, 150);
-            this.guna2DataGridView1.TabIndex = 9;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView1.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 4;
-            this.guna2DataGridView1.ThemeStyle.ReadOnly = true;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.Height = 25;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dvgClients.AllowUserToAddRows = false;
+            this.dvgClients.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.dvgClients.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.dvgClients.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.dvgClients.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dvgClients.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.dvgClients.ColumnHeadersHeight = 4;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dvgClients.DefaultCellStyle = dataGridViewCellStyle9;
+            this.dvgClients.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dvgClients.Location = new System.Drawing.Point(42, 280);
+            this.dvgClients.Name = "dvgClients";
+            this.dvgClients.ReadOnly = true;
+            this.dvgClients.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dvgClients.RowHeadersVisible = false;
+            this.dvgClients.RowTemplate.Height = 25;
+            this.dvgClients.Size = new System.Drawing.Size(953, 150);
+            this.dvgClients.TabIndex = 9;
+            this.dvgClients.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dvgClients.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dvgClients.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dvgClients.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dvgClients.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dvgClients.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dvgClients.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dvgClients.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dvgClients.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dvgClients.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dvgClients.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dvgClients.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dvgClients.ThemeStyle.HeaderStyle.Height = 4;
+            this.dvgClients.ThemeStyle.ReadOnly = true;
+            this.dvgClients.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dvgClients.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dvgClients.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dvgClients.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dvgClients.ThemeStyle.RowsStyle.Height = 25;
+            this.dvgClients.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dvgClients.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
             // btAgg
             // 
@@ -282,26 +149,74 @@
             // 
             // panelPrinc
             // 
-            this.panelPrinc.Controls.Add(this.Is_A);
-            this.panelPrinc.Controls.Add(this.txtSearch);
-            this.panelPrinc.Controls.Add(this.btSearchClient);
-            this.panelPrinc.Controls.Add(this.rjButton1);
-            this.panelPrinc.Controls.Add(this.btDeleteClient);
-            this.panelPrinc.Controls.Add(this.guna2DataGridView1);
-            this.panelPrinc.Controls.Add(this.pickerDate);
-            this.panelPrinc.Controls.Add(this.btAgg);
-            this.panelPrinc.Controls.Add(this.txtNationality);
-            this.panelPrinc.Controls.Add(this.pbxPhoto);
-            this.panelPrinc.Controls.Add(this.txtNames);
-            this.panelPrinc.Controls.Add(this.txtDni);
             this.panelPrinc.Controls.Add(this.txtDirection);
+            this.panelPrinc.Controls.Add(this.txtNationality);
+            this.panelPrinc.Controls.Add(this.txtDni);
             this.panelPrinc.Controls.Add(this.txtSurnames);
             this.panelPrinc.Controls.Add(this.txtPhone);
+            this.panelPrinc.Controls.Add(this.txtNames);
+            this.panelPrinc.Controls.Add(this.txtSearch);
+            this.panelPrinc.Controls.Add(this.btSearchClient);
+            this.panelPrinc.Controls.Add(this.btUpdate);
+            this.panelPrinc.Controls.Add(this.btDeleteClient);
+            this.panelPrinc.Controls.Add(this.dvgClients);
+            this.panelPrinc.Controls.Add(this.pickerDate);
+            this.panelPrinc.Controls.Add(this.btAgg);
+            this.panelPrinc.Controls.Add(this.pbxPhoto);
             this.panelPrinc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelPrinc.Location = new System.Drawing.Point(0, 0);
             this.panelPrinc.Name = "panelPrinc";
             this.panelPrinc.Size = new System.Drawing.Size(1036, 462);
             this.panelPrinc.TabIndex = 10;
+            // 
+            // txtDirection
+            // 
+            this.txtDirection.Location = new System.Drawing.Point(740, 46);
+            this.txtDirection.Multiline = true;
+            this.txtDirection.Name = "txtDirection";
+            this.txtDirection.PlaceholderText = "Domicilio";
+            this.txtDirection.Size = new System.Drawing.Size(228, 107);
+            this.txtDirection.TabIndex = 25;
+            // 
+            // txtNationality
+            // 
+            this.txtNationality.Location = new System.Drawing.Point(440, 157);
+            this.txtNationality.Name = "txtNationality";
+            this.txtNationality.PlaceholderText = "Nacionalidad";
+            this.txtNationality.Size = new System.Drawing.Size(188, 23);
+            this.txtNationality.TabIndex = 24;
+            // 
+            // txtDni
+            // 
+            this.txtDni.Location = new System.Drawing.Point(440, 100);
+            this.txtDni.Name = "txtDni";
+            this.txtDni.PlaceholderText = "Identificacion";
+            this.txtDni.Size = new System.Drawing.Size(239, 23);
+            this.txtDni.TabIndex = 23;
+            // 
+            // txtSurnames
+            // 
+            this.txtSurnames.Location = new System.Drawing.Point(440, 48);
+            this.txtSurnames.Name = "txtSurnames";
+            this.txtSurnames.PlaceholderText = "Apellidos";
+            this.txtSurnames.Size = new System.Drawing.Size(239, 23);
+            this.txtSurnames.TabIndex = 22;
+            // 
+            // txtPhone
+            // 
+            this.txtPhone.Location = new System.Drawing.Point(159, 100);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.PlaceholderText = "Numero telefonico";
+            this.txtPhone.Size = new System.Drawing.Size(199, 23);
+            this.txtPhone.TabIndex = 21;
+            // 
+            // txtNames
+            // 
+            this.txtNames.Location = new System.Drawing.Point(159, 48);
+            this.txtNames.Name = "txtNames";
+            this.txtNames.PlaceholderText = "Nombres";
+            this.txtNames.Size = new System.Drawing.Size(199, 23);
+            this.txtNames.TabIndex = 20;
             // 
             // txtSearch
             // 
@@ -343,24 +258,26 @@
             this.btSearchClient.Text = "Buscar";
             this.btSearchClient.TextColor = System.Drawing.Color.White;
             this.btSearchClient.UseVisualStyleBackColor = false;
+            this.btSearchClient.Click += new System.EventHandler(this.btSearchClient_Click);
             // 
-            // rjButton1
+            // btUpdate
             // 
-            this.rjButton1.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.rjButton1.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.rjButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton1.BorderRadius = 5;
-            this.rjButton1.BorderSize = 0;
-            this.rjButton1.FlatAppearance.BorderSize = 0;
-            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton1.ForeColor = System.Drawing.Color.White;
-            this.rjButton1.Location = new System.Drawing.Point(740, 207);
-            this.rjButton1.Name = "rjButton1";
-            this.rjButton1.Size = new System.Drawing.Size(110, 31);
-            this.rjButton1.TabIndex = 17;
-            this.rjButton1.Text = "Actualizar";
-            this.rjButton1.TextColor = System.Drawing.Color.White;
-            this.rjButton1.UseVisualStyleBackColor = false;
+            this.btUpdate.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btUpdate.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btUpdate.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btUpdate.BorderRadius = 5;
+            this.btUpdate.BorderSize = 0;
+            this.btUpdate.FlatAppearance.BorderSize = 0;
+            this.btUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btUpdate.ForeColor = System.Drawing.Color.White;
+            this.btUpdate.Location = new System.Drawing.Point(740, 207);
+            this.btUpdate.Name = "btUpdate";
+            this.btUpdate.Size = new System.Drawing.Size(110, 31);
+            this.btUpdate.TabIndex = 17;
+            this.btUpdate.Text = "Actualizar";
+            this.btUpdate.TextColor = System.Drawing.Color.White;
+            this.btUpdate.UseVisualStyleBackColor = false;
+            this.btUpdate.Click += new System.EventHandler(this.btUpdate_Click);
             // 
             // btDeleteClient
             // 
@@ -401,23 +318,6 @@
             // 
             this.timerMenuClose.Tick += new System.EventHandler(this.timerMenuClose_Tick);
             // 
-            // Is_A
-            // 
-            this.Is_A.AutoSize = true;
-            this.Is_A.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Is_A.CheckedState.BorderRadius = 0;
-            this.Is_A.CheckedState.BorderThickness = 0;
-            this.Is_A.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Is_A.Location = new System.Drawing.Point(706, 148);
-            this.Is_A.Name = "Is_A";
-            this.Is_A.Size = new System.Drawing.Size(79, 19);
-            this.Is_A.TabIndex = 20;
-            this.Is_A.Text = "Extranjero";
-            this.Is_A.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.Is_A.UncheckedState.BorderRadius = 0;
-            this.Is_A.UncheckedState.BorderThickness = 0;
-            this.Is_A.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            // 
             // UsClients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -427,7 +327,7 @@
             this.Size = new System.Drawing.Size(1036, 462);
             this.Load += new System.EventHandler(this.UsClients_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxPhoto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgClients)).EndInit();
             this.panelPrinc.ResumeLayout(false);
             this.panelPrinc.PerformLayout();
             this.ResumeLayout(false);
@@ -437,14 +337,8 @@
         #endregion
 
         private RJCodeAdvance.RJControls.RJCircularPictureBox pbxPhoto;
-        private RJCodeAdvance.RJControls.RJTextBox txtNames;
-        private RJCodeAdvance.RJControls.RJTextBox txtSurnames;
-        private RJCodeAdvance.RJControls.RJTextBox txtDirection;
-        private RJCodeAdvance.RJControls.RJTextBox txtPhone;
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
-        private RJCodeAdvance.RJControls.RJTextBox txtNationality;
-        private RJCodeAdvance.RJControls.RJTextBox txtDni;
-        private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
+        private Guna.UI2.WinForms.Guna2DataGridView dvgClients;
         private RJCodeAdvance.RJControls.RJButton btAgg;
         private System.Windows.Forms.Panel panelPrinc;
         private System.Windows.Forms.Timer timerMenu;
@@ -452,8 +346,13 @@
         private RJCodeAdvance.RJControls.RJDatePicker pickerDate;
         private RJCodeAdvance.RJControls.RJTextBox txtSearch;
         private RJCodeAdvance.RJControls.RJButton btSearchClient;
-        private RJCodeAdvance.RJControls.RJButton rjButton1;
+        private RJCodeAdvance.RJControls.RJButton btUpdate;
         private RJCodeAdvance.RJControls.RJButton btDeleteClient;
-        private Guna.UI2.WinForms.Guna2CheckBox Is_A;
+        private System.Windows.Forms.TextBox txtDirection;
+        private System.Windows.Forms.TextBox txtNationality;
+        private System.Windows.Forms.TextBox txtDni;
+        private System.Windows.Forms.TextBox txtSurnames;
+        private System.Windows.Forms.TextBox txtPhone;
+        private System.Windows.Forms.TextBox txtNames;
     }
 }

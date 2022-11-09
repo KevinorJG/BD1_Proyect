@@ -66,7 +66,7 @@ namespace Financiera.Presentation.Forms.Main
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            clientServices.Validate("Kevin");
+            
             try
             {
                

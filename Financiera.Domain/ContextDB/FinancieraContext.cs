@@ -5,6 +5,8 @@ using Financiera.Domain.Entities;
 using Financiera.Domain.Interfaces;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
+using System.Data;
+using System.Collections.Generic;
 
 #nullable disable
 
@@ -34,19 +36,92 @@ namespace Financiera.Domain.ContextDB
             throw new NotImplementedException();
         }
 
-        public Task<int> GetClientByDni(string dni)
+        public Client GetClientByDni(string dni)
         {
-            throw new NotImplementedException();
+            Client cl = null;
+            try
+            {
+                using (var conn = new SqlConnection(this.Database.GetConnectionString()))
+                {
+                    conn.Open();
+                    using (var cmd = new SqlCommand(this.Database.GetConnectionString(), conn))
+                    {
+                        cmd.CommandText = "sp_BuscarClient";
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add(new SqlParameter()
+                        {
+                            ParameterName = "@Identification",
+                            SqlDbType = SqlDbType.NVarChar,
+                            Size = 20,
+                            Value = dni
+                        });
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            cl = new Client()
+                            {
+                                IdClient = int.Parse(reader["ID"].ToString()),
+                                Names = reader["Nombres"].ToString(),
+                                LastNames = reader["Apellidos"].ToString(),
+                                Nacionality = reader["Nacionalidad"].ToString(),
+                                Identification = reader["Identificación"].ToString(),
+                                BirthDate = DateTime.Parse(reader["Fecha_Nacimiento"].ToString()),
+                                Phone = reader["Número_Telefonico"].ToString(),
+                                Direction = reader["Domicilio"].ToString()
+                            };
+                        }
+                        cmd.Dispose();
+                    }
+                    conn.Close();
+                    conn.Dispose();
+                }
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 229)
+                {
+
+                }
+            }
+
+
+            return cl;
+        }
+
+        public DataTable GetClients()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (var conn = new SqlConnection(this.Database.GetConnectionString()))
+                {
+                    conn.Open();
+                    using (var cmd = new SqlCommand(this.Database.GetConnectionString(), conn))
+                    {
+                        cmd.CommandText = "select * from ClientsView";
+                        cmd.CommandType = CommandType.Text;
+                        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                        adapter.Fill(dt);
+                        cmd.Dispose();
+                    }
+                    conn.Close();
+                    conn.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return dt;
         }
 
         public async Task<int> InsertClient(Client entity)
         {
-            SqlParameter[]? param = null;
             Task<int> result = null;
-
             try
             {
-                param = new SqlParameter[] {
+                var execute = Database.ExecuteSqlRawAsync("[dbo].[sp_InsertClient] @names,@lastnames,@Direction,@phone,@Birth,@Nation,@dni", new SqlParameter[] {
                         new SqlParameter() {
                             ParameterName = "@names",
                             SqlDbType =  System.Data.SqlDbType.VarChar,
@@ -98,10 +173,7 @@ namespace Financiera.Domain.ContextDB
                             Direction = System.Data.ParameterDirection.Input,
                             Value = entity.Identification
                         }
-
-
-                     };
-                var execute = Database.ExecuteSqlRawAsync("[dbo].[sp_InsertClient] @names,@lastnames,@Direction,@phone,@Birth,@Nation,@dni", param);
+                     });
                 await execute;
                 result = execute;
             }
@@ -111,24 +183,60 @@ namespace Financiera.Domain.ContextDB
             }
             return result.Result;
         }
-        public Task<bool> UpdateClient(Client entity)
+        public async Task<bool> UpdateClient(Client entity, int id)
         {
-            throw new NotImplementedException();
-        }
+            Task<int> query = null;
+            try
+            {
+                query = Database.ExecuteSqlRawAsync("[dbo].[sp_UpdateClient] @Id_Client,@Direction,@Phone,@Nationality,@Identification", new SqlParameter[]
+                {
+                    new SqlParameter()
+                    {
+                    ParameterName = "@Id_Client",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = id
+                    },
+                    new SqlParameter()
+                    {
+                    ParameterName = "@Direction",
+                    SqlDbType = SqlDbType.NVarChar,
+                    Size = 50,
+                    Value = entity.Direction
 
-        public Task<bool> Validate(string login)
-        {
-            throw new NotImplementedException();
-        }
+                    },
+                    new SqlParameter()
+                    {
+                    ParameterName = "@Phone",
+                    SqlDbType= System.Data.SqlDbType.NVarChar,
+                    Size = 15,
+                    Value = entity.Phone
+                    },
+                    new SqlParameter()
+                    {
+                    ParameterName = "@Nationality",
+                    SqlDbType = SqlDbType.NVarChar,
+                    Size = 00,
+                    Value = entity.Nacionality
 
-        //        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //        {
-        //            if (!optionsBuilder.IsConfigured)
-        //            {
-        //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        //                optionsBuilder.UseSqlServer("Server=KEVINOR\\SQLEXPRESS;Database=Financiera;user=sa;password=12345678;");
-        //            }
-        //        }
+                    },
+                    new SqlParameter()
+                    {
+                    ParameterName = "@Identification",
+                    SqlDbType = SqlDbType.NVarChar,
+                    Size = 20,
+                    Value = entity.Identification
+
+                    }
+                });
+                await query;
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return query.IsCompleted;
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

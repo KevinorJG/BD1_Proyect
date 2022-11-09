@@ -73,7 +73,7 @@ as
 if exists(select C.Id_Client from Clients as C
 			where C.Identification = @Identification)
 			BEGIN
-			select * from Clients
+			select * from ClientsView where Identificación = @Identification
 			END
 			else
 			BEGIN
@@ -128,7 +128,7 @@ go
 
 create procedure sp_UpdateClient(
 @id_Client int,
-@Direction nvarchar(20),
+@Direction nvarchar(50),
 @Phone nvarchar(10),
 @Nationality nvarchar(20),
 @Identification nvarchar(20)
