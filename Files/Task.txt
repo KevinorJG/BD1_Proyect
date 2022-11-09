@@ -1,0 +1,16 @@
+Account:
+
+- Agregar un "total" a la tabla Accounts
+- Crear una funcion que aumente o disminuya el "total" de la cuenta
+- Verificar que no pueda sacar mas de lo que tiene
+- Aumentar "Deposito" de la tabla AccountDetails
+- Aumentar "Retiro" de la tabla AccountDetails
+
+Cards:
+
+- Agregar un "total" a la tabla Cards
+- Crear una funcion que aumente o disminuya el "Total" de la cuenta
+- Verificar que no pueda sacar mas de lo que tiene
+- Aumentar "Deposito" de la tabla CardDetails
+- Aumentar "Retiro" de la tabla CardDetails
+
