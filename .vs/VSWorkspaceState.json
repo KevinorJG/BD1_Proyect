@@ -7,8 +7,10 @@
     "\\Financiera.Domain\\ContextDB",
     "\\Financiera.Presentation",
     "\\Financiera.Presentation\\Forms",
+    "\\Financiera.Presentation\\Forms\\Login",
+    "\\Financiera.Presentation\\Forms\\Main",
     "\\Financiera.Presentation\\Forms\\UsControls"
   ],
-  "SelectedNode": "\\Financiera.Presentation\\Forms\\UsControls\\UsClients.cs",
+  "SelectedNode": "\\Financiera.Presentation\\Forms\\Main\\MainForm.cs",
   "PreviewInSolutionExplorer": false
 }

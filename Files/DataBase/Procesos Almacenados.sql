@@ -96,19 +96,27 @@ as
 				END
 go
 create procedure sp_InsertCard(
-@id_Client int,
+@identi nvarchar(20),
 @NameCard nvarchar(10),
 @TypeCard nvarchar(15),
 @TypeCoin nvarchar(15),
 @OpenDate date,
 @ExpireDate date,
-@MaxAmount money,
-@MinAmount money,
-@Description nvarchar(25)
+@MaxAmountD money,
+@MaxAmountC money,
+@BaseAmountD money,
+@BaseAmountC money,
+@FechaPago date,
+@FechaCorte date,
+@NCard nvarchar(22)
 )
 as
-	insert into Cards  (id_Client,NameCard,TypeCard,TypeCoin, Description_,MaxAmount,MinAmount,OpenDate,ExpiredDate)
-	values(@id_Client,dbo.CleanInput(@NameCard),dbo.CleanInput(@TypeCard),dbo.CleanInput(@TypeCoin),dbo.CleanInput(@Description),@MaxAmount,@MinAmount,@OpenDate,@ExpireDate)
+DECLARE @identify int
+
+		set @identify = (select Id_Client from Clients where Identification = @identi)
+		insert into Cards(id_Client,NameCard,TypeCard,TypeCoin,OpenDate,ExpiredDate,
+		MaxAmountDolar,MaxAmountCordoba,AmounBaseDolar,AmountBaseCordoba,FechaCorte,FechaPago,NumerCard)
+		values(@identify,@NameCard,@TypeCard,@TypeCoin,@OpenDate,@ExpireDate,@MaxAmountD,@MaxAmountC,@BaseAmountD,@BaseAmountC,@FechaCorte,@FechaPago,@NCard)
 go
 
 create procedure sp_InsertAccount(

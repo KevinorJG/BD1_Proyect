@@ -111,6 +111,24 @@ namespace Financiera.Presentation.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Genera un historial crediticio, Seguro antifraudes y reembolsos, pagos a meses sin intereses..
+        /// </summary>
+        internal static string Crédito {
+            get {
+                return ResourceManager.GetString("Crédito", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Evita las inconveniencias del dinero en efectivo como la falta de cambio exacto en los comercios, recibir cambio en monedas de poca denominación o el riesgo de recibir billetes falsos..
+        /// </summary>
+        internal static string Débito {
+            get {
+                return ResourceManager.GetString("Débito", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap economics {
@@ -213,6 +231,16 @@ namespace Financiera.Presentation.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap point_blue {
+            get {
+                object obj = ResourceManager.GetObject("point_blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap point_green {
             get {
                 object obj = ResourceManager.GetObject("point green", resourceCulture);
@@ -286,6 +314,26 @@ namespace Financiera.Presentation.Properties {
         internal static System.Drawing.Bitmap settings {
             get {
                 object obj = ResourceManager.GetObject("settings", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tarjeta {
+            get {
+                object obj = ResourceManager.GetObject("tarjeta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tarjeta1 {
+            get {
+                object obj = ResourceManager.GetObject("tarjeta1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

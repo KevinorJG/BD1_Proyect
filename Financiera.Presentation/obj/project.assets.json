@@ -6089,11 +6089,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Presentation\\Financiera.Presentation.csproj",
+      "projectUniqueName": "C:\\Users\\Administrator\\source\\repos\\KevinorJG\\BD1_Proyect\\Financiera.Presentation\\Financiera.Presentation.csproj",
       "projectName": "Financiera.Presentation",
-      "projectPath": "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Presentation\\Financiera.Presentation.csproj",
+      "projectPath": "C:\\Users\\Administrator\\source\\repos\\KevinorJG\\BD1_Proyect\\Financiera.Presentation\\Financiera.Presentation.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Presentation\\obj\\",
+      "outputPath": "C:\\Users\\Administrator\\source\\repos\\KevinorJG\\BD1_Proyect\\Financiera.Presentation\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6110,14 +6110,14 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.AppCore\\Financiera.AppCore.csproj": {
-              "projectPath": "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.AppCore\\Financiera.AppCore.csproj"
+            "C:\\Users\\Administrator\\source\\repos\\KevinorJG\\BD1_Proyect\\Financiera.AppCore\\Financiera.AppCore.csproj": {
+              "projectPath": "C:\\Users\\Administrator\\source\\repos\\KevinorJG\\BD1_Proyect\\Financiera.AppCore\\Financiera.AppCore.csproj"
             },
-            "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Commons\\Financiera.Commons.csproj": {
-              "projectPath": "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Commons\\Financiera.Commons.csproj"
+            "C:\\Users\\Administrator\\source\\repos\\KevinorJG\\BD1_Proyect\\Financiera.Commons\\Financiera.Commons.csproj": {
+              "projectPath": "C:\\Users\\Administrator\\source\\repos\\KevinorJG\\BD1_Proyect\\Financiera.Commons\\Financiera.Commons.csproj"
             },
-            "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Infraestructure\\Financiera.Infraestructure.csproj": {
-              "projectPath": "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Infraestructure\\Financiera.Infraestructure.csproj"
+            "C:\\Users\\Administrator\\source\\repos\\KevinorJG\\BD1_Proyect\\Financiera.Infraestructure\\Financiera.Infraestructure.csproj": {
+              "projectPath": "C:\\Users\\Administrator\\source\\repos\\KevinorJG\\BD1_Proyect\\Financiera.Infraestructure\\Financiera.Infraestructure.csproj"
             }
           }
         }

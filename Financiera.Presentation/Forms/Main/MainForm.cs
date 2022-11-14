@@ -206,8 +206,8 @@ namespace Financiera.Presentation.Forms.Main
 
                 case "pboxCards":
                     this.panelMain.Controls.Clear();
-                    this.panelMain.Controls.Add(usCards);
                     usCards.SetServices(cardServices);
+                    this.panelMain.Controls.Add(usCards);                  
                     usCards.Width = 0;
                     timerOpenCard.Start();
                     break;
@@ -257,6 +257,21 @@ namespace Financiera.Presentation.Forms.Main
         {
             GC.Collect();
             GC.WaitForPendingFinalizers();
+        }
+    
+
+        private void btMaximize_Click_1(object sender, EventArgs e)
+        {
+            if (this.WindowState.Equals(FormWindowState.Maximized))
+            {
+                this.WindowState = FormWindowState.Normal;
+                return;
+            }
+            if (this.WindowState.Equals(FormWindowState.Normal))
+            {
+                this.WindowState = FormWindowState.Maximized;
+                return;
+            }
         }
     }
 }

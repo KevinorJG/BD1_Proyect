@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pbxPhoto = new RJCodeAdvance.RJControls.RJCircularPictureBox();
             this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.dvgClients = new Guna.UI2.WinForms.Guna2DataGridView();
             this.btAgg = new RJCodeAdvance.RJControls.RJButton();
             this.panelPrinc = new System.Windows.Forms.Panel();
+            this.dvgClients = new Guna.UI2.WinForms.Guna2DataGridView();
             this.txtDirection = new System.Windows.Forms.TextBox();
             this.txtNationality = new System.Windows.Forms.TextBox();
             this.txtDni = new System.Windows.Forms.TextBox();
@@ -51,8 +51,8 @@
             this.timerMenu = new System.Windows.Forms.Timer(this.components);
             this.timerMenuClose = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbxPhoto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dvgClients)).BeginInit();
             this.panelPrinc.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgClients)).BeginInit();
             this.SuspendLayout();
             // 
             // pbxPhoto
@@ -72,64 +72,9 @@
             this.pbxPhoto.TabStop = false;
             this.pbxPhoto.Click += new System.EventHandler(this.pbxPhoto_Click);
             // 
-            // dvgClients
-            // 
-            this.dvgClients.AllowUserToAddRows = false;
-            this.dvgClients.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.dvgClients.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            this.dvgClients.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.dvgClients.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dvgClients.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.dvgClients.ColumnHeadersHeight = 4;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dvgClients.DefaultCellStyle = dataGridViewCellStyle9;
-            this.dvgClients.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dvgClients.Location = new System.Drawing.Point(42, 280);
-            this.dvgClients.Name = "dvgClients";
-            this.dvgClients.ReadOnly = true;
-            this.dvgClients.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dvgClients.RowHeadersVisible = false;
-            this.dvgClients.RowTemplate.Height = 25;
-            this.dvgClients.Size = new System.Drawing.Size(953, 150);
-            this.dvgClients.TabIndex = 9;
-            this.dvgClients.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dvgClients.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dvgClients.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dvgClients.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dvgClients.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dvgClients.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dvgClients.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dvgClients.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dvgClients.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dvgClients.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dvgClients.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dvgClients.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dvgClients.ThemeStyle.HeaderStyle.Height = 4;
-            this.dvgClients.ThemeStyle.ReadOnly = true;
-            this.dvgClients.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dvgClients.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dvgClients.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dvgClients.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dvgClients.ThemeStyle.RowsStyle.Height = 25;
-            this.dvgClients.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dvgClients.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            // 
             // btAgg
             // 
+            this.btAgg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btAgg.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.btAgg.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
             this.btAgg.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -149,6 +94,7 @@
             // 
             // panelPrinc
             // 
+            this.panelPrinc.Controls.Add(this.dvgClients);
             this.panelPrinc.Controls.Add(this.txtDirection);
             this.panelPrinc.Controls.Add(this.txtNationality);
             this.panelPrinc.Controls.Add(this.txtDni);
@@ -159,7 +105,6 @@
             this.panelPrinc.Controls.Add(this.btSearchClient);
             this.panelPrinc.Controls.Add(this.btUpdate);
             this.panelPrinc.Controls.Add(this.btDeleteClient);
-            this.panelPrinc.Controls.Add(this.dvgClients);
             this.panelPrinc.Controls.Add(this.pickerDate);
             this.panelPrinc.Controls.Add(this.btAgg);
             this.panelPrinc.Controls.Add(this.pbxPhoto);
@@ -169,8 +114,63 @@
             this.panelPrinc.Size = new System.Drawing.Size(1036, 462);
             this.panelPrinc.TabIndex = 10;
             // 
+            // dvgClients
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dvgClients.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dvgClients.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dvgClients.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dvgClients.ColumnHeadersHeight = 30;
+            this.dvgClients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dvgClients.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dvgClients.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dvgClients.Location = new System.Drawing.Point(42, 277);
+            this.dvgClients.Name = "dvgClients";
+            this.dvgClients.RowHeadersVisible = false;
+            this.dvgClients.RowTemplate.Height = 25;
+            this.dvgClients.Size = new System.Drawing.Size(953, 150);
+            this.dvgClients.TabIndex = 26;
+            this.dvgClients.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dvgClients.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dvgClients.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dvgClients.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dvgClients.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dvgClients.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dvgClients.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dvgClients.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dvgClients.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dvgClients.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dvgClients.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dvgClients.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dvgClients.ThemeStyle.HeaderStyle.Height = 30;
+            this.dvgClients.ThemeStyle.ReadOnly = false;
+            this.dvgClients.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dvgClients.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dvgClients.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dvgClients.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dvgClients.ThemeStyle.RowsStyle.Height = 25;
+            this.dvgClients.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dvgClients.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dvgClients.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgClients_CellClick);
+            this.dvgClients.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dvgClients_KeyDown);
+            // 
             // txtDirection
             // 
+            this.txtDirection.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDirection.Location = new System.Drawing.Point(740, 46);
             this.txtDirection.Multiline = true;
             this.txtDirection.Name = "txtDirection";
@@ -220,6 +220,7 @@
             // 
             // txtSearch
             // 
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearch.BackColor = System.Drawing.SystemColors.Window;
             this.txtSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.txtSearch.BorderColor = System.Drawing.Color.Silver;
@@ -243,6 +244,7 @@
             // 
             // btSearchClient
             // 
+            this.btSearchClient.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btSearchClient.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.btSearchClient.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
             this.btSearchClient.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -262,6 +264,7 @@
             // 
             // btUpdate
             // 
+            this.btUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btUpdate.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.btUpdate.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
             this.btUpdate.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -281,6 +284,7 @@
             // 
             // btDeleteClient
             // 
+            this.btDeleteClient.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btDeleteClient.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.btDeleteClient.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
             this.btDeleteClient.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -299,13 +303,14 @@
             // 
             // pickerDate
             // 
+            this.pickerDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pickerDate.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.pickerDate.BorderSize = 0;
             this.pickerDate.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.pickerDate.Location = new System.Drawing.Point(159, 147);
+            this.pickerDate.Location = new System.Drawing.Point(148, 147);
             this.pickerDate.MinimumSize = new System.Drawing.Size(4, 35);
             this.pickerDate.Name = "pickerDate";
-            this.pickerDate.Size = new System.Drawing.Size(233, 35);
+            this.pickerDate.Size = new System.Drawing.Size(244, 35);
             this.pickerDate.SkinColor = System.Drawing.Color.Silver;
             this.pickerDate.TabIndex = 10;
             this.pickerDate.TextColor = System.Drawing.Color.White;
@@ -327,9 +332,9 @@
             this.Size = new System.Drawing.Size(1036, 462);
             this.Load += new System.EventHandler(this.UsClients_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxPhoto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dvgClients)).EndInit();
             this.panelPrinc.ResumeLayout(false);
             this.panelPrinc.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgClients)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -338,7 +343,6 @@
 
         private RJCodeAdvance.RJControls.RJCircularPictureBox pbxPhoto;
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
-        private Guna.UI2.WinForms.Guna2DataGridView dvgClients;
         private RJCodeAdvance.RJControls.RJButton btAgg;
         private System.Windows.Forms.Panel panelPrinc;
         private System.Windows.Forms.Timer timerMenu;
@@ -354,5 +358,6 @@
         private System.Windows.Forms.TextBox txtSurnames;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtNames;
+        private Guna.UI2.WinForms.Guna2DataGridView dvgClients;
     }
 }

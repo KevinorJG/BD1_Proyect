@@ -156,6 +156,7 @@
             // 
             // panel4
             // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel4.Location = new System.Drawing.Point(1, 371);
             this.panel4.Name = "panel4";
@@ -164,6 +165,7 @@
             // 
             // panel3
             // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel3.Location = new System.Drawing.Point(-4, 283);
             this.panel3.Name = "panel3";
@@ -172,6 +174,7 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel2.Location = new System.Drawing.Point(-4, 191);
             this.panel2.Name = "panel2";
@@ -180,6 +183,7 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel1.Location = new System.Drawing.Point(-4, 98);
             this.panel1.Name = "panel1";
@@ -188,6 +192,7 @@
             // 
             // pbLogout
             // 
+            this.pbLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pbLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbLogout.Image = global::Financiera.Presentation.Properties.Resources.log_out;
             this.pbLogout.Location = new System.Drawing.Point(13, 386);
@@ -201,6 +206,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(3, 439);
             this.label4.Name = "label4";
@@ -211,6 +217,7 @@
             // 
             // pboxCards
             // 
+            this.pboxCards.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pboxCards.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pboxCards.Image = global::Financiera.Presentation.Properties.Resources.credit_card;
             this.pboxCards.Location = new System.Drawing.Point(12, 204);
@@ -224,6 +231,7 @@
             // 
             // lbCards
             // 
+            this.lbCards.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbCards.AutoSize = true;
             this.lbCards.Location = new System.Drawing.Point(13, 257);
             this.lbCards.Name = "lbCards";
@@ -234,6 +242,7 @@
             // 
             // lbCounts
             // 
+            this.lbCounts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbCounts.AutoSize = true;
             this.lbCounts.Location = new System.Drawing.Point(12, 165);
             this.lbCounts.Name = "lbCounts";
@@ -244,6 +253,7 @@
             // 
             // pboxCounts
             // 
+            this.pboxCounts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pboxCounts.BackColor = System.Drawing.Color.Transparent;
             this.pboxCounts.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
             this.pboxCounts.BorderColor = System.Drawing.Color.RoyalBlue;
@@ -264,6 +274,7 @@
             // 
             // lbClients
             // 
+            this.lbClients.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbClients.AutoSize = true;
             this.lbClients.Location = new System.Drawing.Point(13, 73);
             this.lbClients.Name = "lbClients";
@@ -274,6 +285,7 @@
             // 
             // pboxClients
             // 
+            this.pboxClients.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pboxClients.BackColor = System.Drawing.Color.Transparent;
             this.pboxClients.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
             this.pboxClients.BorderColor = System.Drawing.Color.RoyalBlue;

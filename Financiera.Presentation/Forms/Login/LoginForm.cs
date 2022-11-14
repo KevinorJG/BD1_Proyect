@@ -98,6 +98,7 @@ namespace Financiera.Presentation.Forms.Login
                 {
                     MessageBox.Show("Conectado");
                     this.Close();
+                    this.Dispose();
                     
                 }
                 if (Connection.State == ConnectionState.Closed || Connection.StatusRol == false)

@@ -13,7 +13,9 @@ namespace Financiera.Presentation.Forms.UsControls
     public partial class UsClients : UserControl
     {
         protected IClientServices ClientServices;
+        public static string identi = string.Empty;
         int id = 0;
+        int index = 0;
         public UsClients()
         {
             InitializeComponent();
@@ -108,14 +110,14 @@ namespace Financiera.Presentation.Forms.UsControls
                 case "btSearchClient":
                     this.txtNames.Enabled = false;
                     this.txtSurnames.Enabled = false;
-                    this.pickerDate.Enabled = false;
+                    //this.pickerDate.Enabled = false;
                     this.btAgg.Enabled = false;
                     break;
 
                 case "btUpdate":
                     this.txtNames.Enabled = true;
                     this.txtSurnames.Enabled = true;
-                    this.pickerDate.Enabled = true;
+                    //this.pickerDate.Enabled = true;
                     this.btAgg.Enabled = true;
                     break;             
                                     
@@ -134,6 +136,21 @@ namespace Financiera.Presentation.Forms.UsControls
             };           
             ClientServices.UpdateClient(client,id);
             GetClients();
+        }
+
+        private void dvgClients_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.C)
+            {
+                identi = dvgClients.Rows[index].Cells[4].Value.ToString();
+                e.Handled = true;
+            }
+        }
+
+        private void dvgClients_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            index = e.RowIndex;
+            
         }
     }
 }

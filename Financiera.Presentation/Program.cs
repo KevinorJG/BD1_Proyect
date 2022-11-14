@@ -13,13 +13,15 @@ namespace Financiera.Presentation
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
-        [STAThread()]
+       // [STAThread()]
+        [STAThreadAttribute()]
         static void Main()
         {
             try
             {
-                threadLog.Start();
                 threadLog.SetApartmentState(ApartmentState.STA);
+                threadLog.Start();
+                
                
             }
             catch { }

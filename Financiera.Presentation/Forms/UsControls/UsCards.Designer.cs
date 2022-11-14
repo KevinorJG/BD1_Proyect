@@ -32,23 +32,28 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PickerOpenDate = new RJCodeAdvance.RJControls.RJDatePicker();
-            this.txtNameCards = new RJCodeAdvance.RJControls.RJTextBox();
-            this.txtDescription = new RJCodeAdvance.RJControls.RJTextBox();
             this.txtMounOpen = new RJCodeAdvance.RJControls.RJTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lbCounts = new System.Windows.Forms.Label();
             this.cbTypeCard = new RJCodeAdvance.RJControls.RJComboBox();
             this.cbTypeCoin = new RJCodeAdvance.RJControls.RJComboBox();
             this.txtDniClient = new RJCodeAdvance.RJControls.RJTextBox();
-            this.dvgCards = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.dgvCards = new Guna.UI2.WinForms.Guna2DataGridView();
             this.txtSearch = new RJCodeAdvance.RJControls.RJTextBox();
             this.btSearchCard = new RJCodeAdvance.RJControls.RJButton();
             this.btUptCard = new RJCodeAdvance.RJControls.RJButton();
             this.btDeleteCard = new RJCodeAdvance.RJControls.RJButton();
             this.btAddCard = new RJCodeAdvance.RJControls.RJButton();
-            this.pbxPhoto = new RJCodeAdvance.RJControls.RJCircularPictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dvgCards)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxPhoto)).BeginInit();
+            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.txtNCard = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lbNameCard = new System.Windows.Forms.Label();
+            this.txtNameCard = new System.Windows.Forms.TextBox();
+            this.txtBaseD = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtBaseC = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCards)).BeginInit();
             this.SuspendLayout();
             // 
             // PickerOpenDate
@@ -56,57 +61,13 @@
             this.PickerOpenDate.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.PickerOpenDate.BorderSize = 0;
             this.PickerOpenDate.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PickerOpenDate.Location = new System.Drawing.Point(201, 151);
+            this.PickerOpenDate.Location = new System.Drawing.Point(42, 182);
             this.PickerOpenDate.MinimumSize = new System.Drawing.Size(4, 35);
             this.PickerOpenDate.Name = "PickerOpenDate";
-            this.PickerOpenDate.Size = new System.Drawing.Size(239, 35);
+            this.PickerOpenDate.Size = new System.Drawing.Size(251, 35);
             this.PickerOpenDate.SkinColor = System.Drawing.Color.Silver;
             this.PickerOpenDate.TabIndex = 19;
             this.PickerOpenDate.TextColor = System.Drawing.Color.White;
-            // 
-            // txtNameCards
-            // 
-            this.txtNameCards.BackColor = System.Drawing.SystemColors.Window;
-            this.txtNameCards.BorderColor = System.Drawing.Color.Silver;
-            this.txtNameCards.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtNameCards.BorderRadius = 0;
-            this.txtNameCards.BorderSize = 2;
-            this.txtNameCards.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtNameCards.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtNameCards.Location = new System.Drawing.Point(201, 30);
-            this.txtNameCards.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNameCards.Multiline = false;
-            this.txtNameCards.Name = "txtNameCards";
-            this.txtNameCards.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txtNameCards.PasswordChar = false;
-            this.txtNameCards.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtNameCards.PlaceholderText = "Nombre de la tarjeta";
-            this.txtNameCards.Size = new System.Drawing.Size(239, 31);
-            this.txtNameCards.TabIndex = 12;
-            this.txtNameCards.Texts = "";
-            this.txtNameCards.UnderlinedStyle = false;
-            // 
-            // txtDescription
-            // 
-            this.txtDescription.BackColor = System.Drawing.SystemColors.Window;
-            this.txtDescription.BorderColor = System.Drawing.Color.Silver;
-            this.txtDescription.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtDescription.BorderRadius = 0;
-            this.txtDescription.BorderSize = 2;
-            this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtDescription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtDescription.Location = new System.Drawing.Point(201, 80);
-            this.txtDescription.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDescription.Multiline = true;
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txtDescription.PasswordChar = false;
-            this.txtDescription.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtDescription.PlaceholderText = "Descripción";
-            this.txtDescription.Size = new System.Drawing.Size(239, 52);
-            this.txtDescription.TabIndex = 15;
-            this.txtDescription.Texts = "";
-            this.txtDescription.UnderlinedStyle = false;
             // 
             // txtMounOpen
             // 
@@ -117,7 +78,7 @@
             this.txtMounOpen.BorderSize = 2;
             this.txtMounOpen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtMounOpen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtMounOpen.Location = new System.Drawing.Point(460, 30);
+            this.txtMounOpen.Location = new System.Drawing.Point(802, 27);
             this.txtMounOpen.Margin = new System.Windows.Forms.Padding(4);
             this.txtMounOpen.Multiline = false;
             this.txtMounOpen.Name = "txtMounOpen";
@@ -125,7 +86,7 @@
             this.txtMounOpen.PasswordChar = false;
             this.txtMounOpen.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtMounOpen.PlaceholderText = "Monto de apertura";
-            this.txtMounOpen.Size = new System.Drawing.Size(239, 31);
+            this.txtMounOpen.Size = new System.Drawing.Size(141, 31);
             this.txtMounOpen.TabIndex = 13;
             this.txtMounOpen.Texts = "";
             this.txtMounOpen.UnderlinedStyle = false;
@@ -134,7 +95,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(523, 80);
+            this.label1.Location = new System.Drawing.Point(596, 2);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(107, 20);
             this.label1.TabIndex = 25;
@@ -144,7 +105,7 @@
             // 
             this.lbCounts.AutoSize = true;
             this.lbCounts.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbCounts.Location = new System.Drawing.Point(810, 80);
+            this.lbCounts.Location = new System.Drawing.Point(381, 1);
             this.lbCounts.Name = "lbCounts";
             this.lbCounts.Size = new System.Drawing.Size(64, 20);
             this.lbCounts.TabIndex = 24;
@@ -161,13 +122,14 @@
             this.cbTypeCard.IconColor = System.Drawing.Color.RoyalBlue;
             this.cbTypeCard.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.cbTypeCard.ListTextColor = System.Drawing.Color.DimGray;
-            this.cbTypeCard.Location = new System.Drawing.Point(478, 103);
+            this.cbTypeCard.Location = new System.Drawing.Point(543, 27);
             this.cbTypeCard.MinimumSize = new System.Drawing.Size(200, 30);
             this.cbTypeCard.Name = "cbTypeCard";
             this.cbTypeCard.Padding = new System.Windows.Forms.Padding(1);
             this.cbTypeCard.Size = new System.Drawing.Size(200, 30);
             this.cbTypeCard.TabIndex = 23;
             this.cbTypeCard.Texts = "";
+            this.cbTypeCard.OnSelectedIndexChanged += new System.EventHandler(this.cbTypeCard_OnSelectedIndexChanged);
             // 
             // cbTypeCoin
             // 
@@ -180,7 +142,7 @@
             this.cbTypeCoin.IconColor = System.Drawing.Color.RoyalBlue;
             this.cbTypeCoin.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.cbTypeCoin.ListTextColor = System.Drawing.Color.DimGray;
-            this.cbTypeCoin.Location = new System.Drawing.Point(744, 103);
+            this.cbTypeCoin.Location = new System.Drawing.Point(320, 27);
             this.cbTypeCoin.MinimumSize = new System.Drawing.Size(200, 30);
             this.cbTypeCoin.Name = "cbTypeCoin";
             this.cbTypeCoin.Padding = new System.Windows.Forms.Padding(1);
@@ -197,7 +159,7 @@
             this.txtDniClient.BorderSize = 2;
             this.txtDniClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtDniClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtDniClient.Location = new System.Drawing.Point(724, 30);
+            this.txtDniClient.Location = new System.Drawing.Point(42, 26);
             this.txtDniClient.Margin = new System.Windows.Forms.Padding(4);
             this.txtDniClient.Multiline = false;
             this.txtDniClient.Name = "txtDniClient";
@@ -211,13 +173,13 @@
             this.txtDniClient.UnderlinedStyle = false;
             this.txtDniClient.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDniClient_KeyPress);
             // 
-            // dvgCards
+            // dgvCards
             // 
-            this.dvgCards.AllowUserToAddRows = false;
-            this.dvgCards.AllowUserToDeleteRows = false;
+            this.dgvCards.AllowUserToAddRows = false;
+            this.dgvCards.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dvgCards.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dvgCards.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.dgvCards.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvCards.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -225,9 +187,9 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dvgCards.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dvgCards.ColumnHeadersHeight = 4;
-            this.dvgCards.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvCards.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvCards.ColumnHeadersHeight = 30;
+            this.dgvCards.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -235,36 +197,36 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dvgCards.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dvgCards.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dvgCards.Location = new System.Drawing.Point(42, 290);
-            this.dvgCards.Name = "dvgCards";
-            this.dvgCards.ReadOnly = true;
-            this.dvgCards.RowHeadersVisible = false;
-            this.dvgCards.RowTemplate.Height = 25;
-            this.dvgCards.Size = new System.Drawing.Size(953, 150);
-            this.dvgCards.TabIndex = 27;
-            this.dvgCards.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dvgCards.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dvgCards.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dvgCards.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dvgCards.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dvgCards.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dvgCards.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dvgCards.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dvgCards.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dvgCards.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dvgCards.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dvgCards.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dvgCards.ThemeStyle.HeaderStyle.Height = 4;
-            this.dvgCards.ThemeStyle.ReadOnly = true;
-            this.dvgCards.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dvgCards.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dvgCards.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dvgCards.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dvgCards.ThemeStyle.RowsStyle.Height = 25;
-            this.dvgCards.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dvgCards.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvCards.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvCards.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvCards.Location = new System.Drawing.Point(42, 290);
+            this.dgvCards.Name = "dgvCards";
+            this.dgvCards.ReadOnly = true;
+            this.dgvCards.RowHeadersVisible = false;
+            this.dgvCards.RowTemplate.Height = 25;
+            this.dgvCards.Size = new System.Drawing.Size(953, 150);
+            this.dgvCards.TabIndex = 27;
+            this.dgvCards.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvCards.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvCards.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvCards.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvCards.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvCards.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvCards.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvCards.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvCards.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvCards.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dgvCards.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvCards.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvCards.ThemeStyle.HeaderStyle.Height = 30;
+            this.dgvCards.ThemeStyle.ReadOnly = true;
+            this.dgvCards.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvCards.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvCards.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dgvCards.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvCards.ThemeStyle.RowsStyle.Height = 25;
+            this.dgvCards.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvCards.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
             // txtSearch
             // 
@@ -360,48 +322,125 @@
             this.btAddCard.Text = "Registrar";
             this.btAddCard.TextColor = System.Drawing.Color.White;
             this.btAddCard.UseVisualStyleBackColor = false;
+            this.btAddCard.Click += new System.EventHandler(this.btAddCard_Click);
             // 
-            // pbxPhoto
+            // txtDescription
             // 
-            this.pbxPhoto.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.pbxPhoto.BorderColor = System.Drawing.Color.Violet;
-            this.pbxPhoto.BorderColor2 = System.Drawing.Color.Yellow;
-            this.pbxPhoto.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.pbxPhoto.BorderSize = 2;
-            this.pbxPhoto.GradientAngle = 50F;
-            this.pbxPhoto.Image = global::Financiera.Presentation.Properties.Resources.transaction;
-            this.pbxPhoto.Location = new System.Drawing.Point(27, 23);
-            this.pbxPhoto.Name = "pbxPhoto";
-            this.pbxPhoto.Size = new System.Drawing.Size(100, 100);
-            this.pbxPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxPhoto.TabIndex = 33;
-            this.pbxPhoto.TabStop = false;
+            this.txtDescription.Location = new System.Drawing.Point(42, 77);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(239, 89);
+            this.txtDescription.TabIndex = 34;
+            // 
+            // txtNCard
+            // 
+            this.txtNCard.Location = new System.Drawing.Point(477, 135);
+            this.txtNCard.Name = "txtNCard";
+            this.txtNCard.ReadOnly = true;
+            this.txtNCard.Size = new System.Drawing.Size(126, 23);
+            this.txtNCard.TabIndex = 35;
+            this.txtNCard.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(320, 134);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(134, 20);
+            this.label2.TabIndex = 36;
+            this.label2.Text = "Numero de tarjeta:";
+            // 
+            // lbNameCard
+            // 
+            this.lbNameCard.AutoSize = true;
+            this.lbNameCard.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbNameCard.Location = new System.Drawing.Point(320, 96);
+            this.lbNameCard.Name = "lbNameCard";
+            this.lbNameCard.Size = new System.Drawing.Size(151, 20);
+            this.lbNameCard.TabIndex = 37;
+            this.lbNameCard.Text = "Nombre de la tarjeta:";
+            // 
+            // txtNameCard
+            // 
+            this.txtNameCard.Enabled = false;
+            this.txtNameCard.Location = new System.Drawing.Point(477, 97);
+            this.txtNameCard.Name = "txtNameCard";
+            this.txtNameCard.ReadOnly = true;
+            this.txtNameCard.Size = new System.Drawing.Size(156, 23);
+            this.txtNameCard.TabIndex = 38;
+            this.txtNameCard.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtBaseD
+            // 
+            this.txtBaseD.Enabled = false;
+            this.txtBaseD.Location = new System.Drawing.Point(822, 93);
+            this.txtBaseD.Name = "txtBaseD";
+            this.txtBaseD.ReadOnly = true;
+            this.txtBaseD.Size = new System.Drawing.Size(126, 23);
+            this.txtBaseD.TabIndex = 42;
+            this.txtBaseD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(660, 92);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(146, 20);
+            this.label3.TabIndex = 41;
+            this.label3.Text = "Monto base Dólares:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(660, 130);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(159, 20);
+            this.label4.TabIndex = 40;
+            this.label4.Text = "Monto base Córdobas:";
+            // 
+            // txtBaseC
+            // 
+            this.txtBaseC.Enabled = false;
+            this.txtBaseC.Location = new System.Drawing.Point(822, 131);
+            this.txtBaseC.Name = "txtBaseC";
+            this.txtBaseC.ReadOnly = true;
+            this.txtBaseC.Size = new System.Drawing.Size(126, 23);
+            this.txtBaseC.TabIndex = 39;
+            this.txtBaseC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // UsCards
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.pbxPhoto);
+            this.Controls.Add(this.txtBaseD);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtBaseC);
+            this.Controls.Add(this.txtNameCard);
+            this.Controls.Add(this.lbNameCard);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtNCard);
+            this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btSearchCard);
             this.Controls.Add(this.btUptCard);
             this.Controls.Add(this.btDeleteCard);
             this.Controls.Add(this.btAddCard);
-            this.Controls.Add(this.dvgCards);
+            this.Controls.Add(this.dgvCards);
             this.Controls.Add(this.txtDniClient);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbCounts);
             this.Controls.Add(this.cbTypeCard);
             this.Controls.Add(this.cbTypeCoin);
             this.Controls.Add(this.PickerOpenDate);
-            this.Controls.Add(this.txtNameCards);
-            this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.txtMounOpen);
             this.Name = "UsCards";
             this.Size = new System.Drawing.Size(1036, 462);
             this.Load += new System.EventHandler(this.UsCards_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dvgCards)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxPhoto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCards)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -410,20 +449,26 @@
         #endregion
 
         private RJCodeAdvance.RJControls.RJDatePicker PickerOpenDate;
-        private RJCodeAdvance.RJControls.RJTextBox txtNameCards;
-        private RJCodeAdvance.RJControls.RJTextBox txtDescription;
         private RJCodeAdvance.RJControls.RJTextBox txtMounOpen;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbCounts;
         private RJCodeAdvance.RJControls.RJComboBox cbTypeCard;
         private RJCodeAdvance.RJControls.RJComboBox cbTypeCoin;
         private RJCodeAdvance.RJControls.RJTextBox txtDniClient;
-        private Guna.UI2.WinForms.Guna2DataGridView dvgCards;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvCards;
         private RJCodeAdvance.RJControls.RJTextBox txtSearch;
         private RJCodeAdvance.RJControls.RJButton btSearchCard;
         private RJCodeAdvance.RJControls.RJButton btUptCard;
         private RJCodeAdvance.RJControls.RJButton btDeleteCard;
         private RJCodeAdvance.RJControls.RJButton btAddCard;
-        private RJCodeAdvance.RJControls.RJCircularPictureBox pbxPhoto;
+        private System.Windows.Forms.TextBox txtDescription;
+        private System.Windows.Forms.TextBox txtNCard;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbNameCard;
+        private System.Windows.Forms.TextBox txtNameCard;
+        private System.Windows.Forms.TextBox txtBaseD;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtBaseC;
     }
 }
