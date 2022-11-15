@@ -28,3 +28,18 @@ C:\Users\JADPA-12\Desktop\Nueva carpeta\BD1_Proyect\Financiera.AppCore\obj\Debug
 C:\Users\JADPA-12\Desktop\Nueva carpeta\BD1_Proyect\Financiera.AppCore\obj\Debug\net5.0\refint\Financiera.AppCore.dll
 C:\Users\JADPA-12\Desktop\Nueva carpeta\BD1_Proyect\Financiera.AppCore\obj\Debug\net5.0\Financiera.AppCore.pdb
 C:\Users\JADPA-12\Desktop\Nueva carpeta\BD1_Proyect\Financiera.AppCore\obj\Debug\net5.0\ref\Financiera.AppCore.dll
+C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.AppCore\bin\Debug\net5.0\Financiera.AppCore.deps.json
+C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.AppCore\bin\Debug\net5.0\Financiera.AppCore.dll
+C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.AppCore\bin\Debug\net5.0\Financiera.AppCore.pdb
+C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.AppCore\bin\Debug\net5.0\Financiera.Domain.dll
+C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.AppCore\bin\Debug\net5.0\Financiera.Domain.pdb
+C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.AppCore\obj\Debug\net5.0\Financiera.AppCore.csproj.AssemblyReference.cache
+C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.AppCore\obj\Debug\net5.0\Financiera.AppCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.AppCore\obj\Debug\net5.0\Financiera.AppCore.AssemblyInfoInputs.cache
+C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.AppCore\obj\Debug\net5.0\Financiera.AppCore.AssemblyInfo.cs
+C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.AppCore\obj\Debug\net5.0\Financiera.AppCore.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.AppCore\obj\Debug\net5.0\Financiera.AppCore.csproj.CopyComplete
+C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.AppCore\obj\Debug\net5.0\Financiera.AppCore.dll
+C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.AppCore\obj\Debug\net5.0\refint\Financiera.AppCore.dll
+C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.AppCore\obj\Debug\net5.0\Financiera.AppCore.pdb
+C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.AppCore\obj\Debug\net5.0\ref\Financiera.AppCore.dll

@@ -18,5 +18,13 @@ select * from ClientsView
 execute sp_BuscarClient '001-1110603-1028G'
 
 create view CardsView as
-select (CL.Names +' '+ Cl.LastNames) as Cliente, CL.Identification,(C.NameCard) as Tarjeta, C.TypeCard,C.TypeCoin,C.OpenDate,C.ExpiredDate
+select (CL.Names +' '+ Cl.LastNames) as Cliente, CL.Identification,(C.NumerCard) as Tarjeta,C.OpenDate as 'Fecha Emisión',C.ExpiredDate as 'Fecha Expiración',
+C.MaxAmountCordoba as 'Transacción Máxima en Córdobas',C.MaxAmountDolar as 'Transaccion Máxima en Dólares',C.FechaCorte as 'Fecha Corte',C.FechaPago as 'Fecha Pago'
 from Cards as C inner join Clients as Cl on C.id_Client = CL.Id_Client
+GO
+use Financiera
+create view AccountsView as
+select (C.Names+''+C.LastNames) as Cliente,C.Identification as 'Identificación Cliente',(HI.Name_) as Titular,HI.Identification as 'Identificación Titular',
+AC.Type_Account as 'Tipo de cuenta',AC.Type_Coin as 'Tipo de moneda' ,AC.Status_ as 'Estado de la cuenta'
+from Accounts as AC inner join Clients as C on AC.id_Client = C.Id_Client inner join Hideline as Hi
+on AC.id_Hideline = HI.Id_Hideline

@@ -19,29 +19,29 @@ namespace Financiera.AppCore.Services
             this.repository = repository;
         }
 
-        public Client GetCardByDni(string dni)
+        public async Task<bool> DeleteAccount(int id)
         {
-            throw new NotImplementedException();
+            return await repository.DeleteAccount(id);
         }
 
-        public DataTable GetCards()
+        public Account GetAccountByDni(string dni)
         {
-            return repository.GetCards();
+           return repository.GetAccountByDni(dni);
         }
 
-        public Client GetClientByDni(string dni)
+        public DataTable GetAccounts()
         {
-           return repository.GetClientByDni(dni);
+            return repository.GetAccounts();
         }
 
-        public async Task<int> Save(Card client)
+        public async Task<int> InsertAccount(Account entity)
         {
-           return await repository.Save(client);
+            return await repository.InsertAccount(entity);
         }
 
-        public Task<bool> UpdateCard(Card entity, int id)
+        public async Task<bool> UpdateAccount(Account entity, int id)
         {
-            throw new NotImplementedException();
+            return await repository.UpdateAccount(entity, id);  
         }
     }
 }

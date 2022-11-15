@@ -31,12 +31,27 @@ namespace Financiera.Domain.ContextDB
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Hideline> Hidelines { get; set; }
 
+        public Task<bool> DeleteAccount(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<bool> DeleteCard(int id)
         {
             throw new NotImplementedException();
         }
 
         public Task<bool> DeleteClient(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Account GetAccountByDni(string dni)
+        {
+            throw new NotImplementedException();
+        }
+
+        public DataTable GetAccounts()
         {
             throw new NotImplementedException();
         }
@@ -150,6 +165,11 @@ namespace Financiera.Domain.ContextDB
             }
 
             return dt;
+        }
+
+        public Task<int> InsertAccount(Account entity)
+        {
+            throw new NotImplementedException();
         }
 
         public async Task<int> InsertCard(Card entity)
@@ -332,6 +352,11 @@ namespace Financiera.Domain.ContextDB
 
             }
             return result.Result;
+        }
+
+        public Task<bool> UpdateAccount(Account entity, int id)
+        {
+            throw new NotImplementedException();
         }
 
         public Task<bool> UpdateCard(Card entity, int id)
