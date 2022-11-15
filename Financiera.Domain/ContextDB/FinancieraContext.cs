@@ -30,63 +30,34 @@ namespace Financiera.Domain.ContextDB
         public virtual DbSet<Client> Clients { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Hideline> Hidelines { get; set; }
-
-        public Task<bool> DeleteAccount(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<bool> DeleteCard(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<bool> DeleteClient(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Account GetAccountByDni(string dni)
-        {
-            throw new NotImplementedException();
-        }
-
-        public DataTable GetAccounts()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Card GetCardByDni(string dni)
-        {
-            throw new NotImplementedException();
-        }
-
-        public DataTable GetCards()
+        #region Metodos Cliente
+        public DataTable GetClients()
         {
             DataTable dt = new DataTable();
             try
             {
                 using (var conn = new SqlConnection(this.Database.GetConnectionString()))
                 {
-
                     conn.Open();
                     using (var cmd = new SqlCommand(this.Database.GetConnectionString(), conn))
                     {
-                        cmd.CommandText = "select * from CardsView";
+                        cmd.CommandText = "select * from ClientsView";
                         cmd.CommandType = CommandType.Text;
                         SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                         adapter.Fill(dt);
                         cmd.Dispose();
                     }
+                    conn.Close();
+                    conn.Dispose();
                 }
             }
             catch (Exception ex)
             {
 
-            }         
+            }
+
             return dt;
         }
-
         public Client GetClientByDni(string dni)
         {
             Client cl = null;
@@ -138,40 +109,163 @@ namespace Financiera.Domain.ContextDB
 
             return cl;
         }
-
-        public DataTable GetClients()
+        public async Task<int> InsertClient(Client entity)
         {
-            DataTable dt = new DataTable();
+            Task<int> result = null;
             try
             {
-                using (var conn = new SqlConnection(this.Database.GetConnectionString()))
+                var execute = Database.ExecuteSqlRawAsync("[dbo].[sp_InsertClient] @names,@lastnames,@Direction,@phone,@Birth,@Nation,@dni", new SqlParameter[] {
+                        new SqlParameter() {
+                            ParameterName = "@names",
+                            SqlDbType =  System.Data.SqlDbType.VarChar,
+                            Size= 50,
+                            Direction = System.Data.ParameterDirection.Input,
+                            Value = entity.Names
+                        },
+                        new SqlParameter() {
+                            ParameterName = "@lastnames",
+                            SqlDbType =  System.Data.SqlDbType.VarChar,
+                            Size = 50,
+                            Direction = System.Data.ParameterDirection.Input,
+                            Value = entity.LastNames
+                        },
+                        new SqlParameter() {
+                            ParameterName = "@Direction",
+                            SqlDbType =  System.Data.SqlDbType.VarChar,
+                            Size = 50,
+                            Direction = System.Data.ParameterDirection.Input,
+                            Value = entity.Direction
+                        },
+                        new SqlParameter() {
+                            ParameterName = "@phone",
+                            SqlDbType =  System.Data.SqlDbType.VarChar,
+                            Size = 15,
+                            Direction = System.Data.ParameterDirection.Input,
+                            Value = entity.Phone
+                        },
+                        new SqlParameter()
+                        {
+                            ParameterName = "@Birth",
+                            SqlDbType =  System.Data.SqlDbType.Date,
+                            Direction = System.Data.ParameterDirection.Input,
+                            Value = entity.BirthDate
+                        },
+                        new SqlParameter()
+                        {
+                            ParameterName = "@Nation",
+                            SqlDbType =  System.Data.SqlDbType.VarChar,
+                            Size = 20,
+                            Direction = System.Data.ParameterDirection.Input,
+                            Value = entity.Nacionality
+                        },
+                        new SqlParameter()
+                        {
+                            ParameterName = "@dni",
+                            SqlDbType =  System.Data.SqlDbType.VarChar,
+                            Size = 20,
+                            Direction = System.Data.ParameterDirection.Input,
+                            Value = entity.Identification
+                        }
+                     });
+                await execute;
+                result = execute;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return result.Result;
+        }
+        public Task<bool> DeleteClient(int id)
+        {
+            throw new NotImplementedException();
+        }
+        public async Task<bool> UpdateClient(Client entity, int id)
+        {
+            Task<int> query = null;
+            try
+            {
+                query = Database.ExecuteSqlRawAsync("[dbo].[sp_UpdateClient] @Id_Client,@Direction,@Phone,@Nationality,@Identification", new SqlParameter[]
                 {
-                    conn.Open();
-                    using (var cmd = new SqlCommand(this.Database.GetConnectionString(), conn))
+                    new SqlParameter()
                     {
-                        cmd.CommandText = "select * from ClientsView";
-                        cmd.CommandType = CommandType.Text;
-                        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                        adapter.Fill(dt);
-                        cmd.Dispose();
+                    ParameterName = "@Id_Client",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = id
+                    },
+                    new SqlParameter()
+                    {
+                    ParameterName = "@Direction",
+                    SqlDbType = SqlDbType.NVarChar,
+                    Size = 50,
+                    Value = entity.Direction
+
+                    },
+                    new SqlParameter()
+                    {
+                    ParameterName = "@Phone",
+                    SqlDbType= System.Data.SqlDbType.NVarChar,
+                    Size = 15,
+                    Value = entity.Phone
+                    },
+                    new SqlParameter()
+                    {
+                    ParameterName = "@Nationality",
+                    SqlDbType = SqlDbType.NVarChar,
+                    Size = 00,
+                    Value = entity.Nacionality
+
+                    },
+                    new SqlParameter()
+                    {
+                    ParameterName = "@Identification",
+                    SqlDbType = SqlDbType.NVarChar,
+                    Size = 20,
+                    Value = entity.Identification
+
                     }
-                    conn.Close();
-                    conn.Dispose();
-                }
+                });
+                await query;
             }
             catch (Exception ex)
             {
 
             }
 
+            return query.IsCompleted;
+        }
+        #endregion
+        
+        #region Metodos Tarjeta
+        public DataTable GetCards()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (var conn = new SqlConnection(this.Database.GetConnectionString()))
+                {
+
+                    conn.Open();
+                    using (var cmd = new SqlCommand(this.Database.GetConnectionString(), conn))
+                    {
+                        cmd.CommandText = "select * from CardsView";
+                        cmd.CommandType = CommandType.Text;
+                        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                        adapter.Fill(dt);
+                        cmd.Dispose();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
             return dt;
         }
-
-        public Task<int> InsertAccount(Account entity)
+        public Card GetCardByDni(string dni)
         {
             throw new NotImplementedException();
         }
-
         public async Task<int> InsertCard(Card entity)
         {
             Task<int> result = null;
@@ -263,7 +357,7 @@ namespace Financiera.Domain.ContextDB
                         new SqlParameter()
                         {
                             ParameterName = "@FechaCorte",
-                            SqlDbType =  System.Data.SqlDbType.Date,                          
+                            SqlDbType =  System.Data.SqlDbType.Date,
                             Direction = System.Data.ParameterDirection.Input,
                             Value = entity.FechaCorte
                         },
@@ -285,139 +379,39 @@ namespace Financiera.Domain.ContextDB
             }
             return result.Result;
         }
-
-        public async Task<int> InsertClient(Client entity)
-        {
-            Task<int> result = null;
-            try
-            {
-                var execute = Database.ExecuteSqlRawAsync("[dbo].[sp_InsertClient] @names,@lastnames,@Direction,@phone,@Birth,@Nation,@dni", new SqlParameter[] {
-                        new SqlParameter() {
-                            ParameterName = "@names",
-                            SqlDbType =  System.Data.SqlDbType.VarChar,
-                            Size= 50,
-                            Direction = System.Data.ParameterDirection.Input,
-                            Value = entity.Names
-                        },
-                        new SqlParameter() {
-                            ParameterName = "@lastnames",
-                            SqlDbType =  System.Data.SqlDbType.VarChar,
-                            Size = 50,
-                            Direction = System.Data.ParameterDirection.Input,
-                            Value = entity.LastNames
-                        },
-                        new SqlParameter() {
-                            ParameterName = "@Direction",
-                            SqlDbType =  System.Data.SqlDbType.VarChar,
-                            Size = 50,
-                            Direction = System.Data.ParameterDirection.Input,
-                            Value = entity.Direction
-                        },
-                        new SqlParameter() {
-                            ParameterName = "@phone",
-                            SqlDbType =  System.Data.SqlDbType.VarChar,
-                            Size = 15,
-                            Direction = System.Data.ParameterDirection.Input,
-                            Value = entity.Phone
-                        },
-                        new SqlParameter()
-                        {
-                            ParameterName = "@Birth",
-                            SqlDbType =  System.Data.SqlDbType.Date,
-                            Direction = System.Data.ParameterDirection.Input,
-                            Value = entity.BirthDate
-                        },
-                        new SqlParameter()
-                        {
-                            ParameterName = "@Nation",
-                            SqlDbType =  System.Data.SqlDbType.VarChar,
-                            Size = 20,
-                            Direction = System.Data.ParameterDirection.Input,
-                            Value = entity.Nacionality
-                        },
-                        new SqlParameter()
-                        {
-                            ParameterName = "@dni",
-                            SqlDbType =  System.Data.SqlDbType.VarChar,
-                            Size = 20,
-                            Direction = System.Data.ParameterDirection.Input,
-                            Value = entity.Identification
-                        }
-                     });
-                await execute;
-                result = execute;
-            }
-            catch (Exception ex)
-            {
-
-            }
-            return result.Result;
-        }
-
-        public Task<bool> UpdateAccount(Account entity, int id)
+        public Task<bool> DeleteCard(int id)
         {
             throw new NotImplementedException();
         }
-
         public Task<bool> UpdateCard(Card entity, int id)
         {
             throw new NotImplementedException();
         }
+        #endregion
 
-        public async Task<bool> UpdateClient(Client entity, int id)
+        #region Metodos Cuenta
+        public DataTable GetAccounts()
         {
-            Task<int> query = null;
-            try
-            {
-                query = Database.ExecuteSqlRawAsync("[dbo].[sp_UpdateClient] @Id_Client,@Direction,@Phone,@Nationality,@Identification", new SqlParameter[]
-                {
-                    new SqlParameter()
-                    {
-                    ParameterName = "@Id_Client",
-                    SqlDbType = System.Data.SqlDbType.Int,
-                    Value = id
-                    },
-                    new SqlParameter()
-                    {
-                    ParameterName = "@Direction",
-                    SqlDbType = SqlDbType.NVarChar,
-                    Size = 50,
-                    Value = entity.Direction
-
-                    },
-                    new SqlParameter()
-                    {
-                    ParameterName = "@Phone",
-                    SqlDbType= System.Data.SqlDbType.NVarChar,
-                    Size = 15,
-                    Value = entity.Phone
-                    },
-                    new SqlParameter()
-                    {
-                    ParameterName = "@Nationality",
-                    SqlDbType = SqlDbType.NVarChar,
-                    Size = 00,
-                    Value = entity.Nacionality
-
-                    },
-                    new SqlParameter()
-                    {
-                    ParameterName = "@Identification",
-                    SqlDbType = SqlDbType.NVarChar,
-                    Size = 20,
-                    Value = entity.Identification
-
-                    }
-                });
-                await query;
-            }
-            catch (Exception ex)
-            {
-
-            }
-
-            return query.IsCompleted;
+            throw new NotImplementedException();
         }
+        public Account GetAccountByDni(string dni)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<int> InsertAccount(Account entity)
+        {
+            throw new NotImplementedException();
+        }
+        public Task<bool> DeleteAccount(int id)
+        {
+            throw new NotImplementedException();
+        }
+        public Task<bool> UpdateAccount(Account entity, int id)
+        {
+            throw new NotImplementedException();
+        }
+        #endregion
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
