@@ -18,29 +18,33 @@ namespace Financiera.Infraestructure.Repository
             Db = db;
         }
 
-        public Client GetCardByDni(string dni)
+        public async Task<bool> DeleteCard(int id)
         {
-            throw new NotImplementedException();
+           return await Db.DeleteCard(id);
+        }
+
+        public Card GetCardByDni(string dni)
+        {
+            return Db.GetCardByDni(dni);
         }
 
         public DataTable GetCards()
         {
-            return Db.GetCards();
+           return Db.GetCards();
         }
 
+        public async Task<int> InsertCard(Card entity)
+        {
+            return await Db.InsertCard(entity);
+        }
+
+        public async Task<bool> UpdateCard(Card entity, int id)
+        {
+           return await Db.UpdateCard(entity, id);
+        }
         public Client GetClientByDni(string dni)
         {
-            return Db.GetClientByDni(dni);
-        }
-
-        public Task<int> Save(Card client)
-        {
-            return Db.InsertCard(client);
-        }
-
-        public Task<bool> UpdateCard(Card entity, int id)
-        {
-            throw new NotImplementedException();
+            return Db.GetClientByDni(dni); ;
         }
     }
 }

@@ -23,17 +23,17 @@ namespace Financiera.Presentation.DependencyApp
             {
                 options.UseSqlServer(Connection);
             });
-            services.AddScoped<IFinancieraContext, FinancieraContext>();
-            services.AddScoped<IClientRepository, ClientRepository>();
-            services.AddScoped<IClientServices, ClientService>();
+            services.AddSingleton<IFinancieraContext, FinancieraContext>();
+            services.AddSingleton<IClientRepository, ClientRepository>();
+            services.AddSingleton<IClientServices, ClientService>();
 
-            services.AddScoped<IAccountRepository, AccountRepository>();
-            services.AddScoped<IAccountServices, AccountService>();
+            services.AddSingleton<IAccountRepository, AccountRepository>();
+            services.AddSingleton<IAccountServices, AccountService>();
 
-            services.AddScoped<ICardRepository, CardRepository>();
-            services.AddScoped<ICardServices, CardServices>();
+            services.AddSingleton<ICardRepository, CardRepository>();
+            services.AddSingleton<ICardServices, CardServices>();
 
-            services.AddScoped<MainForm>();
+            services.AddSingleton<MainForm>();
 
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.

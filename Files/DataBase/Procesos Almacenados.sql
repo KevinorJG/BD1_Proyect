@@ -120,7 +120,7 @@ DECLARE @identify int
 go
 
 create procedure sp_InsertAccount(
-@id_Client int,
+@identify nvarchar(20),
 @id_Hideline int,
 @Description nvarchar(25),
 @TypeAccount nvarchar(15),
@@ -130,8 +130,10 @@ create procedure sp_InsertAccount(
 @OpenDate date
 )
 as
+DECLARE @id int
+	SET @id = (select Id_Client from Clients where Identification = @identify)
 insert into Accounts (id_Client,id_Hideline,Description_,Type_Account,Type_Coin,Status_,MinAmount,OpenDate)
-values(@id_Client,@id_Hideline,dbo.CleanInput(@Description),dbo.CleanInput(@TypeAccount),dbo.CleanInput(@TypeCoin),dbo.CleanInput(@Status),@MinAmount,@OpenDate)
+values(@id,@id_Hideline,dbo.CleanInput(@Description),dbo.CleanInput(@TypeAccount),dbo.CleanInput(@TypeCoin),dbo.CleanInput(@Status),@MinAmount,@OpenDate)
 go
 
 create procedure sp_UpdateClient(

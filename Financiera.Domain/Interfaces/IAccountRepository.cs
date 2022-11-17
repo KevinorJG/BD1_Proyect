@@ -15,5 +15,6 @@ namespace Financiera.Domain.Interfaces
         Task<bool> DeleteAccount(int id);
         Account GetAccountByDni(string dni);
         DataTable GetAccounts();
+        Client GetClientByDni(string dni);
     }
 }

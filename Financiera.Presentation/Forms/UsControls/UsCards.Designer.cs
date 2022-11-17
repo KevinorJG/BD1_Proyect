@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PickerOpenDate = new RJCodeAdvance.RJControls.RJDatePicker();
             this.txtMounOpen = new RJCodeAdvance.RJControls.RJTextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,7 +41,6 @@
             this.dgvCards = new Guna.UI2.WinForms.Guna2DataGridView();
             this.txtSearch = new RJCodeAdvance.RJControls.RJTextBox();
             this.btSearchCard = new RJCodeAdvance.RJControls.RJButton();
-            this.btUptCard = new RJCodeAdvance.RJControls.RJButton();
             this.btDeleteCard = new RJCodeAdvance.RJControls.RJButton();
             this.btAddCard = new RJCodeAdvance.RJControls.RJButton();
             this.txtDescription = new System.Windows.Forms.TextBox();
@@ -177,27 +176,27 @@
             // 
             this.dgvCards.AllowUserToAddRows = false;
             this.dgvCards.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvCards.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvCards.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvCards.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCards.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCards.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvCards.ColumnHeadersHeight = 30;
             this.dgvCards.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCards.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCards.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvCards.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvCards.Location = new System.Drawing.Point(42, 290);
             this.dgvCards.Name = "dgvCards";
@@ -268,24 +267,7 @@
             this.btSearchCard.Text = "Buscar";
             this.btSearchCard.TextColor = System.Drawing.Color.White;
             this.btSearchCard.UseVisualStyleBackColor = false;
-            // 
-            // btUptCard
-            // 
-            this.btUptCard.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btUptCard.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.btUptCard.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btUptCard.BorderRadius = 5;
-            this.btUptCard.BorderSize = 0;
-            this.btUptCard.FlatAppearance.BorderSize = 0;
-            this.btUptCard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btUptCard.ForeColor = System.Drawing.Color.White;
-            this.btUptCard.Location = new System.Drawing.Point(740, 233);
-            this.btUptCard.Name = "btUptCard";
-            this.btUptCard.Size = new System.Drawing.Size(110, 31);
-            this.btUptCard.TabIndex = 30;
-            this.btUptCard.Text = "Actualizar";
-            this.btUptCard.TextColor = System.Drawing.Color.White;
-            this.btUptCard.UseVisualStyleBackColor = false;
+            this.btSearchCard.Click += new System.EventHandler(this.btSearchCard_Click);
             // 
             // btDeleteCard
             // 
@@ -297,7 +279,7 @@
             this.btDeleteCard.FlatAppearance.BorderSize = 0;
             this.btDeleteCard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btDeleteCard.ForeColor = System.Drawing.Color.White;
-            this.btDeleteCard.Location = new System.Drawing.Point(885, 233);
+            this.btDeleteCard.Location = new System.Drawing.Point(742, 233);
             this.btDeleteCard.Name = "btDeleteCard";
             this.btDeleteCard.Size = new System.Drawing.Size(110, 31);
             this.btDeleteCard.TabIndex = 29;
@@ -426,7 +408,6 @@
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btSearchCard);
-            this.Controls.Add(this.btUptCard);
             this.Controls.Add(this.btDeleteCard);
             this.Controls.Add(this.btAddCard);
             this.Controls.Add(this.dgvCards);
@@ -458,7 +439,6 @@
         private Guna.UI2.WinForms.Guna2DataGridView dgvCards;
         private RJCodeAdvance.RJControls.RJTextBox txtSearch;
         private RJCodeAdvance.RJControls.RJButton btSearchCard;
-        private RJCodeAdvance.RJControls.RJButton btUptCard;
         private RJCodeAdvance.RJControls.RJButton btDeleteCard;
         private RJCodeAdvance.RJControls.RJButton btAddCard;
         private System.Windows.Forms.TextBox txtDescription;

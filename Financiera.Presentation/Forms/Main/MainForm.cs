@@ -197,9 +197,8 @@ namespace Financiera.Presentation.Forms.Main
 
                 case "pboxCounts":
                     this.panelMain.Controls.Clear();
-
-                    this.panelMain.Controls.Add(usAcounts);
                     usAcounts.SetServices(accountServices);
+                    this.panelMain.Controls.Add(usAcounts);              
                     usAcounts.Width = 0;
                     timerOpenUsCounts.Start();
                     break;

@@ -264,7 +264,47 @@ namespace Financiera.Domain.ContextDB
         }
         public Card GetCardByDni(string dni)
         {
-            throw new NotImplementedException();
+
+            Card cd = null;
+            try
+            {
+                using (var conn = new SqlConnection(this.Database.GetConnectionString()))
+                {
+                    conn.Open();
+                    using (var cmd = new SqlCommand(this.Database.GetConnectionString(), conn))
+                    {
+                        cmd.CommandText = "sp_BuscarTarjeta";
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add(new SqlParameter()
+                        {
+                            ParameterName = "@Identification",
+                            SqlDbType = SqlDbType.NVarChar,
+                            Size = 20,
+                            Value = dni
+                        });
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            cd = new Card()
+                            {
+                                IdClient = int.Parse(reader["ID"].ToString()),
+                                
+                            };
+                        }
+                        cmd.Dispose();
+                    }
+                    conn.Close();
+                    conn.Dispose();
+                }
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 229)
+                {
+
+                }
+            }
+            return cd;
         }
         public async Task<int> InsertCard(Card entity)
         {
@@ -392,16 +432,98 @@ namespace Financiera.Domain.ContextDB
         #region Metodos Cuenta
         public DataTable GetAccounts()
         {
-            throw new NotImplementedException();
+            DataTable dt = new DataTable();
+            try
+            {
+                using (var conn = new SqlConnection(this.Database.GetConnectionString()))
+                {
+
+                    conn.Open();
+                    using (var cmd = new SqlCommand(this.Database.GetConnectionString(), conn))
+                    {
+                        cmd.CommandText = "select * from AccountsView";
+                        cmd.CommandType = CommandType.Text;
+                        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                        adapter.Fill(dt);
+                        cmd.Dispose();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return dt;
         }
         public Account GetAccountByDni(string dni)
         {
             throw new NotImplementedException();
         }
 
-        public Task<int> InsertAccount(Account entity)
+        public async Task<int> InsertAccount(Account entity)
         {
-            throw new NotImplementedException();
+            Task<int> result = null;
+            try
+            {
+                var execute = Database.ExecuteSqlRawAsync("[dbo].[sp_InsertAccount] @identify,@id_Hideline,@TypeAccount,@TypeCoin,@Status,@MinAmount,@OpenDate", new SqlParameter[] {
+                        new SqlParameter() {
+                            ParameterName = "@identify",
+                            SqlDbType =  System.Data.SqlDbType.NVarChar,
+                            Size= 20,
+                            Direction = System.Data.ParameterDirection.Input,
+                            Value = entity.Identi
+                        },
+                        new SqlParameter() {
+                            ParameterName = "@id_Hideline",
+                            SqlDbType =  System.Data.SqlDbType.Int,                           
+                            Direction = System.Data.ParameterDirection.Input,
+                            Value = entity.IdHideline
+                        },
+                        new SqlParameter() {
+                            ParameterName = "@TypeAccount",
+                            SqlDbType =  System.Data.SqlDbType.NVarChar,
+                            Size = 15,
+                            Direction = System.Data.ParameterDirection.Input,
+                            Value = entity.TypeAccount
+                        },
+                        new SqlParameter() {
+                            ParameterName = "@TypeCoin",
+                            SqlDbType =  System.Data.SqlDbType.NVarChar,
+                            Size = 15,
+                            Direction = System.Data.ParameterDirection.Input,
+                            Value = entity.TypeCoin
+                        },
+                        new SqlParameter()
+                        {
+                            ParameterName = "@Status",
+                            SqlDbType =  System.Data.SqlDbType.NVarChar,
+                            Size = 10,
+                            Direction = System.Data.ParameterDirection.Input,
+                            Value = entity.Status
+                        },
+                        new SqlParameter()
+                        {
+                            ParameterName = "@MinAmount",
+                            SqlDbType =  System.Data.SqlDbType.Money,
+                            Direction = System.Data.ParameterDirection.Input,
+                            Value = entity.MinAmount
+                        },
+                        new SqlParameter()
+                        {
+                            ParameterName = "@OpenDate",
+                            SqlDbType =  System.Data.SqlDbType.Date,
+                            Direction = System.Data.ParameterDirection.Input,
+                            Value = entity.OpenDate
+                        }
+                     });
+                await execute;
+                result = execute;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return result.Result;
         }
         public Task<bool> DeleteAccount(int id)
         {
@@ -422,12 +544,7 @@ namespace Financiera.Domain.ContextDB
                 entity.HasKey(e => e.IdAccount)
                     .HasName("PK__Accounts__0EB75CDB6C31A0B5");
 
-                entity.Property(e => e.IdAccount).HasColumnName("Id_Account");
-
-                entity.Property(e => e.Description)
-                    .IsRequired()
-                    .HasMaxLength(25)
-                    .HasColumnName("Description_");
+                entity.Property(e => e.IdAccount).HasColumnName("Id_Account");              
 
                 entity.Property(e => e.IdClient).HasColumnName("id_Client");
 

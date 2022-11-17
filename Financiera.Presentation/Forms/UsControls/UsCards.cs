@@ -33,16 +33,18 @@ namespace Financiera.Presentation.Forms.UsControls
         }
 
         private void txtDniClient_KeyPress(object sender, KeyPressEventArgs e)
-        {
+         {
+            
             if ((int)e.KeyChar == (int)Keys.Enter)
             {
-                if(txtSearch.Texts != string.Empty)
+                if(txtDniClient.Texts != string.Empty)
                 {
                     var cl = CardServices.GetClientByDni(txtDniClient.Texts);
                     if (cl != null)
                     {
                         txtNameCard.Text = cl.Names + " " + cl.LastNames;
                         txtNCard.Text = number = Generator.GeneradorCodigo();
+                        indeti = cl.Identification;
                     }
                     else { MessageBox.Show("Este cliente no existe"); }
                 }
@@ -60,7 +62,7 @@ namespace Financiera.Presentation.Forms.UsControls
             Object lockRegister = new object();
             Card card = new Card()
             {
-                identi = txtDniClient.Texts,
+                identi = indeti,
                 NameCard = txtNameCard.Text,
                 MaxAmountCordoba =decimal.Parse(txtMounOpen.Texts),
                 MaxAmountDolar = decimal.Parse(txtMounOpen.Texts),
@@ -74,7 +76,7 @@ namespace Financiera.Presentation.Forms.UsControls
                 
             };
 
-            var result = CardServices.Save(card);
+            var result = CardServices.InsertCard(card);
             await result;
             lock (lockRegister)
             {
@@ -105,6 +107,11 @@ namespace Financiera.Presentation.Forms.UsControls
         public void GetCards()
         {
             dgvCards.DataSource = CardServices.GetCards();
+        }
+
+        private void btSearchCard_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
