@@ -422,11 +422,7 @@ namespace Financiera.Domain.ContextDB
         public Task<bool> DeleteCard(int id)
         {
             throw new NotImplementedException();
-        }
-        public Task<bool> UpdateCard(Card entity, int id)
-        {
-            throw new NotImplementedException();
-        }
+        }   
         #endregion
 
         #region Metodos Cuenta
@@ -465,7 +461,7 @@ namespace Financiera.Domain.ContextDB
             Task<int> result = null;
             try
             {
-                var execute = Database.ExecuteSqlRawAsync("[dbo].[sp_InsertAccount] @identify,@id_Hideline,@TypeAccount,@TypeCoin,@Status,@MinAmount,@OpenDate", new SqlParameter[] {
+                var execute = Database.ExecuteSqlRawAsync("[dbo].[sp_InsertAccount] @identify,@id_Hideline,@TypeAccount,@TypeCoin,@MinAmount,@OpenDate", new SqlParameter[] {
                         new SqlParameter() {
                             ParameterName = "@identify",
                             SqlDbType =  System.Data.SqlDbType.NVarChar,
@@ -492,15 +488,7 @@ namespace Financiera.Domain.ContextDB
                             Size = 15,
                             Direction = System.Data.ParameterDirection.Input,
                             Value = entity.TypeCoin
-                        },
-                        new SqlParameter()
-                        {
-                            ParameterName = "@Status",
-                            SqlDbType =  System.Data.SqlDbType.NVarChar,
-                            Size = 10,
-                            Direction = System.Data.ParameterDirection.Input,
-                            Value = entity.Status
-                        },
+                        },                   
                         new SqlParameter()
                         {
                             ParameterName = "@MinAmount",
@@ -529,10 +517,6 @@ namespace Financiera.Domain.ContextDB
         {
             throw new NotImplementedException();
         }
-        public Task<bool> UpdateAccount(Account entity, int id)
-        {
-            throw new NotImplementedException();
-        }
         #endregion
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -553,12 +537,7 @@ namespace Financiera.Domain.ContextDB
                 entity.Property(e => e.MinAmount).HasColumnType("money");
 
                 entity.Property(e => e.OpenDate).HasColumnType("date");
-
-                entity.Property(e => e.Status)
-                    .IsRequired()
-                    .HasMaxLength(10)
-                    .HasColumnName("Status_");
-
+            
                 entity.Property(e => e.TypeAccount)
                     .IsRequired()
                     .HasMaxLength(15)

@@ -17,12 +17,12 @@ namespace Financiera.Presentation.DependencyApp
         [STAThread]
         public static void Inyeccion(string Connection)
         {
-
+            
             services = new ServiceCollection();
             services.AddDbContext<FinancieraContext>(options =>
             {
                 options.UseSqlServer(Connection);
-            });
+            });       
             services.AddSingleton<IFinancieraContext, FinancieraContext>();
             services.AddSingleton<IClientRepository, ClientRepository>();
             services.AddSingleton<IClientServices, ClientService>();

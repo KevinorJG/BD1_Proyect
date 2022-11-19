@@ -9,7 +9,7 @@ namespace Financiera.Presentation
 {
     internal static class Program
     {
-        static public Thread? threadLog = new Thread(new ThreadStart(FormLog));
+        public static Thread? threadLog;
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
@@ -17,17 +17,16 @@ namespace Financiera.Presentation
         [STAThreadAttribute()]
         static void Main()
         {
+           
             try
             {
+                threadLog = new Thread(new ThreadStart(FormLog));
                 threadLog.SetApartmentState(ApartmentState.STA);
                 threadLog.Start();
-                
-               
             }
             catch { }
-
-
         }
+
         public static void FormLog()
         {
             Application.SetHighDpiMode(HighDpiMode.SystemAware);

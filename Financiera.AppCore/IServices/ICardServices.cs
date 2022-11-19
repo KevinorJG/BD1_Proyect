@@ -10,8 +10,7 @@ namespace Financiera.AppCore.IServices
 {
     public interface ICardServices : IService<Card>
     {
-        Task<int> InsertCard(Card entity);
-        Task<bool> UpdateCard(Card entity, int id);
+        Task<int> InsertCard(Card entity);       
         Task<bool> DeleteCard(int id);
         Card GetCardByDni(string dni);
         DataTable GetCards();

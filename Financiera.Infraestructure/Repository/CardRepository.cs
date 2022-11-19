@@ -37,11 +37,6 @@ namespace Financiera.Infraestructure.Repository
         {
             return await Db.InsertCard(entity);
         }
-
-        public async Task<bool> UpdateCard(Card entity, int id)
-        {
-           return await Db.UpdateCard(entity, id);
-        }
         public Client GetClientByDni(string dni)
         {
             return Db.GetClientByDni(dni); ;

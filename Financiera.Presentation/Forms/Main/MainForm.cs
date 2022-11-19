@@ -13,7 +13,7 @@ namespace Financiera.Presentation.Forms.Main
         protected readonly IAccountServices accountServices;
         protected readonly ICardServices cardServices;
         UsClients usClients = new UsClients();
-        UsCounts usAcounts = new UsCounts();
+        UsAccounts usAcounts = new UsAccounts();
         UsCards usCards = new UsCards();
 
         public MainForm(IClientServices clientServices, IAccountServices accountServices, ICardServices cardServices)

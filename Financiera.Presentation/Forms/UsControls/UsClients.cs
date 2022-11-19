@@ -15,26 +15,13 @@ namespace Financiera.Presentation.Forms.UsControls
         protected IClientServices ClientServices;
         public static string identi = string.Empty;
         int id = 0;
-        int index = 0;
         public UsClients()
         {
             InitializeComponent();
         }
 
-        private void pbxPhoto_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void timerMenu_Tick(object sender, EventArgs e)
-        {
-
-        }
-
-
         private void UsClients_Load(object sender, EventArgs e)
         {
-            //pboxLoad.Visible = false;
             GetClients();
             if(User.Rol == Roles.Administrador.ToString())
             {
@@ -45,12 +32,6 @@ namespace Financiera.Presentation.Forms.UsControls
                 this.btDeleteClient.Enabled = false;
             }
         }
-
-
-        private void timerMenuClose_Tick(object sender, EventArgs e)
-        {
-        }
-
 
         private async void btAgg_Click(object sender, EventArgs e)
         {
@@ -138,19 +119,20 @@ namespace Financiera.Presentation.Forms.UsControls
             GetClients();
         }
 
-        private void dvgClients_KeyDown(object sender, KeyEventArgs e)
+        private void dvgClients_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.Control && e.KeyCode == Keys.C)
+          
+            try
             {
-                identi = dvgClients.Rows[index].Cells[4].Value.ToString();
-                e.Handled = true;
+                identi = Convert.ToString(dvgClients.Rows[e.RowIndex].Cells[4].Value);
+                Reports.FormReports.FmClientReport clienteReporte = new Reports.FormReports.FmClientReport(identi, Connection.StringConnection);
+                clienteReporte.Show();
             }
-        }
+            catch (Exception ex)
+            {
 
-        private void dvgClients_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            index = e.RowIndex;
-            
+            }
+           
         }
     }
 }

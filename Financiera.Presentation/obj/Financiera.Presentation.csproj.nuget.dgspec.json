@@ -286,6 +286,9 @@
               },
               "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Infraestructure\\Financiera.Infraestructure.csproj": {
                 "projectPath": "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Financiera.Infraestructure\\Financiera.Infraestructure.csproj"
+              },
+              "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Reports\\Financiera.Reports.csproj": {
+                "projectPath": "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Reports\\Financiera.Reports.csproj"
               }
             }
           }
@@ -319,6 +322,10 @@
             "RJCodeAdvance.RJControls": {
               "target": "Package",
               "version": "[1.0.0, )"
+            },
+            "ReportViewerCore.WinForms": {
+              "target": "Package",
+              "version": "[15.1.17, )"
             }
           },
           "imports": [
@@ -341,6 +348,21 @@
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
+      }
+    },
+    "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Reports\\Financiera.Reports.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Reports\\Financiera.Reports.csproj",
+        "projectName": "Financiera.Reports",
+        "projectPath": "C:\\Users\\Administrator\\Source\\Repos\\KevinorJG\\BD1_Proyect\\Reports\\Financiera.Reports.csproj",
+        "frameworks": {
+          "net48": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {}
       }
     }
   }

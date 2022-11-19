@@ -16,8 +16,9 @@
     <Compile Update="Forms\UsControls\UsClients.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Forms\UsControls\UsCounts.cs">
+    <Compile Update="Forms\UsControls\UsAccounts.cs">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
+  <ItemGroup />
 </Project>

@@ -17,8 +17,7 @@ namespace Financiera.Domain.Entities
         public int? IdHideline { get; set; }
         public string Identi { get; set; }
         public string TypeAccount { get; set; }
-        public string TypeCoin { get; set; }
-        public string Status { get; set; }
+        public string TypeCoin { get; set; }      
         public decimal MinAmount { get; set; }
         public DateTime OpenDate { get; set; }
 

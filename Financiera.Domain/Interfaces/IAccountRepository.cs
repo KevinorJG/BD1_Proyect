@@ -11,7 +11,7 @@ namespace Financiera.Domain.Interfaces
     public interface IAccountRepository : IRepository<Account>
     {
         Task<int> InsertAccount(Account entity);
-        Task<bool> UpdateAccount(Account entity, int id);
+      
         Task<bool> DeleteAccount(int id);
         Account GetAccountByDni(string dni);
         DataTable GetAccounts();

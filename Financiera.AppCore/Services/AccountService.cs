@@ -44,9 +44,6 @@ namespace Financiera.AppCore.Services
             return await repository.InsertAccount(entity);
         }
 
-        public async Task<bool> UpdateAccount(Account entity, int id)
-        {
-           return await repository.UpdateAccount(entity, id);
-        }
+    
     }
 }

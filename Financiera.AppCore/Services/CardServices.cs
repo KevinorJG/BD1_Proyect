@@ -44,10 +44,7 @@ namespace Financiera.AppCore.Services
             return await repository.InsertCard(entity);
         }
 
-        public async Task<bool> UpdateCard(Card entity, int id)
-        {
-            return await repository.UpdateCard(entity, id);  
-        }
+       
         
     }
 }

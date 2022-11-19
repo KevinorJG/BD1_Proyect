@@ -12,9 +12,7 @@ namespace Financiera.Commons.Processes
         {
             var characters = "0123456789";
             var Charsarr = new char[19];
-            var random = new Random();
-            int indice = 4;
-
+            var random = new Random();        
             for (int i = 0; i < Charsarr.Length; i++)
             {                
                 Charsarr[i] = characters[random.Next(characters.Length)];                                        

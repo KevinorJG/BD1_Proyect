@@ -149,5 +149,25 @@ set Direction = @Direction, Phone = @Phone, Nacionality = @Nationality, Identifi
 where Id_Client = @id_Client
 go
 
+create procedure sp_BuscarTarjeta(
+@Identification nvarchar(20)
+)
+as
+if exists(select C.id_Client from Clients as C inner join Cards as CA on C.id_Client = CA.id_Client
+			where C.Identification = @Identification)
+			BEGIN
+			DECLARE @id int
+			SET @id = (select Id_Client from Clients where Clients.Identification = @Identification)
+			select * from CardsView where CardsView.Identification = @Identification
+			END
+			else
+			BEGIN
+			RAISERROR ('Tarjeta no existe',11,1)
+			END
+
+go
+execute sp_BuscarTarjeta '001-050698-5689'
+drop procedure sp_BuscarTarjeta
+
 backup database Financiera
 to disk = 'D:\Financiera.bak'
