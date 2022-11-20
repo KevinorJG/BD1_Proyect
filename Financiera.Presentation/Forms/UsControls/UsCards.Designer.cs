@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PickerOpenDate = new RJCodeAdvance.RJControls.RJDatePicker();
             this.txtMounOpen = new RJCodeAdvance.RJControls.RJTextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -52,6 +52,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtBaseC = new System.Windows.Forms.TextBox();
+            this.txtMounOpenD = new RJCodeAdvance.RJControls.RJTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCards)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,6 +90,7 @@
             this.txtMounOpen.TabIndex = 13;
             this.txtMounOpen.Texts = "";
             this.txtMounOpen.UnderlinedStyle = false;
+            this.txtMounOpen._TextChanged += new System.EventHandler(this.txtMounOpen__TextChanged);
             // 
             // label1
             // 
@@ -148,6 +150,7 @@
             this.cbTypeCoin.Size = new System.Drawing.Size(200, 30);
             this.cbTypeCoin.TabIndex = 22;
             this.cbTypeCoin.Texts = "";
+            this.cbTypeCoin.OnSelectedIndexChanged += new System.EventHandler(this.cbTypeCoin_OnSelectedIndexChanged);
             // 
             // txtDniClient
             // 
@@ -176,27 +179,27 @@
             // 
             this.dgvCards.AllowUserToAddRows = false;
             this.dgvCards.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvCards.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvCards.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCards.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCards.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCards.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCards.ColumnHeadersHeight = 30;
             this.dgvCards.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCards.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCards.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCards.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvCards.Location = new System.Drawing.Point(42, 290);
             this.dgvCards.Name = "dgvCards";
@@ -226,6 +229,7 @@
             this.dgvCards.ThemeStyle.RowsStyle.Height = 25;
             this.dgvCards.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvCards.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvCards.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCards_CellContentDoubleClick);
             // 
             // txtSearch
             // 
@@ -393,10 +397,33 @@
             this.txtBaseC.TabIndex = 39;
             this.txtBaseC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // txtMounOpenD
+            // 
+            this.txtMounOpenD.BackColor = System.Drawing.SystemColors.Window;
+            this.txtMounOpenD.BorderColor = System.Drawing.Color.Silver;
+            this.txtMounOpenD.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtMounOpenD.BorderRadius = 0;
+            this.txtMounOpenD.BorderSize = 2;
+            this.txtMounOpenD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtMounOpenD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtMounOpenD.Location = new System.Drawing.Point(802, 27);
+            this.txtMounOpenD.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMounOpenD.Multiline = false;
+            this.txtMounOpenD.Name = "txtMounOpenD";
+            this.txtMounOpenD.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtMounOpenD.PasswordChar = false;
+            this.txtMounOpenD.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtMounOpenD.PlaceholderText = "Monto de apertura";
+            this.txtMounOpenD.Size = new System.Drawing.Size(141, 31);
+            this.txtMounOpenD.TabIndex = 43;
+            this.txtMounOpenD.Texts = "";
+            this.txtMounOpenD.UnderlinedStyle = false;
+            // 
             // UsCards
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.txtMounOpenD);
             this.Controls.Add(this.txtBaseD);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
@@ -450,5 +477,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtBaseC;
+        private RJCodeAdvance.RJControls.RJTextBox txtMounOpenD;
     }
 }

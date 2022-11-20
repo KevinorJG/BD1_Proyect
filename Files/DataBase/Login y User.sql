@@ -21,6 +21,8 @@ grant execute on sp_InsertAccount to Kevin
 grant execute on sp_BuscarClient to kevin
 grant execute on sp_BuscarTarjeta to Kevin
 grant execute on sp_UpdateClient to Kevin
+grant execute on ReporteCuenta to Kevin
+grant execute on ReporteTarjeta to Kevin
 
 
 grant execute on sp_ValidarAcceso to Francisco

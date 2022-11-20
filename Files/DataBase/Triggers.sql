@@ -45,3 +45,29 @@ delete from Clients where Id_Client = 29
 select * from ClientsView
 select * from CardsView
 select * from Accounts
+
+
+create trigger DepositoCuenta
+on AccountDetails
+For insert
+as
+ UPDATE AC
+   SET Saldo =(AC.Saldo + I.Deposito)
+   FROM Accounts AS AC INNER JOIN INSERTED AS I
+   ON AC.Id_Account = I.id_Account
+go
+
+create trigger RetiroCuenta
+on AccountDetails
+For insert
+as
+ UPDATE AC
+   SET Saldo =(AC.Saldo - I.Retiro)
+   FROM Accounts AS AC INNER JOIN INSERTED AS I
+   ON AC.Id_Account = I.id_Account
+go
+
+insert into AccountDetails(id_Account,Deposito,Retiro,TransactionDate,TypeGestion,typeMove,description_) 
+values (3,0,5000,GETDATE(),'Linea','Retiro','Primer retiro')
+
+select * from Accounts

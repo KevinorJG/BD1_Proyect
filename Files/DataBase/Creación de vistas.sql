@@ -24,7 +24,7 @@ from Cards as C inner join Clients as Cl on C.id_Client = CL.Id_Client
 GO
 use Financiera
 create view AccountsView as
-select (C.Names+''+C.LastNames) as Cliente,C.Identification as 'Identificación Cliente',(HI.Name_) as Titular,HI.Identification as 'Identificación Titular',
+select AC.Id_Account,(C.Names+''+C.LastNames) as Cliente,C.Identification as 'Identificación Cliente',(HI.Name_) as Titular,HI.Identification as 'Identificación Titular',
 AC.Type_Account as 'Tipo de cuenta',AC.Type_Coin as 'Tipo de moneda' ,AC.Status_ as 'Estado de la cuenta'
 from Accounts as AC inner join Clients as C on AC.id_Client = C.Id_Client inner join Hideline as Hi
 on AC.id_Hideline = HI.Id_Hideline

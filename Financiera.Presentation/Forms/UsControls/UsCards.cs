@@ -30,6 +30,8 @@ namespace Financiera.Presentation.Forms.UsControls
             txtNCard.Text = String.Empty;
             txtBaseC.Text = String.Empty;
             txtBaseD.Text = String.Empty;
+            txtMounOpenD.Visible = false;
+            txtMounOpen.Visible = false;
         }
 
         private void txtDniClient_KeyPress(object sender, KeyPressEventArgs e)
@@ -45,6 +47,7 @@ namespace Financiera.Presentation.Forms.UsControls
                         txtNameCard.Text = cl.Names + " " + cl.LastNames;
                         txtNCard.Text = number = Generator.GeneradorCodigo();
                         indeti = cl.Identification;
+                        MessageBox.Show($"Nombre: {cl.Names +" "+cl.LastNames}\nCedula: {cl.Identification}","Informacion",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     }
                     else { MessageBox.Show("Este cliente no existe"); }
                 }
@@ -59,29 +62,49 @@ namespace Financiera.Presentation.Forms.UsControls
 
         private async void btAddCard_Click(object sender, EventArgs e)
         {
-            Object lockRegister = new object();
-            Card card = new Card()
+            if(txtDniClient.Texts == string.Empty)
             {
-                identi = indeti,
-                NameCard = txtNameCard.Text,
-                MaxAmountCordoba =decimal.Parse(txtMounOpen.Texts),
-                MaxAmountDolar = decimal.Parse(txtMounOpen.Texts),
-                TypeCard = cbTypeCard.SelectedItem.ToString(),
-                TypeCoin = cbTypeCoin.SelectedItem.ToString(),
-                OpenDate = DateTime.Parse(PickerOpenDate.Text),
-                ExpiredDate = DateTime.Parse(PickerOpenDate.Text).AddYears(5),
-                FechaCorte = DateTime.Parse(PickerOpenDate.Text).AddDays(30),
-                FechaPago = DateTime.Parse(PickerOpenDate.Text).AddDays(50),
-                NumerCard = number,
-                
-            };
-
-            var result = CardServices.InsertCard(card);
-            await result;
-            lock (lockRegister)
-            {
-                if (result.IsCompleted) { GetCards(); }                
+                MessageBox.Show("Debe de aginar la cedula","Campo requerido",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                return;
             }
+            else if(txtMounOpen.Texts == string.Empty || txtMounOpenD.Texts == string.Empty)
+            {
+                MessageBox.Show("Llene todo los espacios requeridos para registrar la tarjeta","Ocurrio un error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                Object lockRegister = new object();
+                Card card = new Card()
+                {
+                    Identi = indeti,
+                    NameCard = txtNameCard.Text,
+                    AmounBaseDolar = decimal.Parse(txtBaseD.Text),
+                    AmountBaseCordoba = decimal.Parse(txtBaseC.Text),
+                    TypeCard = cbTypeCard.SelectedItem.ToString(),
+                    TypeCoin = cbTypeCoin.SelectedItem.ToString(),
+                    OpenDate = DateTime.Parse(PickerOpenDate.Text),
+                    ExpiredDate = DateTime.Parse(PickerOpenDate.Text).AddYears(5),
+                    FechaCorte = DateTime.Parse(PickerOpenDate.Text).AddDays(30),
+                    FechaPago = DateTime.Parse(PickerOpenDate.Text).AddDays(50),
+                    NumerCard = number,
+
+                };
+                if (txtMounOpen.Texts == string.Empty)
+                {
+                    card.MaxAmountCordoba = decimal.Parse("0");
+                }
+                if (txtMounOpenD.Texts == string.Empty)
+                {
+                    card.MaxAmountDolar = decimal.Parse("0");
+                }
+                var result = CardServices.InsertCard(card);
+                await result;
+                lock (lockRegister)
+                {
+                    if (result.IsCompleted) { GetCards(); }
+                }
+            }           
             
         }
 
@@ -112,6 +135,39 @@ namespace Financiera.Presentation.Forms.UsControls
         private void btSearchCard_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtMounOpen__TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbTypeCoin_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cbTypeCoin.SelectedIndex == 0)
+            {
+                txtMounOpenD.Visible = false;
+                txtMounOpen.Visible = true;
+            }
+            if(cbTypeCoin.SelectedIndex == 1)
+            {
+                txtMounOpen.Visible = false;
+                txtMounOpenD.Visible = true;
+            }
+        }
+
+        private void dgvCards_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                var identi = int.Parse(Convert.ToString(dgvCards.Rows[e.RowIndex].Cells[0].Value));
+                Reports.FormReports.FmCardReport Reporte = new Reports.FormReports.FmCardReport(identi, Connection.StringConnection);
+                Reporte.Show();
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
     }
 }

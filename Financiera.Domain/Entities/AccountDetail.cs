@@ -9,12 +9,13 @@ namespace Financiera.Domain.Entities
     {
         public int IdAccountDetails { get; set; }
         public int IdAccount { get; set; }
-        public int IdEmployee { get; set; }
         public decimal Deposito { get; set; }
         public decimal Retiro { get; set; }
         public DateTime TransactionDate { get; set; }
+        public string TypeMove { get; set; }
+        public string TypeGestion { get; set; }
+        public string Description { get; set; }
 
         public virtual Account IdAccountNavigation { get; set; }
-        public virtual Employee IdEmployeeNavigation { get; set; }
     }
 }

@@ -2,17 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Financiera.Domain.Entities;
-using Financiera.Domain.Interfaces;
-using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
 using System.Data;
-using System.Collections.Generic;
+using System.Threading.Tasks;
+using Financiera.Domain.Interfaces;
+using Financiera.Domain.Views;
 
 #nullable disable
 
 namespace Financiera.Domain.ContextDB
 {
-    public partial class FinancieraContext : DbContext, IFinancieraContext
+    public partial class FinancieraContext : DbContext,IFinancieraContext
     {
         public FinancieraContext()
         {
@@ -25,9 +25,12 @@ namespace Financiera.Domain.ContextDB
 
         public virtual DbSet<Account> Accounts { get; set; }
         public virtual DbSet<AccountDetail> AccountDetails { get; set; }
+        public virtual DbSet<AccountsView> AccountsViews { get; set; }
         public virtual DbSet<Card> Cards { get; set; }
         public virtual DbSet<CardDetail> CardDetails { get; set; }
+        public virtual DbSet<CardsView> CardsViews { get; set; }
         public virtual DbSet<Client> Clients { get; set; }
+        public virtual DbSet<ClientsView> ClientsViews { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Hideline> Hidelines { get; set; }
         #region Metodos Cliente
@@ -176,16 +179,32 @@ namespace Financiera.Domain.ContextDB
             }
             return result.Result;
         }
-        public Task<bool> DeleteClient(int id)
+        public async Task<bool> DeleteClient(int id)
         {
-            throw new NotImplementedException();
+            Task<int> result = null;
+            try
+            {
+                var execute = Database.ExecuteSqlRawAsync("delete Clientes where Id_Client = @id", new SqlParameter()
+                {
+                    ParameterName = "@id",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = id
+                });
+                await execute;
+                result = execute;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return result.IsCompleted;
         }
         public async Task<bool> UpdateClient(Client entity, int id)
         {
             Task<int> query = null;
             try
             {
-                query = Database.ExecuteSqlRawAsync("[dbo].[sp_UpdateClient] @Id_Client,@Direction,@Phone,@Nationality,@Identification", new SqlParameter[]
+                query = Database.ExecuteSqlRawAsync("[dbo].[sp_UpdateClient] @Id_Client,@Direction,@Phone,@Nationality,@Identification,@Date", new SqlParameter[]
                 {
                     new SqlParameter()
                     {
@@ -223,6 +242,12 @@ namespace Financiera.Domain.ContextDB
                     Size = 20,
                     Value = entity.Identification
 
+                    },
+                    new SqlParameter()
+                    {
+                        ParameterName = "@Date",
+                        SqlDbType = SqlDbType.Date,
+                        Value = entity.BirthDate
                     }
                 });
                 await query;
@@ -235,7 +260,7 @@ namespace Financiera.Domain.ContextDB
             return query.IsCompleted;
         }
         #endregion
-        
+
         #region Metodos Tarjeta
         public DataTable GetCards()
         {
@@ -288,7 +313,7 @@ namespace Financiera.Domain.ContextDB
                             cd = new Card()
                             {
                                 IdClient = int.Parse(reader["ID"].ToString()),
-                                
+
                             };
                         }
                         cmd.Dispose();
@@ -317,7 +342,7 @@ namespace Financiera.Domain.ContextDB
                             SqlDbType =  System.Data.SqlDbType.NVarChar,
                             Size= 20,
                             Direction = System.Data.ParameterDirection.Input,
-                            Value = entity.identi
+                            Value = entity.Identi
                         },
                         new SqlParameter() {
                             ParameterName = "@NameCard",
@@ -419,10 +444,26 @@ namespace Financiera.Domain.ContextDB
             }
             return result.Result;
         }
-        public Task<bool> DeleteCard(int id)
+        public async Task<bool> DeleteCard(int id)
         {
-            throw new NotImplementedException();
-        }   
+            Task<int> result = null;
+            try
+            {
+                var execute = Database.ExecuteSqlRawAsync("delete Cards where Id_Card = @id", new SqlParameter()
+                {
+                    ParameterName = "@id",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = id
+                });
+                await execute;
+                result = execute;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return result.IsCompleted;
+        }
         #endregion
 
         #region Metodos Cuenta
@@ -461,7 +502,7 @@ namespace Financiera.Domain.ContextDB
             Task<int> result = null;
             try
             {
-                var execute = Database.ExecuteSqlRawAsync("[dbo].[sp_InsertAccount] @identify,@id_Hideline,@TypeAccount,@TypeCoin,@MinAmount,@OpenDate", new SqlParameter[] {
+                var execute = Database.ExecuteSqlRawAsync("[dbo].[sp_InsertAccount] @identify,@id_Hideline,@TypeAccount,@TypeCoin,@saldo,@OpenDate,@Status", new SqlParameter[] {
                         new SqlParameter() {
                             ParameterName = "@identify",
                             SqlDbType =  System.Data.SqlDbType.NVarChar,
@@ -471,7 +512,7 @@ namespace Financiera.Domain.ContextDB
                         },
                         new SqlParameter() {
                             ParameterName = "@id_Hideline",
-                            SqlDbType =  System.Data.SqlDbType.Int,                           
+                            SqlDbType =  System.Data.SqlDbType.Int,
                             Direction = System.Data.ParameterDirection.Input,
                             Value = entity.IdHideline
                         },
@@ -488,13 +529,13 @@ namespace Financiera.Domain.ContextDB
                             Size = 15,
                             Direction = System.Data.ParameterDirection.Input,
                             Value = entity.TypeCoin
-                        },                   
+                        },
                         new SqlParameter()
                         {
-                            ParameterName = "@MinAmount",
+                            ParameterName = "@saldo",
                             SqlDbType =  System.Data.SqlDbType.Money,
                             Direction = System.Data.ParameterDirection.Input,
-                            Value = entity.MinAmount
+                            Value = entity.Saldo
                         },
                         new SqlParameter()
                         {
@@ -502,6 +543,14 @@ namespace Financiera.Domain.ContextDB
                             SqlDbType =  System.Data.SqlDbType.Date,
                             Direction = System.Data.ParameterDirection.Input,
                             Value = entity.OpenDate
+                        },
+                        
+                        new SqlParameter() {
+                            ParameterName = "@Status",
+                            SqlDbType =  System.Data.SqlDbType.NVarChar,
+                            Size = 20,
+                            Direction = System.Data.ParameterDirection.Input,
+                            Value = entity.Status
                         }
                      });
                 await execute;
@@ -513,9 +562,25 @@ namespace Financiera.Domain.ContextDB
             }
             return result.Result;
         }
-        public Task<bool> DeleteAccount(int id)
+        public async Task<bool> DeleteAccount(int id)
         {
-            throw new NotImplementedException();
+            Task<int> result = null;
+            try
+            {
+                var execute = Database.ExecuteSqlRawAsync("delete Accounts where Id_Account = @id", new SqlParameter()
+                {
+                    ParameterName = "@id",
+                    SqlDbType = System.Data.SqlDbType.Int,
+                    Value = id
+                });
+                await execute;
+                result = execute;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return result.IsCompleted;
         }
         #endregion
 
@@ -528,7 +593,7 @@ namespace Financiera.Domain.ContextDB
                 entity.HasKey(e => e.IdAccount)
                     .HasName("PK__Accounts__0EB75CDB6C31A0B5");
 
-                entity.Property(e => e.IdAccount).HasColumnName("Id_Account");              
+                entity.Property(e => e.IdAccount).HasColumnName("Id_Account");
 
                 entity.Property(e => e.IdClient).HasColumnName("id_Client");
 
@@ -537,7 +602,14 @@ namespace Financiera.Domain.ContextDB
                 entity.Property(e => e.MinAmount).HasColumnType("money");
 
                 entity.Property(e => e.OpenDate).HasColumnType("date");
-            
+
+                entity.Property(e => e.Saldo).HasColumnType("money");
+
+                entity.Property(e => e.Status)
+                    .IsRequired()
+                    .HasMaxLength(10)
+                    .HasColumnName("Status_");
+
                 entity.Property(e => e.TypeAccount)
                     .IsRequired()
                     .HasMaxLength(15)
@@ -551,6 +623,7 @@ namespace Financiera.Domain.ContextDB
                 entity.HasOne(d => d.IdClientNavigation)
                     .WithMany(p => p.Accounts)
                     .HasForeignKey(d => d.IdClient)
+                    .OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName("FK__Accounts__id_Cli__5EBF139D");
 
                 entity.HasOne(d => d.IdHidelineNavigation)
@@ -562,31 +635,79 @@ namespace Financiera.Domain.ContextDB
             modelBuilder.Entity<AccountDetail>(entity =>
             {
                 entity.HasKey(e => e.IdAccountDetails)
-                    .HasName("PK__AccountD__DF9627CD3D4B0327");
+                    .HasName("PK__AccountD__DF9627CD2EBB1790");
 
                 entity.Property(e => e.IdAccountDetails).HasColumnName("Id_AccountDetails");
 
                 entity.Property(e => e.Deposito).HasColumnType("money");
 
-                entity.Property(e => e.IdAccount).HasColumnName("id_Account");
+                entity.Property(e => e.Description)
+                    .HasMaxLength(50)
+                    .HasColumnName("description_");
 
-                entity.Property(e => e.IdEmployee).HasColumnName("id_Employee");
+                entity.Property(e => e.IdAccount).HasColumnName("id_Account");
 
                 entity.Property(e => e.Retiro).HasColumnType("money");
 
                 entity.Property(e => e.TransactionDate).HasColumnType("date");
 
+                entity.Property(e => e.TypeGestion).HasMaxLength(20);
+
+                entity.Property(e => e.TypeMove)
+                    .HasMaxLength(20)
+                    .HasColumnName("typeMove");
+
                 entity.HasOne(d => d.IdAccountNavigation)
                     .WithMany(p => p.AccountDetails)
                     .HasForeignKey(d => d.IdAccount)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__AccountDe__id_Ac__60A75C0F");
+                    .HasConstraintName("FK__AccountDe__id_Ac__1C873BEC");
+            });
 
-                entity.HasOne(d => d.IdEmployeeNavigation)
-                    .WithMany(p => p.AccountDetails)
-                    .HasForeignKey(d => d.IdEmployee)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__AccountDe__id_Em__619B8048");
+            modelBuilder.Entity<AccountsView>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("AccountsView");
+
+                entity.Property(e => e.Id_Account).HasColumnName("Id_Account");
+
+                entity.Property(e => e.Cliente)
+                    .IsRequired()
+                    .HasMaxLength(101);
+
+                entity.Property(e => e.EstadoDeLaCuenta)
+                    .IsRequired()
+                    .HasMaxLength(10)
+                    .HasColumnName("Estado de la cuenta");
+
+                entity.Property(e => e.FechaDeApertura)
+                    .HasColumnType("date")
+                    .HasColumnName("Fecha de apertura");
+
+                entity.Property(e => e.IdentificaciónCliente)
+                    .IsRequired()
+                    .HasMaxLength(20)
+                    .HasColumnName("Identificación Cliente");
+
+                entity.Property(e => e.IdentificaciónTitular)
+                    .IsRequired()
+                    .HasMaxLength(20)
+                    .HasColumnName("Identificación Titular");
+
+                entity.Property(e => e.TipoDeCuenta)
+                    .IsRequired()
+                    .HasMaxLength(15)
+                    .HasColumnName("Tipo de cuenta");
+
+                entity.Property(e => e.TipoDeMoneda)
+                    .IsRequired()
+                    .HasMaxLength(15)
+                    .HasColumnName("Tipo de moneda");
+
+                entity.Property(e => e.Titular)
+                    .IsRequired()
+                    .HasMaxLength(20);
             });
 
             modelBuilder.Entity<Card>(entity =>
@@ -596,9 +717,9 @@ namespace Financiera.Domain.ContextDB
 
                 entity.Property(e => e.IdCard).HasColumnName("Id_Card");
 
-                entity.Property(e => e.NumerCard)
-                    .IsRequired()                  
-                    .HasColumnName("NumerCard");
+                entity.Property(e => e.AmounBaseDolar).HasColumnType("money");
+
+                entity.Property(e => e.AmountBaseCordoba).HasColumnType("money");
 
                 entity.Property(e => e.ExpiredDate).HasColumnType("date");
 
@@ -610,15 +731,11 @@ namespace Financiera.Domain.ContextDB
 
                 entity.Property(e => e.MaxAmountCordoba).HasColumnType("money");
 
-                entity.Property(e => e.AmountBaseCordoba).HasColumnType("money");
-
                 entity.Property(e => e.MaxAmountDolar).HasColumnType("money");
 
-                entity.Property(e => e.AmounBaseDolar).HasColumnType("money");
+                entity.Property(e => e.NameCard).HasMaxLength(50);
 
-                entity.Property(e => e.NameCard)
-                    .IsRequired()
-                    .HasMaxLength(20);
+                entity.Property(e => e.NumerCard).HasMaxLength(22);
 
                 entity.Property(e => e.OpenDate).HasColumnType("date");
 
@@ -633,38 +750,80 @@ namespace Financiera.Domain.ContextDB
                 entity.HasOne(d => d.IdClientNavigation)
                     .WithMany(p => p.Cards)
                     .HasForeignKey(d => d.IdClient)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__Cards__id_Client__5CD6CB2B");
             });
 
             modelBuilder.Entity<CardDetail>(entity =>
             {
                 entity.HasKey(e => e.IdCardDetails)
-                    .HasName("PK__CardDeta__8B8DDC0267169511");
+                    .HasName("PK__CardDeta__8B8DDC02233FA25B");
 
                 entity.Property(e => e.IdCardDetails).HasColumnName("Id_CardDetails");
 
+                entity.Property(e => e.CodigoComercio).HasMaxLength(10);
+
                 entity.Property(e => e.Deposito).HasColumnType("money");
+
+                entity.Property(e => e.DireccionComercio).HasMaxLength(50);
 
                 entity.Property(e => e.IdCard).HasColumnName("id_Card");
 
-                entity.Property(e => e.IdEmployee).HasColumnName("id_Employee");
+                entity.Property(e => e.NombreComercio).HasMaxLength(30);
 
                 entity.Property(e => e.Retiro).HasColumnType("money");
 
+                entity.Property(e => e.Telefono).HasMaxLength(20);
+
                 entity.Property(e => e.TransactionDate).HasColumnType("date");
+
+                entity.Property(e => e.TypeGestion).HasMaxLength(20);
 
                 entity.HasOne(d => d.IdCardNavigation)
                     .WithMany(p => p.CardDetails)
                     .HasForeignKey(d => d.IdCard)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__CardDetai__id_Ca__5DCAEF64");
+                    .HasConstraintName("FK__CardDetai__id_Ca__1B9317B3");
+            });
 
-                entity.HasOne(d => d.IdEmployeeNavigation)
-                    .WithMany(p => p.CardDetails)
-                    .HasForeignKey(d => d.IdEmployee)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__CardDetai__id_Em__628FA481");
+            modelBuilder.Entity<CardsView>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("CardsView");
+
+                entity.Property(e => e.Cliente)
+                    .IsRequired()
+                    .HasMaxLength(101);
+
+                entity.Property(e => e.FechaCorte)
+                    .HasColumnType("date")
+                    .HasColumnName("Fecha_Corte");
+
+                entity.Property(e => e.FechaEmisión)
+                    .HasColumnType("date")
+                    .HasColumnName("Fecha_Emisión");
+
+                entity.Property(e => e.FechaExpiración)
+                    .HasColumnType("date")
+                    .HasColumnName("Fecha_Expiración");
+
+                entity.Property(e => e.FechaPago)
+                    .HasColumnType("date")
+                    .HasColumnName("Fecha_Pago");
+
+                entity.Property(e => e.Identification)
+                    .IsRequired()
+                    .HasMaxLength(20);
+
+                entity.Property(e => e.Tarjeta).HasMaxLength(22);
+
+                entity.Property(e => e.TmáximaCórdobas)
+                    .HasColumnType("money")
+                    .HasColumnName("TMáxima_Córdobas");
+
+                entity.Property(e => e.TmáximaDólares)
+                    .HasColumnType("money")
+                    .HasColumnName("TMáxima_Dólares");
             });
 
             modelBuilder.Entity<Client>(entity =>
@@ -700,6 +859,46 @@ namespace Financiera.Domain.ContextDB
                     .IsRequired()
                     .HasMaxLength(10);
             });
+
+            //modelBuilder.Entity<ClientsView>(entity =>
+            //{
+            //    entity.HasNoKey();
+
+            //    entity.ToView("ClientsView");
+
+            //    entity.Property(e => e.Apellidos)
+            //        .IsRequired()
+            //        .HasMaxLength(50);
+
+            //    entity.Property(e => e.Domicilio)
+            //        .IsRequired()
+            //        .HasMaxLength(50);
+
+            //    entity.Property(e => e.FechaNacimiento)
+            //        .HasColumnType("date")
+            //        .HasColumnName("Fecha_Nacimiento");
+
+            //    entity.Property(e => e.Id)
+            //        .ValueGeneratedOnAdd()
+            //        .HasColumnName("ID");
+
+            //    entity.Property(e => e.Identificación)
+            //        .IsRequired()
+            //        .HasMaxLength(20);
+
+            //    entity.Property(e => e.Nacionalidad)
+            //        .IsRequired()
+            //        .HasMaxLength(20);
+
+            //    entity.Property(e => e.Nombres)
+            //        .IsRequired()
+            //        .HasMaxLength(50);
+
+            //    entity.Property(e => e.NúmeroTelefonico)
+            //        .IsRequired()
+            //        .HasMaxLength(10)
+            //        .HasColumnName("Número_Telefonico");
+            //});
 
             modelBuilder.Entity<Employee>(entity =>
             {

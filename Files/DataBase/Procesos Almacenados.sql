@@ -122,18 +122,16 @@ go
 create procedure sp_InsertAccount(
 @identify nvarchar(20),
 @id_Hideline int,
-@Description nvarchar(25),
 @TypeAccount nvarchar(15),
 @TypeCoin nvarchar(15),
-@Status nvarchar(10),
 @MinAmount money,
 @OpenDate date
 )
 as
 DECLARE @id int
 	SET @id = (select Id_Client from Clients where Identification = @identify)
-insert into Accounts (id_Client,id_Hideline,Description_,Type_Account,Type_Coin,Status_,MinAmount,OpenDate)
-values(@id,@id_Hideline,dbo.CleanInput(@Description),dbo.CleanInput(@TypeAccount),dbo.CleanInput(@TypeCoin),dbo.CleanInput(@Status),@MinAmount,@OpenDate)
+insert into Accounts (id_Client,id_Hideline,Type_Account,Type_Coin,MinAmount,OpenDate)
+values(@id,@id_Hideline,dbo.CleanInput(@TypeAccount),dbo.CleanInput(@TypeCoin),@MinAmount,@OpenDate)
 go
 
 create procedure sp_UpdateClient(
@@ -168,6 +166,38 @@ if exists(select C.id_Client from Clients as C inner join Cards as CA on C.id_Cl
 go
 execute sp_BuscarTarjeta '001-050698-5689'
 drop procedure sp_BuscarTarjeta
+
+create procedure ReporteCuenta(
+@Identificacion nvarchar(20)
+)
+as 
+select AD.TransactionDate,
+AC.id_Client,
+(select (Clients.Names+' '+Clients.LastNames) from Clients where Identification = @Identificacion) as Titular,
+AD.typeMove as 'Tipo_Moviento',
+AD.TypeGestion as 'Tipo_Gestion',
+AD.description_ as 'Descripcion',
+AD.Deposito,
+AD.Retiro
+from AccountDetails as AD inner join Accounts as AC on AD.id_Account = AC.Id_Account
+select Saldo from Accounts where Id_Account = @Identificacion
+
+create procedure ReporteTarjeta(
+@Identificacion nvarchar(20)
+)
+as
+select 
+from CardDetails
+
+DBCC CHECKIDENT (AccountDetails, RESEED, 0)
+
+insert into AccountDetails(id_Account,Deposito,Retiro,TransactionDate,TypeGestion,typeMove,description_) 
+values (3,8000,0,GETDATE(),'Linea','Deposito','Deposito cuenta')
+
+insert into AccountDetails(id_Account,Deposito,Retiro,TransactionDate,TypeGestion,typeMove,description_) 
+values (3,0,5000,GETDATE(),'Mostrador','Debito','Compra mueble')
+
+
 
 backup database Financiera
 to disk = 'D:\Financiera.bak'

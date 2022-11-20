@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.txtAmount = new RJCodeAdvance.RJControls.RJTextBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cbTypeCoin = new RJCodeAdvance.RJControls.RJComboBox();
             this.cbTyCount = new RJCodeAdvance.RJControls.RJComboBox();
             this.lbCounts = new System.Windows.Forms.Label();
@@ -44,31 +43,12 @@
             this.btSearchAcc = new RJCodeAdvance.RJControls.RJButton();
             this.btDeleteAcc = new RJCodeAdvance.RJControls.RJButton();
             this.btAgg = new RJCodeAdvance.RJControls.RJButton();
+            this.tgStatus = new RJCodeAdvance.RJControls.RJToggleButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lbStatus = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccounts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPhoto)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtAmount
-            // 
-            this.txtAmount.BackColor = System.Drawing.SystemColors.Window;
-            this.txtAmount.BorderColor = System.Drawing.Color.Silver;
-            this.txtAmount.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtAmount.BorderRadius = 0;
-            this.txtAmount.BorderSize = 2;
-            this.txtAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtAmount.Location = new System.Drawing.Point(197, 50);
-            this.txtAmount.Margin = new System.Windows.Forms.Padding(4);
-            this.txtAmount.Multiline = false;
-            this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txtAmount.PasswordChar = false;
-            this.txtAmount.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtAmount.PlaceholderText = "Monto inicial";
-            this.txtAmount.Size = new System.Drawing.Size(239, 31);
-            this.txtAmount.TabIndex = 11;
-            this.txtAmount.Texts = "";
-            this.txtAmount.UnderlinedStyle = false;
             // 
             // cbTypeCoin
             // 
@@ -122,38 +102,39 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(530, 27);
+            this.label1.Location = new System.Drawing.Point(482, 136);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 20);
+            this.label1.Size = new System.Drawing.Size(126, 20);
             this.label1.TabIndex = 21;
-            this.label1.Text = "Tipo de cuenta";
+            this.label1.Text = "Estado de cuenta:";
             // 
             // dgvAccounts
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvAccounts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvAccounts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvAccounts.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAccounts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvAccounts.ColumnHeadersHeight = 4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAccounts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvAccounts.ColumnHeadersHeight = 30;
             this.dgvAccounts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAccounts.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAccounts.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvAccounts.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvAccounts.Location = new System.Drawing.Point(44, 273);
             this.dgvAccounts.Name = "dgvAccounts";
+            this.dgvAccounts.ReadOnly = true;
             this.dgvAccounts.RowHeadersVisible = false;
             this.dgvAccounts.RowTemplate.Height = 25;
             this.dgvAccounts.Size = new System.Drawing.Size(953, 150);
@@ -170,8 +151,8 @@
             this.dgvAccounts.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dgvAccounts.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvAccounts.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvAccounts.ThemeStyle.HeaderStyle.Height = 4;
-            this.dgvAccounts.ThemeStyle.ReadOnly = false;
+            this.dgvAccounts.ThemeStyle.HeaderStyle.Height = 30;
+            this.dgvAccounts.ThemeStyle.ReadOnly = true;
             this.dgvAccounts.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvAccounts.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvAccounts.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -179,6 +160,7 @@
             this.dgvAccounts.ThemeStyle.RowsStyle.Height = 25;
             this.dgvAccounts.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvAccounts.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvAccounts.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAccounts_CellContentDoubleClick);
             // 
             // txtDniClient
             // 
@@ -189,7 +171,7 @@
             this.txtDniClient.BorderSize = 2;
             this.txtDniClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtDniClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtDniClient.Location = new System.Drawing.Point(197, 111);
+            this.txtDniClient.Location = new System.Drawing.Point(203, 50);
             this.txtDniClient.Margin = new System.Windows.Forms.Padding(4);
             this.txtDniClient.Multiline = false;
             this.txtDniClient.Name = "txtDniClient";
@@ -224,10 +206,10 @@
             this.pickerDate.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.pickerDate.BorderSize = 0;
             this.pickerDate.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.pickerDate.Location = new System.Drawing.Point(482, 111);
+            this.pickerDate.Location = new System.Drawing.Point(203, 121);
             this.pickerDate.MinimumSize = new System.Drawing.Size(4, 35);
             this.pickerDate.Name = "pickerDate";
-            this.pickerDate.Size = new System.Drawing.Size(233, 35);
+            this.pickerDate.Size = new System.Drawing.Size(241, 35);
             this.pickerDate.SkinColor = System.Drawing.Color.Silver;
             this.pickerDate.TabIndex = 27;
             this.pickerDate.TextColor = System.Drawing.Color.White;
@@ -254,6 +236,7 @@
             this.txtSearch.TabIndex = 32;
             this.txtSearch.Texts = "";
             this.txtSearch.UnderlinedStyle = false;
+            this.txtSearch._TextChanged += new System.EventHandler(this.txtSearch__TextChanged);
             // 
             // btSearchAcc
             // 
@@ -301,7 +284,7 @@
             this.btAgg.FlatAppearance.BorderSize = 0;
             this.btAgg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btAgg.ForeColor = System.Drawing.Color.White;
-            this.btAgg.Location = new System.Drawing.Point(602, 217);
+            this.btAgg.Location = new System.Drawing.Point(613, 217);
             this.btAgg.Name = "btAgg";
             this.btAgg.Size = new System.Drawing.Size(110, 31);
             this.btAgg.TabIndex = 28;
@@ -310,10 +293,47 @@
             this.btAgg.UseVisualStyleBackColor = false;
             this.btAgg.Click += new System.EventHandler(this.btAgg_Click);
             // 
-            // UsCounts
+            // tgStatus
+            // 
+            this.tgStatus.AutoSize = true;
+            this.tgStatus.Location = new System.Drawing.Point(614, 136);
+            this.tgStatus.MinimumSize = new System.Drawing.Size(45, 22);
+            this.tgStatus.Name = "tgStatus";
+            this.tgStatus.OffBackColor = System.Drawing.Color.Salmon;
+            this.tgStatus.OffToggleColor = System.Drawing.Color.Gainsboro;
+            this.tgStatus.OnBackColor = System.Drawing.Color.LimeGreen;
+            this.tgStatus.OnToggleColor = System.Drawing.Color.WhiteSmoke;
+            this.tgStatus.Size = new System.Drawing.Size(45, 22);
+            this.tgStatus.TabIndex = 33;
+            this.tgStatus.UseVisualStyleBackColor = true;
+            this.tgStatus.CheckedChanged += new System.EventHandler(this.tgStatus_CheckedChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(528, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(108, 20);
+            this.label2.TabIndex = 34;
+            this.label2.Text = "Tipo de cuenta";
+            // 
+            // lbStatus
+            // 
+            this.lbStatus.AutoSize = true;
+            this.lbStatus.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbStatus.Location = new System.Drawing.Point(684, 136);
+            this.lbStatus.Name = "lbStatus";
+            this.lbStatus.Size = new System.Drawing.Size(0, 20);
+            this.lbStatus.TabIndex = 35;
+            // 
+            // UsAccounts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lbStatus);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.tgStatus);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btSearchAcc);
             this.Controls.Add(this.btDeleteAcc);
@@ -326,8 +346,7 @@
             this.Controls.Add(this.lbCounts);
             this.Controls.Add(this.cbTyCount);
             this.Controls.Add(this.cbTypeCoin);
-            this.Controls.Add(this.txtAmount);
-            this.Name = "UsCounts";
+            this.Name = "UsAccounts";
             this.Size = new System.Drawing.Size(1036, 462);
             this.Load += new System.EventHandler(this.UsCounts_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccounts)).EndInit();
@@ -338,7 +357,6 @@
         }
 
         #endregion
-        private RJCodeAdvance.RJControls.RJTextBox txtAmount;
         private RJCodeAdvance.RJControls.RJComboBox cbTypeCoin;
         private RJCodeAdvance.RJControls.RJComboBox cbTyCount;
         private System.Windows.Forms.Label lbCounts;
@@ -351,5 +369,8 @@
         private RJCodeAdvance.RJControls.RJButton btSearchAcc;
         private RJCodeAdvance.RJControls.RJButton btDeleteAcc;
         private RJCodeAdvance.RJControls.RJButton btAgg;
+        private RJCodeAdvance.RJControls.RJToggleButton tgStatus;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbStatus;
     }
 }

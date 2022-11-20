@@ -34,6 +34,7 @@ namespace Financiera.Presentation.Forms.UsControls
                     if (cl != null)
                     {                       
                         Identi = cl.Identification;
+                        MessageBox.Show($"Nombre: {cl.Names + " " + cl.LastNames}\nCedula: {cl.Identification}", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else { MessageBox.Show("Este cliente no existe"); }
                 }
@@ -60,7 +61,9 @@ namespace Financiera.Presentation.Forms.UsControls
                 OpenDate = DateTime.Parse(pickerDate.Text),
                 TypeAccount = cbTyCount.SelectedItem.ToString(),
                 TypeCoin = cbTypeCoin.SelectedItem.ToString(),
-                IdHideline =  1
+                IdHideline =  1,
+                Status = STATUS,
+                Saldo = 0
             };
             var result = AccountServices.InsertAccount(account);
             await result;
@@ -75,10 +78,35 @@ namespace Financiera.Presentation.Forms.UsControls
         private void btUptAcc_Click(object sender, EventArgs e)
         {
             
-            Reports.FormReports.FmClientReport clienteReporte = new Reports.FormReports.FmClientReport("001-040978-4895G", Connection.StringConnection);
-            clienteReporte.Show();
+           
           
 
+        }
+
+        private void txtSearch__TextChanged(object sender, EventArgs e)
+        {
+            //var query = from i in AccountServices.GetClientByDni(txtSearch.Texts);
+        }
+
+        private void dgvAccounts_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                var identi = int.Parse(dgvAccounts.Rows[e.RowIndex].Cells[0].Value.ToString());
+                Reports.FormReports.FmAccountReport Reporte = new Reports.FormReports.FmAccountReport(identi, Connection.StringConnection);
+                Reporte.Show();
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void tgStatus_CheckedChanged(object sender, EventArgs e)
+        {
+            if(tgStatus.CheckState == CheckState.Checked) { STATUS = "Habilitado"; }   
+            if(tgStatus.CheckState == CheckState.Unchecked) { STATUS = "Deshabilitado"; }
+            lbStatus.Text = STATUS;
         }
     }
 }
