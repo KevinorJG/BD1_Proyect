@@ -24,9 +24,9 @@ namespace Financiera.AppCore.Services
            return await repository.DeleteAccount(id);
         }
 
-        public Account GetAccountByDni(string dni)
+        public DataTable GetAccountsByDni(string dni)
         {
-            return repository.GetAccountByDni(dni);
+            return repository.GetAccountsByDni(dni);
         }
 
         public DataTable GetAccounts()

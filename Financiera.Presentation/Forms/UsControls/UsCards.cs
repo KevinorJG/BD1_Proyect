@@ -47,7 +47,9 @@ namespace Financiera.Presentation.Forms.UsControls
                         txtNameCard.Text = cl.Names + " " + cl.LastNames;
                         txtNCard.Text = number = Generator.GeneradorCodigo();
                         indeti = cl.Identification;
-                        MessageBox.Show($"Nombre: {cl.Names +" "+cl.LastNames}\nCedula: {cl.Identification}","Informacion",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        MessageBox.Show($"Nombre: {cl.Names +" "+cl.LastNames}\nCedula: " +
+                                        $"{cl.Identification}","Informacion",
+                                        MessageBoxButtons.OK,MessageBoxIcon.Information);
                     }
                     else { MessageBox.Show("Este cliente no existe"); }
                 }
@@ -134,7 +136,11 @@ namespace Financiera.Presentation.Forms.UsControls
 
         private void btSearchCard_Click(object sender, EventArgs e)
         {
-
+            var ls = CardServices.GetCardsByDni(txtSearch.Texts);
+            if (ls != null)
+            {
+                dgvCards.DataSource = ls;
+            }
         }
 
         private void txtMounOpen__TextChanged(object sender, EventArgs e)

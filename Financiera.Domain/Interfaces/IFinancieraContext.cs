@@ -20,12 +20,12 @@ namespace Financiera.Domain.Interfaces
 
         Task<int> InsertCard(Card entity);
         Task<bool> DeleteCard(int id);
-        Card GetCardByDni(string dni);
+        DataTable GetCardsByDni(string dni);
         DataTable GetCards();
 
         Task<int> InsertAccount(Account entity);
         Task<bool> DeleteAccount(int id);
-        Account GetAccountByDni(string dni);
+        DataTable GetAccountsByDni(string dni);
         DataTable GetAccounts();
 
     }

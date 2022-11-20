@@ -1,16 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\Financiera.Commons",
-    "\\Financiera.Commons\\Processes",
-    "\\Financiera.Domain",
-    "\\Financiera.Domain\\ContextDB",
-    "\\Financiera.Presentation",
-    "\\Financiera.Presentation\\Forms",
-    "\\Financiera.Presentation\\Forms\\Login",
-    "\\Financiera.Presentation\\Forms\\Main",
-    "\\Financiera.Presentation\\Forms\\UsControls"
+    ""
   ],
-  "SelectedNode": "\\Financiera.Presentation\\Forms\\UsControls\\UsCards.cs",
+  "SelectedNode": "\\Financiera_DBProyect.sln",
   "PreviewInSolutionExplorer": false
 }

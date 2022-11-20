@@ -287,10 +287,9 @@ namespace Financiera.Domain.ContextDB
             }
             return dt;
         }
-        public Card GetCardByDni(string dni)
+        public DataTable GetCardsByDni(string dni)
         {
-
-            Card cd = null;
+            DataTable data = new DataTable();
             try
             {
                 using (var conn = new SqlConnection(this.Database.GetConnectionString()))
@@ -307,15 +306,9 @@ namespace Financiera.Domain.ContextDB
                             Size = 20,
                             Value = dni
                         });
-                        SqlDataReader reader = cmd.ExecuteReader();
-                        while (reader.Read())
-                        {
-                            cd = new Card()
-                            {
-                                IdClient = int.Parse(reader["ID"].ToString()),
-
-                            };
-                        }
+                        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                        adapter.Fill(data);
+                        
                         cmd.Dispose();
                     }
                     conn.Close();
@@ -329,7 +322,7 @@ namespace Financiera.Domain.ContextDB
 
                 }
             }
-            return cd;
+            return data;
         }
         public async Task<int> InsertCard(Card entity)
         {
@@ -492,9 +485,41 @@ namespace Financiera.Domain.ContextDB
             }
             return dt;
         }
-        public Account GetAccountByDni(string dni)
+        public DataTable GetAccountsByDni(string dni)
         {
-            throw new NotImplementedException();
+            DataTable data = new DataTable();
+            try
+            {
+                using (var conn = new SqlConnection(this.Database.GetConnectionString()))
+                {
+                    conn.Open();
+                    using (var cmd = new SqlCommand(this.Database.GetConnectionString(), conn))
+                    {
+                        cmd.CommandText = "sp_BuscarCuenta";
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add(new SqlParameter()
+                        {
+                            ParameterName = "@Identification",
+                            SqlDbType = SqlDbType.NVarChar,
+                            Size = 20,
+                            Value = dni
+                        });
+                        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                        adapter.Fill(data);
+                        cmd.Dispose();
+                    }
+                    conn.Close();
+                    conn.Dispose();
+                }
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 229)
+                {
+
+                }
+            }
+            return data;
         }
 
         public async Task<int> InsertAccount(Account entity)

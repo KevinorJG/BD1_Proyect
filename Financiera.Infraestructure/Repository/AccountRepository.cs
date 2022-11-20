@@ -23,9 +23,9 @@ namespace Financiera.Infraestructure.Repository
             return await Db.DeleteAccount(id);
         }
 
-        public Account GetAccountByDni(string dni)
+        public DataTable GetAccountsByDni(string dni)
         {
-            return Db.GetAccountByDni(dni);
+            return Db.GetAccountsByDni(dni);
         }
 
         public DataTable GetAccounts()

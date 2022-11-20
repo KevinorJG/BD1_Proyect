@@ -36,24 +36,32 @@ namespace Financiera.Presentation.Forms.UsControls
         private async void btAgg_Click(object sender, EventArgs e)
         {
             
-            Client client = new Client()
+            if(txtNames.Text == string.Empty || txtSurnames.Text == string.Empty || txtNationality.Text == string.Empty || txtPhone.Text == string.Empty || txtDirection.Text == string.Empty)
             {
-                Names = txtNames.Text,
-                LastNames = txtSurnames.Text,
-                Identification = txtDni.Text,
-                Nacionality = txtNationality.Text,
-                BirthDate = DateTime.Parse(pickerDate.Text),
-                Phone = txtPhone.Text.ToString(),
-                Direction = txtDirection.Text.ToString(),
-            };
-
-            var result = ClientServices.Save(client);
-            await result;
-            if (result.IsCompleted)
-            {
-                MessageBox.Show("Agregado");
-                GetClients();
+                MessageBox.Show("Asegurese de llenar todos los campos","Falta informacion",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
+            else
+            {
+                Client client = new Client()
+                {
+                    Names = txtNames.Text,
+                    LastNames = txtSurnames.Text,
+                    Identification = txtDni.Text,
+                    Nacionality = txtNationality.Text,
+                    BirthDate = DateTime.Parse(pickerDate.Text),
+                    Phone = txtPhone.Text.ToString(),
+                    Direction = txtDirection.Text.ToString(),
+                };
+
+                var result = ClientServices.Save(client);
+                await result;
+                if (result.IsCompleted)
+                {
+                    MessageBox.Show("Agregado");
+                    GetClients();
+                }
+            }
+            
         }
 
         private void txtDni_KeyPress(object sender, KeyPressEventArgs e)
@@ -126,8 +134,15 @@ namespace Financiera.Presentation.Forms.UsControls
             try
             {
                 identi = Convert.ToString(dvgClients.Rows[e.RowIndex].Cells[4].Value);
-                //Reports.FormReports.FmClientReport clienteReporte = new Reports.FormReports.FmClientReport(identi, Connection.StringConnection);
-                //clienteReporte.Show();
+                var cl = ClientServices.GetClientByDni(identi);
+                id = cl.IdClient;
+                txtNames.Text = cl.Names;
+                txtSurnames.Text = cl.LastNames;
+                txtDni.Text = cl.Identification;
+                txtPhone.Text = cl.Phone;
+                txtDirection.Text = cl.Direction;
+                txtNationality.Text = cl.Nacionality;
+                pickerDate.Text = cl.BirthDate.ToString();
             }
             catch (Exception ex)
             {

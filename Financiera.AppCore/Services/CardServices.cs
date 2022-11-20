@@ -24,9 +24,9 @@ namespace Financiera.AppCore.Services
             return await repository.DeleteCard(id);
         }
 
-        public Card GetCardByDni(string dni)
+        public DataTable GetCardsByDni(string dni)
         {
-           return repository.GetCardByDni(dni);
+           return repository.GetCardsByDni(dni);
         }
 
         public DataTable GetCards()

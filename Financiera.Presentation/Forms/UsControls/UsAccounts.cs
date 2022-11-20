@@ -73,16 +73,6 @@ namespace Financiera.Presentation.Forms.UsControls
             }
         }
 
-      
-
-        private void btUptAcc_Click(object sender, EventArgs e)
-        {
-            
-           
-          
-
-        }
-
         private void txtSearch__TextChanged(object sender, EventArgs e)
         {
             //var query = from i in AccountServices.GetClientByDni(txtSearch.Texts);
@@ -107,6 +97,23 @@ namespace Financiera.Presentation.Forms.UsControls
             if(tgStatus.CheckState == CheckState.Checked) { STATUS = "Habilitado"; }   
             if(tgStatus.CheckState == CheckState.Unchecked) { STATUS = "Deshabilitado"; }
             lbStatus.Text = STATUS;
+        }
+
+        private void btSearchAcc_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var ls = AccountServices.GetAccountsByDni(txtSearch.Texts);
+                if (ls != null)
+                {
+                    dgvAccounts.DataSource = ls;
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+          
         }
     }
 }

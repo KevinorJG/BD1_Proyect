@@ -23,9 +23,9 @@ namespace Financiera.Infraestructure.Repository
            return await Db.DeleteCard(id);
         }
 
-        public Card GetCardByDni(string dni)
+        public DataTable GetCardsByDni(string dni)
         {
-            return Db.GetCardByDni(dni);
+            return Db.GetCardsByDni(dni);
         }
 
         public DataTable GetCards()

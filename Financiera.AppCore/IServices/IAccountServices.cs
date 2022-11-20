@@ -12,7 +12,7 @@ namespace Financiera.AppCore.IServices
     {
         Task<int> InsertAccount(Account entity);
         Task<bool> DeleteAccount(int id);
-        Account GetAccountByDni(string dni);
+        DataTable GetAccountsByDni(string dni);
         DataTable GetAccounts();
         Client GetClientByDni(string dni);
     }

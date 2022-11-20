@@ -255,6 +255,7 @@
             this.btSearchAcc.Text = "Buscar";
             this.btSearchAcc.TextColor = System.Drawing.Color.White;
             this.btSearchAcc.UseVisualStyleBackColor = false;
+            this.btSearchAcc.Click += new System.EventHandler(this.btSearchAcc_Click);
             // 
             // btDeleteAcc
             // 
