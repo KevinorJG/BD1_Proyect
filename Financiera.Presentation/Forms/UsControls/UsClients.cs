@@ -12,7 +12,7 @@ namespace Financiera.Presentation.Forms.UsControls
 {
     public partial class UsClients : UserControl
     {
-        protected IClientServices ClientServices;      
+        protected IClientServices ClientServices;
         int id = 0;
         public UsClients()
         {
@@ -22,11 +22,11 @@ namespace Financiera.Presentation.Forms.UsControls
         private void UsClients_Load(object sender, EventArgs e)
         {
             GetClients();
-            if(User.Rol == Roles.Administrador.ToString())
+            if (User.Rol == Roles.Administrador.ToString())
             {
                 this.btDeleteClient.Enabled = true;
             }
-            else if(User.Rol == Roles.Empleado.ToString())
+            else if (User.Rol == Roles.Empleado.ToString())
             {
                 this.btDeleteClient.Enabled = false;
             }
@@ -38,10 +38,11 @@ namespace Financiera.Presentation.Forms.UsControls
         }
 
         private async void btAgg_Click(object sender, EventArgs e)
-        {           
-            if(txtNames.Text == string.Empty || txtSurnames.Text == string.Empty || txtNationality.Text == string.Empty || txtPhone.Text == string.Empty || txtDirection.Text == string.Empty)
+        {
+
+            if (txtNames.Text == string.Empty || txtSurnames.Text == string.Empty || txtNationality.Text == string.Empty || txtPhone.Text == string.Empty || txtDirection.Text == string.Empty)
             {
-                MessageBox.Show("Asegurese de llenar todos los campos","Falta informacion",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Asegurese de llenar todos los campos", "Falta informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -58,19 +59,26 @@ namespace Financiera.Presentation.Forms.UsControls
 
                 var result = ClientServices.Save(client);
                 await result;
-                if (result.IsCompleted)
+                if (result.Result == 0)
+                {
+                    MessageBox.Show(Domain.ContextDB.Message.Exception, "Cliente existente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
                 {
                     MessageBox.Show("Agregado");
                     GetClients();
+                    return;
                 }
-            }           
+            }
+
         }
 
         private void btSearchClient_Click(object sender, EventArgs e)
         {
-            OnClick(sender,e);
+
             var cl = ClientServices.GetClientByDni(txtSearch.Texts);
-            if(cl != null)
+            if (cl != null)
             {
                 id = cl.IdClient;
                 txtNames.Text = cl.Names;
@@ -80,11 +88,12 @@ namespace Financiera.Presentation.Forms.UsControls
                 txtDirection.Text = cl.Direction;
                 txtNationality.Text = cl.Nacionality;
                 pickerDate.Text = cl.BirthDate.ToString();
+                OnClick(sender, e);
             }
             else
             {
-                MessageBox.Show(Domain.ContextDB.Message.Exception, "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Error);               
-            }           
+                MessageBox.Show(Domain.ContextDB.Message.Exception, "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public void GetClients()
@@ -107,7 +116,7 @@ namespace Financiera.Presentation.Forms.UsControls
                     this.txtNames.Enabled = true;
                     this.txtSurnames.Enabled = true;
                     this.btAgg.Enabled = true;
-                    break;                                              
+                    break;
             }
         }
 
@@ -115,24 +124,24 @@ namespace Financiera.Presentation.Forms.UsControls
         {
             OnClick(sender, e);
             Client client = new Client()
-            {             
+            {
                 Identification = txtDni.Text,
                 Nacionality = txtNationality.Text,
                 Phone = txtPhone.Text.ToString(),
                 Direction = txtDirection.Text.ToString(),
                 BirthDate = DateTime.Parse(pickerDate.Text)
-            };           
-            ClientServices.UpdateClient(client,id);
+            };
+            ClientServices.UpdateClient(client, id);
             GetClients();
         }
 
         private void dvgClients_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {        
+        {
             try
             {
                 var identi = Convert.ToString(dvgClients.Rows[e.RowIndex].Cells[4].Value);
                 var cl = ClientServices.GetClientByDni(identi);
-                if(cl != null)
+                if (cl != null)
                 {
                     id = cl.IdClient;
                     txtNames.Text = cl.Names;
@@ -142,12 +151,12 @@ namespace Financiera.Presentation.Forms.UsControls
                     txtDirection.Text = cl.Direction;
                     txtNationality.Text = cl.Nacionality;
                     pickerDate.Text = cl.BirthDate.ToString();
-                }               
+                }
             }
             catch (Exception ex)
             {
 
-            }           
+            }
         }
     }
 }

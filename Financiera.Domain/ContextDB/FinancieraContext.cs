@@ -112,8 +112,11 @@ namespace Financiera.Domain.ContextDB
         public async Task<int> InsertClient(Client entity)
         {
             Task<int> result = null;
+            var consult = Clients.FirstOrDefaultAsync(x => x.Identification == entity.Identification).Result;
+           
             try
             {
+                if (consult != null) { throw new Exception("Este cliente ya existe");}
                 var execute = Database.ExecuteSqlRawAsync("[dbo].[sp_InsertClient] @names,@lastnames,@Direction,@phone,@Birth,@Nation,@dni", new SqlParameter[] {
                         new SqlParameter() {
                             ParameterName = "@names",
@@ -172,9 +175,10 @@ namespace Financiera.Domain.ContextDB
             }
             catch (Exception ex)
             {
-                Message.Exception = ex.Message;
+                Message.Exception = ex.Message;               
             }
-            return result.Result;
+            var value = (result != null) ? result.Result : 0;
+            return value;
         }
         public async Task<bool> DeleteClient(int id)
         {
@@ -322,8 +326,10 @@ namespace Financiera.Domain.ContextDB
         public async Task<int> InsertCard(Card entity)
         {
             Task<int> result = null;
+            var consult = Cards.FirstOrDefaultAsync(x => x.NumerCard == entity.NumerCard);
             try
             {
+                if (consult != null) { throw new Exception("Ya existe este numero de tarjeta"); }
                 var execute = Database.ExecuteSqlRawAsync("[dbo].[sp_InsertCard] @identi,@NameCard,@TyperCard,@TypeCoin,@OpenDate,@ExpireDate,@MaxAmountD,@MaxAmountC,@BaseAmountD,@BaseAmountC,@FechaPago ,@FechaCorte,@NCard", new SqlParameter[] {
                         new SqlParameter() {
                             ParameterName = "@identi",
@@ -430,7 +436,8 @@ namespace Financiera.Domain.ContextDB
             {
                 Message.Exception = ex.Message;
             }
-            return result.Result;
+            var value = (result != null) ? result.Result : 0;
+            return value;
         }
         public async Task<bool> DeleteCard(int id)
         {
