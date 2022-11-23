@@ -1,42 +1,17 @@
 	/****** Script for SelectTopNRows command from SSMS  ******/
-SELECT TOP (1000) [id_Client]
-      ,[Names]
-      ,[LastNames]
-      ,[Direction]
-      ,[Phone]
-      ,[Birthdate]
-      ,[Nacionality]
-      ,[Identification]
-  FROM [Financiera].[dbo].[Clients]
 
-  drop procedure sp_InsertClient
-  drop procedure sp_InsertEmployee
-
-  create procedure sp_InsertClient
-	@names nvarchar(50),
-	@lastnames nvarchar(50),
-	@Direction nvarchar(50),
-	@phone nvarchar(15),
-	@Birth date,
-	@Nation nvarchar(20),
-	@dni nvarchar(20)
-	as	
-	DECLARE @value1 nvarchar(50),
-			@value2 nvarchar(50),
-			@value3 nvarchar(50),
-			@value4 nvarchar(15),
-			@value5 date,
-			@value6 nvarchar(20),
-			@value7 nvarchar(20)
-	set @value1 = [dbo].[CleanInput](@names)
-	set @value2 = [dbo].[CleanInput](@lastnames)
-	set @value3 = [dbo].[CleanInput](@Direction)
-	set @value4 = [dbo].[CleanInput](@phone)
-	set @value5 = [dbo].[CleanInput](@Birth)
-	set @value6 = [dbo].[CleanInput](@Nation)
-	set @value7 = [dbo].[CleanInput](@dni)
+create procedure sp_InsertClient
+@names nvarchar(50),
+@lastnames nvarchar(50),
+@Direction nvarchar(50),
+@phone nvarchar(15),
+@Birth date,
+@Nation nvarchar(20),
+@dni nvarchar(20)
+as		
 	insert into Clients(Names,LastNames,Direction,Phone,Birthdate,Nacionality,Identification)
-	values (@value1,@value2,@value3,@value4,@value5,@value6,@value7)
+	values (@names,@lastnames,@Direction,@phone,@Birth,@Nation,@dni)
+	go
   
 create procedure [dbo].[sp_ValidarAcceso]
 @usuario varchar(50)
@@ -54,7 +29,6 @@ create procedure sp_InsertEmployee
 @Surnames nvarchar(20),
 @Roll nvarchar(15),
 @Status nvarchar(10)
-
 as
 if not exists(select EM.DNI,EM.Roll from Employees AS EM
 			where Em.DNI = @Dni and EM.Roll = @Roll)
@@ -66,6 +40,7 @@ if not exists(select EM.DNI,EM.Roll from Employees AS EM
 			BEGIN
 			RAISERROR ('Empleado ya existe',11,1)
 			END
+go
 
 create procedure sp_BuscarClient
 @Identification nvarchar(20)
@@ -79,22 +54,8 @@ if exists(select C.Id_Client from Clients as C
 			BEGIN
 			RAISERROR ('Cliente no existe',11,1)
 			END
-
-create procedure sp_ClientAccount
-@Identification nvarchar(20)
-as
-	if exists(select C.Identification from Clients as C inner join Accounts as A on C.Id_Client = A.id_Client
-				where C.Identification = @Identification)
-				BEGIN
-				select (C.Names+' '+C.LastNames) as Client,C.Identification, A.Type_Account,A.Type_Coin,A.Status_,A.OpenDate,ACD.Deposito from Clients as C 
-				inner join Accounts as A on C.Id_Client = A.id_Client
-				inner join AccountDetails ACD on A.Id_Account = ACD.id_Account
- 				END
-				else
-				BEGIN
-				RAISERROR ('No existe',11,1)
-				END
 go
+
 create procedure sp_InsertCard(
 @identi nvarchar(20),
 @NameCard nvarchar(10),
@@ -124,14 +85,15 @@ create procedure sp_InsertAccount(
 @id_Hideline int,
 @TypeAccount nvarchar(15),
 @TypeCoin nvarchar(15),
-@MinAmount money,
-@OpenDate date
+@saldo money,
+@OpenDate date,
+@Status nvarchar(20)
 )
 as
 DECLARE @id int
 	SET @id = (select Id_Client from Clients where Identification = @identify)
-insert into Accounts (id_Client,id_Hideline,Type_Account,Type_Coin,MinAmount,OpenDate)
-values(@id,@id_Hideline,dbo.CleanInput(@TypeAccount),dbo.CleanInput(@TypeCoin),@MinAmount,@OpenDate)
+insert into Accounts (id_Client,id_Hideline,Type_Account,Type_Coin,Saldo,OpenDate,Status_)
+values(@id,@id_Hideline,dbo.CleanInput(@TypeAccount),dbo.CleanInput(@TypeCoin),@saldo,@OpenDate,@Status)
 go
 
 create procedure sp_UpdateClient(
@@ -139,11 +101,12 @@ create procedure sp_UpdateClient(
 @Direction nvarchar(50),
 @Phone nvarchar(10),
 @Nationality nvarchar(20),
-@Identification nvarchar(20)
+@Identification nvarchar(20),
+@Date Date
 )
 as
 UPDATE Clients
-set Direction = @Direction, Phone = @Phone, Nacionality = @Nationality, Identification = @Identification
+set Direction = @Direction, Phone = @Phone, Nacionality = @Nationality, Identification = @Identification,BirthDate = @Date
 where Id_Client = @id_Client
 go
 
@@ -151,7 +114,7 @@ create procedure sp_BuscarTarjeta(
 @Identification nvarchar(20)
 )
 as
-if exists(select C.id_Client from Clients as C inner join Cards as CA on C.id_Client = CA.id_Client
+if exists(select C.id_Client from Clients as C
 			where C.Identification = @Identification)
 			BEGIN
 			DECLARE @id int
@@ -164,39 +127,62 @@ if exists(select C.id_Client from Clients as C inner join Cards as CA on C.id_Cl
 			END
 
 go
-execute sp_BuscarTarjeta '001-050698-5689'
-drop procedure sp_BuscarTarjeta
+create procedure sp_BuscarCuenta(
+@Identification nvarchar(20)
+)
+as
+if exists(select C.id_Client from Clients as C
+			where C.Identification = @Identification)
+			BEGIN
+			select * from AccountsView where AccountsView.[Identificacion_Cliente] = @Identification
+			END
+			else
+			BEGIN
+			RAISERROR ('Cuenta no existe',11,1)
+			END
+go
 
 create procedure ReporteCuenta(
-@Identificacion nvarchar(20)
+@Id_ACC int
 )
 as 
 select AD.TransactionDate,
 AC.id_Client,
-(select (Clients.Names+' '+Clients.LastNames) from Clients where Identification = @Identificacion) as Titular,
+AC.Id_Account,
+Cl.Names+' '+CL.LastNames as Titular,
 AD.typeMove as 'Tipo_Moviento',
 AD.TypeGestion as 'Tipo_Gestion',
 AD.description_ as 'Descripcion',
 AD.Deposito,
-AD.Retiro
+AD.Retiro,
+AC.Saldo
 from AccountDetails as AD inner join Accounts as AC on AD.id_Account = AC.Id_Account
-select Saldo from Accounts where Id_Account = @Identificacion
+inner join Clients as CL on AC.id_Client = CL.Id_Client
+where AC.Id_Account = @Id_ACC
+go
 
 create procedure ReporteTarjeta(
-@Identificacion nvarchar(20)
+@Id_Card int
 )
 as
 select 
-from CardDetails
-
-DBCC CHECKIDENT (AccountDetails, RESEED, 0)
-
-insert into AccountDetails(id_Account,Deposito,Retiro,TransactionDate,TypeGestion,typeMove,description_) 
-values (3,8000,0,GETDATE(),'Linea','Deposito','Deposito cuenta')
-
-insert into AccountDetails(id_Account,Deposito,Retiro,TransactionDate,TypeGestion,typeMove,description_) 
-values (3,0,5000,GETDATE(),'Mostrador','Debito','Compra mueble')
-
+CD.Pago,
+CD.Retiro,
+CD.TransactionDate,
+CD.TypeGestion,
+CD.NombreComercio,
+CD.CodigoComercio,
+CD.DireccionComercio,
+CD.Telefono,
+C.NameCard,
+C.NumerCard,
+(CL.Names+' '+CL.LastNames) as Propietario,
+Cl.Identification
+from CardDetails as CD inner join Cards as C
+on CD.id_Card = C.Id_Card inner join Clients as Cl
+on C.id_Client = CL.Id_Client
+where C.Id_Card = @Id_Card
+go
 
 
 backup database Financiera

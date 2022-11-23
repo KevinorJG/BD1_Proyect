@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Financiera.Domain",
+    "\\Financiera.Domain\\ContextDB"
   ],
-  "SelectedNode": "\\Financiera_DBProyect.sln",
   "PreviewInSolutionExplorer": false
 }

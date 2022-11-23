@@ -12,8 +12,7 @@ namespace Financiera.Presentation.Forms.UsControls
 {
     public partial class UsClients : UserControl
     {
-        protected IClientServices ClientServices;
-        public static string identi = string.Empty;
+        protected IClientServices ClientServices;      
         int id = 0;
         public UsClients()
         {
@@ -33,9 +32,13 @@ namespace Financiera.Presentation.Forms.UsControls
             }
         }
 
-        private async void btAgg_Click(object sender, EventArgs e)
+        public void SetServices(IClientServices clientServices)
         {
-            
+            this.ClientServices = clientServices;
+        }
+
+        private async void btAgg_Click(object sender, EventArgs e)
+        {           
             if(txtNames.Text == string.Empty || txtSurnames.Text == string.Empty || txtNationality.Text == string.Empty || txtPhone.Text == string.Empty || txtDirection.Text == string.Empty)
             {
                 MessageBox.Show("Asegurese de llenar todos los campos","Falta informacion",MessageBoxButtons.OK,MessageBoxIcon.Error);
@@ -60,56 +63,51 @@ namespace Financiera.Presentation.Forms.UsControls
                     MessageBox.Show("Agregado");
                     GetClients();
                 }
-            }
-            
-        }
-
-        private void txtDni_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-        public void SetServices(IClientServices clientServices)
-        {
-            this.ClientServices = clientServices;
+            }           
         }
 
         private void btSearchClient_Click(object sender, EventArgs e)
         {
             OnClick(sender,e);
             var cl = ClientServices.GetClientByDni(txtSearch.Texts);
-            id = cl.IdClient;
-            txtNames.Text = cl.Names;
-            txtSurnames.Text = cl.LastNames;
-            txtDni.Text = cl.Identification;
-            txtPhone.Text = cl.Phone;
-            txtDirection.Text = cl.Direction;
-            txtNationality.Text = cl.Nacionality;
-            pickerDate.Text = cl.BirthDate.ToString();
+            if(cl != null)
+            {
+                id = cl.IdClient;
+                txtNames.Text = cl.Names;
+                txtSurnames.Text = cl.LastNames;
+                txtDni.Text = cl.Identification;
+                txtPhone.Text = cl.Phone;
+                txtDirection.Text = cl.Direction;
+                txtNationality.Text = cl.Nacionality;
+                pickerDate.Text = cl.BirthDate.ToString();
+            }
+            else
+            {
+                MessageBox.Show(Domain.ContextDB.Message.Exception, "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Error);               
+            }           
         }
+
         public void GetClients()
         {
             dvgClients.DataSource = ClientServices.GetClients();
         }
+
         private void OnClick(object sender, EventArgs e)
         {
             var bt = (RJButton)sender;
-
             switch (bt.Name)
             {
                 case "btSearchClient":
                     this.txtNames.Enabled = false;
                     this.txtSurnames.Enabled = false;
-                    //this.pickerDate.Enabled = false;
                     this.btAgg.Enabled = false;
                     break;
 
                 case "btUpdate":
                     this.txtNames.Enabled = true;
                     this.txtSurnames.Enabled = true;
-                    //this.pickerDate.Enabled = true;
                     this.btAgg.Enabled = true;
-                    break;             
-                                    
+                    break;                                              
             }
         }
 
@@ -129,30 +127,27 @@ namespace Financiera.Presentation.Forms.UsControls
         }
 
         private void dvgClients_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-          
+        {        
             try
             {
-                identi = Convert.ToString(dvgClients.Rows[e.RowIndex].Cells[4].Value);
+                var identi = Convert.ToString(dvgClients.Rows[e.RowIndex].Cells[4].Value);
                 var cl = ClientServices.GetClientByDni(identi);
-                id = cl.IdClient;
-                txtNames.Text = cl.Names;
-                txtSurnames.Text = cl.LastNames;
-                txtDni.Text = cl.Identification;
-                txtPhone.Text = cl.Phone;
-                txtDirection.Text = cl.Direction;
-                txtNationality.Text = cl.Nacionality;
-                pickerDate.Text = cl.BirthDate.ToString();
+                if(cl != null)
+                {
+                    id = cl.IdClient;
+                    txtNames.Text = cl.Names;
+                    txtSurnames.Text = cl.LastNames;
+                    txtDni.Text = cl.Identification;
+                    txtPhone.Text = cl.Phone;
+                    txtDirection.Text = cl.Direction;
+                    txtNationality.Text = cl.Nacionality;
+                    pickerDate.Text = cl.BirthDate.ToString();
+                }               
             }
             catch (Exception ex)
             {
 
-            }
-           
-        }
-
-        private void txtSearch__TextChanged(object sender, EventArgs e)
-        {
+            }           
         }
     }
 }

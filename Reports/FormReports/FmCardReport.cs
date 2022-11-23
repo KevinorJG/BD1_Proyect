@@ -14,12 +14,7 @@ namespace Reports.FormReports
     {
         private int id = 0;
         private string Connection = string.Empty;
-
-        public FmCardReport()
-        {
-            
-        }
-
+     
         public FmCardReport(int id, string connection)
         {
             this.id = id;

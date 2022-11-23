@@ -1,4 +1,5 @@
 ﻿using Financiera.Commons.Processes;
+using Financiera.Domain.Entities;
 using System;
 using System.Data;
 using System.Drawing;
@@ -96,15 +97,22 @@ namespace Financiera.Presentation.Forms.Login
 
                 if (Connection.State == ConnectionState.Open)
                 {
-                    MessageBox.Show("Conectado");
+                    MessageBox.Show("Conectado","Estado de conexión",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     this.Close();
                     this.Dispose();
-                    
+                    return;
                 }
                 if (Connection.State == ConnectionState.Closed || Connection.StatusRol == false)
                 {
+                    if (Domain.ContextDB.Message.SqlException)
+                    {
+                        MessageBox.Show($"{Domain.ContextDB.Message.Exception}", "Error de conexión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        MessageBox.Show(Domain.ContextDB.Message.Error,"Credenciales",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                    }
 
-                    MessageBox.Show("No Conectado");
                 }
             }
             else

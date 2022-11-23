@@ -8,11 +8,12 @@ using System.Threading.Tasks;
 using Financiera.Domain.Interfaces;
 using Financiera.Domain.Views;
 
+
 #nullable disable
 
 namespace Financiera.Domain.ContextDB
 {
-    public partial class FinancieraContext : DbContext,IFinancieraContext
+    public partial class FinancieraContext : DbContext, IFinancieraContext
     {
         public FinancieraContext()
         {
@@ -56,7 +57,7 @@ namespace Financiera.Domain.ContextDB
             }
             catch (Exception ex)
             {
-
+                Message.Exception = ex.Message;
             }
 
             return dt;
@@ -103,12 +104,8 @@ namespace Financiera.Domain.ContextDB
             }
             catch (SqlException ex)
             {
-                if (ex.Number == 229)
-                {
-
-                }
+                Message.Exception = ex.Message;
             }
-
 
             return cl;
         }
@@ -175,7 +172,7 @@ namespace Financiera.Domain.ContextDB
             }
             catch (Exception ex)
             {
-
+                Message.Exception = ex.Message;
             }
             return result.Result;
         }
@@ -195,7 +192,7 @@ namespace Financiera.Domain.ContextDB
             }
             catch (Exception ex)
             {
-
+                Message.Exception = ex.Message;
             }
             return result.IsCompleted;
         }
@@ -254,7 +251,7 @@ namespace Financiera.Domain.ContextDB
             }
             catch (Exception ex)
             {
-
+                Message.Exception = ex.Message;
             }
 
             return query.IsCompleted;
@@ -283,7 +280,7 @@ namespace Financiera.Domain.ContextDB
             }
             catch (Exception ex)
             {
-
+                Message.Exception = ex.Message;
             }
             return dt;
         }
@@ -308,7 +305,7 @@ namespace Financiera.Domain.ContextDB
                         });
                         SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                         adapter.Fill(data);
-                        
+
                         cmd.Dispose();
                     }
                     conn.Close();
@@ -317,10 +314,8 @@ namespace Financiera.Domain.ContextDB
             }
             catch (SqlException ex)
             {
-                if (ex.Number == 229)
-                {
-
-                }
+                Message.Exception = ex.Message;
+                data = null;
             }
             return data;
         }
@@ -433,7 +428,7 @@ namespace Financiera.Domain.ContextDB
             }
             catch (Exception ex)
             {
-
+                Message.Exception = ex.Message;
             }
             return result.Result;
         }
@@ -453,7 +448,7 @@ namespace Financiera.Domain.ContextDB
             }
             catch (Exception ex)
             {
-
+                Message.Exception = ex.Message;
             }
             return result.IsCompleted;
         }
@@ -481,7 +476,7 @@ namespace Financiera.Domain.ContextDB
             }
             catch (Exception ex)
             {
-
+                Message.Exception = ex.Message;
             }
             return dt;
         }
@@ -514,10 +509,8 @@ namespace Financiera.Domain.ContextDB
             }
             catch (SqlException ex)
             {
-                if (ex.Number == 229)
-                {
-
-                }
+                Message.Exception = ex.Message;
+                data = null;
             }
             return data;
         }
@@ -569,7 +562,7 @@ namespace Financiera.Domain.ContextDB
                             Direction = System.Data.ParameterDirection.Input,
                             Value = entity.OpenDate
                         },
-                        
+
                         new SqlParameter() {
                             ParameterName = "@Status",
                             SqlDbType =  System.Data.SqlDbType.NVarChar,
@@ -583,7 +576,7 @@ namespace Financiera.Domain.ContextDB
             }
             catch (Exception ex)
             {
-
+                Message.Exception = ex.Message;
             }
             return result.Result;
         }
@@ -603,7 +596,7 @@ namespace Financiera.Domain.ContextDB
             }
             catch (Exception ex)
             {
-
+                Message.Exception = ex.Message;
             }
             return result.IsCompleted;
         }
@@ -982,5 +975,11 @@ namespace Financiera.Domain.ContextDB
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+    }
+    public static class Message
+    {
+        public static string Exception { get; set; }
+        public static string Error { get; set; }
+        public static bool SqlException {get; set;}
     }
 }

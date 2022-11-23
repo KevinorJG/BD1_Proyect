@@ -61,10 +61,19 @@ create trigger RetiroCuenta
 on AccountDetails
 For insert
 as
- UPDATE AC
-   SET Saldo =(AC.Saldo - I.Retiro)
-   FROM Accounts AS AC INNER JOIN INSERTED AS I
-   ON AC.Id_Account = I.id_Account
+BEGIN
+	BEGIN TRY
+		UPDATE AC
+		SET Saldo =(AC.Saldo - I.Retiro)
+		FROM Accounts AS AC INNER JOIN INSERTED AS I
+		ON AC.Id_Account = I.id_Account
+		COMMIT TRAN
+	END TRY
+	BEGIN CATCH
+		ROLLBACK
+		RAISERROR('No puede retirar esa cantidad',11,1)
+	END CATCH
+END
 go
 
 insert into AccountDetails(id_Account,Deposito,Retiro,TransactionDate,TypeGestion,typeMove,description_) 

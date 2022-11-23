@@ -194,7 +194,7 @@
             this.pbxPhoto.BorderSize = 2;
             this.pbxPhoto.GradientAngle = 50F;
             this.pbxPhoto.Image = global::Financiera.Presentation.Properties.Resources.value;
-            this.pbxPhoto.Location = new System.Drawing.Point(27, 23);
+            this.pbxPhoto.Location = new System.Drawing.Point(44, 28);
             this.pbxPhoto.Name = "pbxPhoto";
             this.pbxPhoto.Size = new System.Drawing.Size(100, 100);
             this.pbxPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -236,7 +236,6 @@
             this.txtSearch.TabIndex = 32;
             this.txtSearch.Texts = "";
             this.txtSearch.UnderlinedStyle = false;
-            this.txtSearch._TextChanged += new System.EventHandler(this.txtSearch__TextChanged);
             // 
             // btSearchAcc
             // 

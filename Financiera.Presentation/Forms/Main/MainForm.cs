@@ -241,12 +241,10 @@ namespace Financiera.Presentation.Forms.Main
             this.Close();
             this.Dispose();
             Optimize();
-            var d = Program.threadLog;
             try
             {
                 Program.threadLog.Interrupt();
                 Program.threadLog.Join();
-
 
             }
             catch { Application.Restart(); }
@@ -258,19 +256,5 @@ namespace Financiera.Presentation.Forms.Main
             GC.WaitForPendingFinalizers();
         }
     
-
-        private void btMaximize_Click_1(object sender, EventArgs e)
-        {
-            if (this.WindowState.Equals(FormWindowState.Maximized))
-            {
-                this.WindowState = FormWindowState.Normal;
-                return;
-            }
-            if (this.WindowState.Equals(FormWindowState.Normal))
-            {
-                this.WindowState = FormWindowState.Maximized;
-                return;
-            }
-        }
     }
 }

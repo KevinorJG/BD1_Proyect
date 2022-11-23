@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -18,13 +19,15 @@ namespace Financiera.Commons.Processes
         protected static SqlCommand? cmd { get; set; }
         public static Roles Roles { get; set; }
         public static bool StatusRol { get; set; }
+
         public Connection()
         {
-            //connection = new SqlConnection();
+           
         }
 
         public ConnectionState Connect(string dni, string pass, string login)
         {
+            Domain.ContextDB.Message.SqlException = false;
             StatusRol = false;
 
             builder = new SqlConnectionStringBuilder()
@@ -48,16 +51,16 @@ namespace Financiera.Commons.Processes
                         StringConnection = builder.ConnectionString;//obtiene la cadena de conexion para poder utilizarla luego
                         SqlCommand command = new SqlCommand(connection.ConnectionString, connection);
                         command.CommandText = "sp_ValidarAcceso";                       
-                        command.CommandType = CommandType.StoredProcedure;
-                        command.Parameters.AddWithValue("@usuario", dni);
-                        SqlDataReader reader = command.ExecuteReader();
+                        command.CommandType = CommandType.StoredProcedure;                      
+                        command.Parameters.AddWithValue("@usuario", dni);                      
+                        SqlDataReader reader = command.ExecuteReader();                      
 
                         while (reader.Read() == true)
                         {
                             
                             if(reader["Resultado"].ToString() == "Acceso Exitoso")
-                            {
-                               if((reader["Roll"].ToString() == login))
+                            {                               
+                                if ((reader["Roll"].ToString() == login))
                                {
                                     if (reader["NameEmployee"].ToString() != null)
                                     {
@@ -73,27 +76,32 @@ namespace Financiera.Commons.Processes
                                         User.Rol = Roles.Administrador.ToString();
                                         StatusRol = true;
                                     }
-                                }
-                                
+                                }                                                             
                             }
-                            if (reader["Resultado"].ToString() == "Acceso Denegado")
-                            {
-                                State = ConnectionState.Closed;
-                            }
-
                         }
 
                         var result = (StatusRol != true) ? State = ConnectionState.Closed : State = ConnectionState.Open;
+                        var message = (StatusRol != true) ? Domain.ContextDB.Message.Error = "No tiene asignado dicho rol" : "" ;
                     }
 
                 }
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
-                State = ConnectionState.Closed;
+                Domain.ContextDB.Message.SqlException = true;
+                if(ex.Number == 233 || ex.Number == 18456)
+                {
+                    Domain.ContextDB.Message.Exception = "No se establecio una conexión a la base de datos";
+                }
+                if(ex.Number == 50000)
+                {
+                    Domain.ContextDB.Message.Exception = ex.Message;
+                }    
+                State = ConnectionState.Closed;               
             }
             connection.Dispose();
             connection.Close();
+            builder.Clear();
             return State;
         }
 

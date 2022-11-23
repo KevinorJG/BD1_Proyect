@@ -19,6 +19,15 @@ namespace Financiera.Presentation.Forms.UsControls
 
         private void UsCounts_Load(object sender, EventArgs e)
         {
+          
+            if (User.Rol == Roles.Administrador.ToString())
+            {
+                this.btDeleteAcc.Enabled = true;
+            }
+            else if (User.Rol == Roles.Empleado.ToString())
+            {
+                this.btDeleteAcc.Enabled = false;
+            }
             cbTypeCoin.DataSource = Enum.GetValues(typeof(TypeCoin));
             cbTyCount.DataSource = Enum.GetValues(typeof(TypeCounts));
             GetAccounts();
@@ -34,12 +43,12 @@ namespace Financiera.Presentation.Forms.UsControls
                     if (cl != null)
                     {                       
                         Identi = cl.Identification;
-                        MessageBox.Show($"Nombre: {cl.Names + " " + cl.LastNames}\nCedula: {cl.Identification}", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show($"Nombre: {cl.Names + " " + cl.LastNames}\nCedula: " +
+                                        $"{cl.Identification}", "Informacion", 
+                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    else { MessageBox.Show("Este cliente no existe"); }
+                    else { MessageBox.Show(Domain.ContextDB.Message.Exception, "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Error); }
                 }
-
-
             }
         }
         public void SetServices(IAccountServices accountServices)
@@ -73,11 +82,6 @@ namespace Financiera.Presentation.Forms.UsControls
             }
         }
 
-        private void txtSearch__TextChanged(object sender, EventArgs e)
-        {
-            //var query = from i in AccountServices.GetClientByDni(txtSearch.Texts);
-        }
-
         private void dgvAccounts_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -108,12 +112,15 @@ namespace Financiera.Presentation.Forms.UsControls
                 {
                     dgvAccounts.DataSource = ls;
                 }
+                else
+                {
+                    MessageBox.Show(Domain.ContextDB.Message.Exception, "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch (Exception ex)
             {
-
-            }
-          
+              
+            }          
         }
     }
 }

@@ -18,7 +18,15 @@ namespace Financiera.Presentation.Forms.UsControls
         }
 
         private void UsCards_Load(object sender, EventArgs e)
-        {
+        {          
+            if (User.Rol == Roles.Administrador.ToString())
+            {
+                this.btDeleteCard.Enabled = true;
+            }
+            else if (User.Rol == Roles.Empleado.ToString())
+            {
+                this.btDeleteCard.Enabled = false;
+            }
             GetCards();
             cbTypeCard.DataSource = Enum.GetValues(typeof(TypeCard));
             cbTypeCoin.DataSource = Enum.GetValues(typeof(TypeCoin));
@@ -35,8 +43,7 @@ namespace Financiera.Presentation.Forms.UsControls
         }
 
         private void txtDniClient_KeyPress(object sender, KeyPressEventArgs e)
-         {
-            
+        {         
             if ((int)e.KeyChar == (int)Keys.Enter)
             {
                 if(txtDniClient.Texts != string.Empty)
@@ -51,12 +58,11 @@ namespace Financiera.Presentation.Forms.UsControls
                                         $"{cl.Identification}","Informacion",
                                         MessageBoxButtons.OK,MessageBoxIcon.Information);
                     }
-                    else { MessageBox.Show("Este cliente no existe"); }
-                }
-               
-               
+                    else { MessageBox.Show(Domain.ContextDB.Message.Exception, "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                }                          
             }
         }
+
         public void SetServices(ICardServices cardServices)
         {
             this.CardServices = cardServices;
@@ -64,7 +70,15 @@ namespace Financiera.Presentation.Forms.UsControls
 
         private async void btAddCard_Click(object sender, EventArgs e)
         {
-            if(txtDniClient.Texts == string.Empty)
+            if(decimal.Parse(txtMounOpen.Texts) < decimal.Parse(txtBaseC.Text))
+            {
+                MessageBox.Show($"El monto de apertura no debe de ser menor ha {txtBaseC.Text}");
+            }
+            if(decimal.Parse(txtMounOpenD.Texts) < decimal.Parse(txtBaseD.Text))
+            {
+                MessageBox.Show($"El monto de apertura no debe de ser menor ha {txtBaseD.Text}");
+            }
+            if (txtDniClient.Texts == string.Empty)
             {
                 MessageBox.Show("Debe de aginar la cedula","Campo requerido",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
                 return;
@@ -104,15 +118,13 @@ namespace Financiera.Presentation.Forms.UsControls
                 await result;
                 lock (lockRegister)
                 {
-                    if (result.IsCompleted) { GetCards(); }
+                    if (result.IsCompleted) { GetCards(); CleanInputs(); }
                 }
-            }           
-            
+            }                     
         }
 
         private void cbTypeCard_OnSelectedIndexChanged(object sender, EventArgs e)
-        {
-           
+        {          
             if (cbTypeCard.SelectedIndex == 0)
             {
                 txtDescription.Text = Properties.Resources.Débito;
@@ -126,9 +138,9 @@ namespace Financiera.Presentation.Forms.UsControls
                 txtDescription.TextAlign = HorizontalAlignment.Center;               
                 txtBaseD.Text = "$500";
                 txtBaseC.Text = "C$18000";
-            }
-            
+            }          
         }
+
         public void GetCards()
         {
             dgvCards.DataSource = CardServices.GetCards();
@@ -141,11 +153,10 @@ namespace Financiera.Presentation.Forms.UsControls
             {
                 dgvCards.DataSource = ls;
             }
-        }
-
-        private void txtMounOpen__TextChanged(object sender, EventArgs e)
-        {
-
+            else
+            {
+                MessageBox.Show(Domain.ContextDB.Message.Exception,"Sin coincidencias",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
         }
 
         private void cbTypeCoin_OnSelectedIndexChanged(object sender, EventArgs e)
@@ -174,6 +185,27 @@ namespace Financiera.Presentation.Forms.UsControls
             {
 
             }
+        }
+        private void CleanInputs()
+        {
+            txtBaseD.Clear();
+            txtBaseC.Clear();
+            txtMounOpen.Texts = string.Empty;
+            txtMounOpenD.Texts = string.Empty;
+            txtDescription.Clear();
+            txtNameCard.Clear();
+            txtNCard.Clear();
+            txtDniClient.Texts = string.Empty;
+
+            cbTypeCard.SelectedIndex = -1;
+            cbTypeCoin.SelectedIndex = -1;
+    
+            PickerOpenDate.Value = DateTime.Now;         
+        }
+
+        private void btDeleteCard_Click(object sender, EventArgs e)
+        {
+            CleanInputs();
         }
     }
 }
