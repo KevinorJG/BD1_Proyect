@@ -13,15 +13,16 @@ as
 	values (@names,@lastnames,@Direction,@phone,@Birth,@Nation,@dni)
 	go
   
-create procedure [dbo].[sp_ValidarAcceso]
+alter procedure [dbo].[sp_ValidarAcceso]
 @usuario varchar(50)
 as
 if exists (Select DNI from Employees
             where DNI = @Usuario and Status_ = 'Habilitado' )
 			 select 'Acceso Exitoso' as Resultado, (E.Names +' '+E.Surnames) as NameEmployee, E.Roll
-			 from Employees E			 
+			 from Employees E
+			 where DNI = @usuario
 			 else
-			 Select 'Acceso Denegado' as Resultado
+			 RAISERROR('Acceso denegado',11,1)
 
 create procedure sp_InsertEmployee
 @Dni nvarchar(20),
