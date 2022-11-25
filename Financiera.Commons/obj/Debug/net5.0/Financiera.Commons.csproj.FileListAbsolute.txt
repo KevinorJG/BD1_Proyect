@@ -28,12 +28,9 @@ C:\Users\JADPA-12\Desktop\Nueva carpeta\BD1_Proyect\Financiera.Commons\obj\Debug
 C:\Users\JADPA-12\Desktop\Nueva carpeta\BD1_Proyect\Financiera.Commons\obj\Debug\net5.0\refint\Financiera.Commons.dll
 C:\Users\JADPA-12\Desktop\Nueva carpeta\BD1_Proyect\Financiera.Commons\obj\Debug\net5.0\Financiera.Commons.pdb
 C:\Users\JADPA-12\Desktop\Nueva carpeta\BD1_Proyect\Financiera.Commons\obj\Debug\net5.0\ref\Financiera.Commons.dll
-C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Commons\bin\Debug\net5.0\SqlServerTypes\x64\msvcr120.dll
-C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Commons\bin\Debug\net5.0\SqlServerTypes\x64\SqlServerSpatial140.dll
-C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Commons\bin\Debug\net5.0\SqlServerTypes\x86\msvcr120.dll
-C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Commons\bin\Debug\net5.0\SqlServerTypes\x86\SqlServerSpatial140.dll
 C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Commons\bin\Debug\net5.0\Financiera.Commons.deps.json
 C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Commons\bin\Debug\net5.0\Financiera.Commons.dll
+C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Commons\bin\Debug\net5.0\ref\Financiera.Commons.dll
 C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Commons\bin\Debug\net5.0\Financiera.Commons.pdb
 C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Commons\bin\Debug\net5.0\Financiera.Domain.dll
 C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Commons\bin\Debug\net5.0\Reports.exe
@@ -41,7 +38,6 @@ C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Commons\bin
 C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Commons\bin\Debug\net5.0\Microsoft.ReportViewer.Common.dll
 C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Commons\bin\Debug\net5.0\Microsoft.ReportViewer.ProcessingObjectModel.dll
 C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Commons\bin\Debug\net5.0\Microsoft.ReportViewer.DataVisualization.dll
-C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Commons\bin\Debug\net5.0\Microsoft.SqlServer.Types.dll
 C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Commons\bin\Debug\net5.0\Financiera.Domain.pdb
 C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Commons\bin\Debug\net5.0\Reports.pdb
 C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Commons\bin\Debug\net5.0\Reports.exe.config
@@ -82,6 +78,7 @@ C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Commons\obj
 C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Commons\obj\Debug\net5.0\Financiera.Commons.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Commons\obj\Debug\net5.0\Financiera.Commons.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Commons\obj\Debug\net5.0\Financiera.Commons.dll
-C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Commons\obj\Debug\net5.0\refint\Financiera.Commons.dll
-C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Commons\obj\Debug\net5.0\Financiera.Commons.pdb
 C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Commons\obj\Debug\net5.0\ref\Financiera.Commons.dll
+C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Commons\obj\Debug\net5.0\Financiera.Commons.pdb
+C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Commons\bin\Debug\net5.0\x86\SqlServerSpatial160.dll
+C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Commons\bin\Debug\net5.0\x64\SqlServerSpatial160.dll

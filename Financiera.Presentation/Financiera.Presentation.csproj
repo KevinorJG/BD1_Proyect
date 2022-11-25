@@ -20,6 +20,7 @@
     <ProjectReference Include="..\Financiera.AppCore\Financiera.AppCore.csproj" />
     <ProjectReference Include="..\Financiera.Commons\Financiera.Commons.csproj" />
     <ProjectReference Include="..\Financiera.Infraestructure\Financiera.Infraestructure.csproj" />
+    <ProjectReference Include="..\Reports\Financiera.Reports.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -237,10 +237,8 @@ namespace Financiera.Presentation.Forms.UsControls
             {
                 
                 var identi = int.Parse(Convert.ToString(dgvCards.Rows[e.RowIndex].Cells[0].Value));
-                FmCardReport Reporte = new FmCardReport(identi, Connection.StringConnection);
-                Thread thread = new Thread(new ThreadStart(Reporte.Show));
-                //Reporte.ShowDialog();
-                thread.Start();
+                FmCardReport Reporte = new FmCardReport();             
+                Reporte.Show();
             }
             catch (Exception ex)
             {

@@ -12,15 +12,22 @@ namespace Reports.FormReports
 {
     public partial class FmCardReport : Form
     {
-        private int id = 0;
-        private string Connection = string.Empty;
-     
-        public FmCardReport(int id, string connection)
+        public int id { get; set; }
+        public string Connection { get; set; }
+        private System.Security.PermissionSet Permission;
+        public FmCardReport()
         {
-            this.id = id;
-            Connection = connection;
+            Permission = new System.Security.PermissionSet(System.Security.Permissions.PermissionState.Unrestricted);
+            Permission.Demand();
             InitializeComponent();
         }
+
+        //public FmCardReport(int id, string connection)
+        //{
+        //    this.id = id;
+        //    Connection = connection;
+        //    InitializeComponent();
+        //}
 
         private void FmCardReport_Load(object sender, EventArgs e)
         {

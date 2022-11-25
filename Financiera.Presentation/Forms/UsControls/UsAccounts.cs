@@ -86,7 +86,9 @@ namespace Financiera.Presentation.Forms.UsControls
             try
             {
                 var identi = int.Parse(dgvAccounts.Rows[e.RowIndex].Cells[0].Value.ToString());
-                Reports.FormReports.FmAccountReport Reporte = new Reports.FormReports.FmAccountReport(identi, Connection.StringConnection);
+                Reports.FormReports.FmAccountReport Reporte = new Reports.FormReports.FmAccountReport();
+                Reporte.id = identi;
+                Reporte.Connection = Connection.StringConnection;
                 Reporte.Show();
             }
             catch (Exception ex)

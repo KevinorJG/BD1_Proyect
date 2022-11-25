@@ -72,8 +72,8 @@ namespace Financiera.Presentation.Forms.Main
                
                 lbUser.Text = "Usuario: "+User.Name;
                 lbRol.Text = "Rol: "+ User.Rol;
-                //Program.threadLog.Interrupt();
-                //Program.threadLog.Join();
+                Program.threadLog.Interrupt();
+                Program.threadLog.Join();
             }
             catch { }
 
@@ -164,7 +164,6 @@ namespace Financiera.Presentation.Forms.Main
         private void pbCounts_Click(object sender, EventArgs e)
         {
             OnClick(sender, e);
-
 
         }
 

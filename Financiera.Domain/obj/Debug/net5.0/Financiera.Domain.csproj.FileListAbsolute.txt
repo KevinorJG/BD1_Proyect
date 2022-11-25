@@ -32,6 +32,7 @@ C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Domain\bin\
 C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Domain\bin\Debug\net5.0\Financiera.Domain.runtimeconfig.json
 C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Domain\bin\Debug\net5.0\Financiera.Domain.runtimeconfig.dev.json
 C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Domain\bin\Debug\net5.0\Financiera.Domain.dll
+C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Domain\bin\Debug\net5.0\ref\Financiera.Domain.dll
 C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Domain\bin\Debug\net5.0\Financiera.Domain.pdb
 C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Domain\obj\Debug\net5.0\Financiera.Domain.csproj.AssemblyReference.cache
 C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Domain\obj\Debug\net5.0\Financiera.Domain.GeneratedMSBuildEditorConfig.editorconfig
@@ -39,7 +40,6 @@ C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Domain\obj\
 C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Domain\obj\Debug\net5.0\Financiera.Domain.AssemblyInfo.cs
 C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Domain\obj\Debug\net5.0\Financiera.Domain.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Domain\obj\Debug\net5.0\Financiera.Domain.dll
-C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Domain\obj\Debug\net5.0\refint\Financiera.Domain.dll
+C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Domain\obj\Debug\net5.0\ref\Financiera.Domain.dll
 C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Domain\obj\Debug\net5.0\Financiera.Domain.pdb
 C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Domain\obj\Debug\net5.0\Financiera.Domain.genruntimeconfig.cache
-C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Domain\obj\Debug\net5.0\ref\Financiera.Domain.dll

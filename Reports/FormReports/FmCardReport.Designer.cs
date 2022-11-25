@@ -44,7 +44,7 @@
             reportDataSource1.Name = "DataReporteTarjeta";
             reportDataSource1.Value = this.reporteTarjetaBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Reports.FormReports.CardReport.rdlc";
+            //this.reportViewer1.LocalReport.ReportEmbeddedResource = "Reports.FormReports.CardReport.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;

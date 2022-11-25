@@ -30,6 +30,7 @@ C:\Users\JADPA-12\Desktop\Nueva carpeta\BD1_Proyect\Financiera.Infraestructure\o
 C:\Users\JADPA-12\Desktop\Nueva carpeta\BD1_Proyect\Financiera.Infraestructure\obj\Debug\net5.0\ref\Financiera.Infraestructure.dll
 C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Infraestructure\bin\Debug\net5.0\Financiera.Infraestructure.deps.json
 C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Infraestructure\bin\Debug\net5.0\Financiera.Infraestructure.dll
+C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Infraestructure\bin\Debug\net5.0\ref\Financiera.Infraestructure.dll
 C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Infraestructure\bin\Debug\net5.0\Financiera.Infraestructure.pdb
 C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Infraestructure\bin\Debug\net5.0\Financiera.Domain.dll
 C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Infraestructure\bin\Debug\net5.0\Financiera.Domain.pdb
@@ -40,6 +41,5 @@ C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Infraestruc
 C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Infraestructure\obj\Debug\net5.0\Financiera.Infraestructure.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Infraestructure\obj\Debug\net5.0\Financiera.Infraestructure.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Infraestructure\obj\Debug\net5.0\Financiera.Infraestructure.dll
-C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Infraestructure\obj\Debug\net5.0\refint\Financiera.Infraestructure.dll
-C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Infraestructure\obj\Debug\net5.0\Financiera.Infraestructure.pdb
 C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Infraestructure\obj\Debug\net5.0\ref\Financiera.Infraestructure.dll
+C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Financiera.Infraestructure\obj\Debug\net5.0\Financiera.Infraestructure.pdb

@@ -12,15 +12,23 @@ namespace Reports.FormReports
 {
     public partial class FmAccountReport : Form
     {
-        private int id = 0;
-        private string Connection = string.Empty;      
+        public int id { get; set; }
+        public string Connection { get; set; }
+        private System.Security.PermissionSet Permission;
 
-        public FmAccountReport(int id, string connection)
+        public FmAccountReport()
         {
-            this.id = id;
-            Connection = connection;
+            Permission = new System.Security.PermissionSet(System.Security.Permissions.PermissionState.Unrestricted);
+            Permission.Demand();
             InitializeComponent();
         }
+
+        //public FmAccountReport(int id, string connection)
+        //{
+        //    this.id = id;
+        //    Connection = connection;
+        //    InitializeComponent();
+        //}
 
         private void FmAccountReport_Load(object sender, EventArgs e)
         {
