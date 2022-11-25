@@ -1,9 +1,13 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Financiera.Commons",
+    "\\Financiera.Commons\\Processes",
     "\\Financiera.Domain",
     "\\Financiera.Domain\\ContextDB",
-    "\\Financiera.Presentation"
+    "\\Financiera.Presentation",
+    "\\Reports"
   ],
+  "SelectedNode": "\\Financiera_DBProyect.sln",
   "PreviewInSolutionExplorer": false
 }

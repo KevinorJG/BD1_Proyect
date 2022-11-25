@@ -17,7 +17,6 @@ namespace Financiera.Domain.Entities
         public string NameCard { get; set; }
         public string TypeCard { get; set; }
         public string TypeCoin { get; set; }
-        public string Identi { get; set; }
         public DateTime OpenDate { get; set; }
         public DateTime ExpiredDate { get; set; }
         public decimal? MaxAmountDolar { get; set; }

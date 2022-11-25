@@ -18,7 +18,7 @@ namespace Financiera.Domain.Interfaces
         DataTable GetClients();
 
 
-        Task<int> InsertCard(Card entity);
+        Task<int> InsertCard(Card entity, string identi);
         Task<bool> DeleteCard(int id);
         DataTable GetCardsByDni(string dni);
         DataTable GetCards();

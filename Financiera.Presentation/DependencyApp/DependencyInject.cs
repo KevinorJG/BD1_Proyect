@@ -40,9 +40,6 @@ namespace Financiera.Presentation.DependencyApp
 
             using (var serivceScope = services.BuildServiceProvider())
             {
-                //Application.SetHighDpiMode(HighDpiMode.SystemAware);
-                //Application.EnableVisualStyles();
-                //Application.SetCompatibleTextRenderingDefault(false);
                 var main = serivceScope.GetRequiredService<MainForm>();
                 Application.Run(main);
 

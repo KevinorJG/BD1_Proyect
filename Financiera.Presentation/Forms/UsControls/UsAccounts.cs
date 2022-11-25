@@ -19,7 +19,7 @@ namespace Financiera.Presentation.Forms.UsControls
 
         private void UsCounts_Load(object sender, EventArgs e)
         {
-          
+
             if (User.Rol == Roles.Administrador.ToString())
             {
                 this.btDeleteAcc.Enabled = true;
@@ -41,10 +41,10 @@ namespace Financiera.Presentation.Forms.UsControls
                 {
                     var cl = AccountServices.GetClientByDni(txtDniClient.Texts);
                     if (cl != null)
-                    {                       
+                    {
                         Identi = cl.Identification;
                         MessageBox.Show($"Nombre: {cl.Names + " " + cl.LastNames}\nCedula: " +
-                                        $"{cl.Identification}", "Informacion", 
+                                        $"{cl.Identification}", "Informacion",
                                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else { MessageBox.Show(Domain.ContextDB.Message.Exception, "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Error); }
@@ -59,27 +59,26 @@ namespace Financiera.Presentation.Forms.UsControls
         private void GetAccounts()
         {
             dgvAccounts.DataSource = AccountServices.GetAccounts();
+            SetColumns();
         }
 
         private async void btAgg_Click(object sender, EventArgs e)
         {
-            Object lockinsert = new object();
+
             Account account = new Account()
             {
                 Identi = Identi,
                 OpenDate = DateTime.Parse(pickerDate.Text),
                 TypeAccount = cbTyCount.SelectedItem.ToString(),
                 TypeCoin = cbTypeCoin.SelectedItem.ToString(),
-                IdHideline =  1,
+                IdHideline = 1,
                 Status = STATUS,
                 Saldo = 0
             };
             var result = AccountServices.InsertAccount(account);
             await result;
-            lock (lockinsert)
-            {
-                if (result.IsCompleted) { GetAccounts(); }
-            }
+            if (result.IsCompleted) { GetAccounts(); }
+
         }
 
         private void dgvAccounts_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -98,8 +97,8 @@ namespace Financiera.Presentation.Forms.UsControls
 
         private void tgStatus_CheckedChanged(object sender, EventArgs e)
         {
-            if(tgStatus.CheckState == CheckState.Checked) { STATUS = "Habilitado"; }   
-            if(tgStatus.CheckState == CheckState.Unchecked) { STATUS = "Deshabilitado"; }
+            if (tgStatus.CheckState == CheckState.Checked) { STATUS = "Habilitado"; }
+            if (tgStatus.CheckState == CheckState.Unchecked) { STATUS = "Deshabilitado"; }
             lbStatus.Text = STATUS;
         }
 
@@ -111,6 +110,8 @@ namespace Financiera.Presentation.Forms.UsControls
                 if (ls != null)
                 {
                     dgvAccounts.DataSource = ls;
+                    SetColumns();
+
                 }
                 else
                 {
@@ -119,8 +120,17 @@ namespace Financiera.Presentation.Forms.UsControls
             }
             catch (Exception ex)
             {
-              
-            }          
+
+            }
+        }
+        private void SetColumns()
+        {
+            dgvAccounts.Columns[3].HeaderText = "Identi Titular";
+            dgvAccounts.Columns[4].HeaderText = "Identi Cliente";
+            dgvAccounts.Columns[5].HeaderText = "Tipo Cuenta";
+            dgvAccounts.Columns[6].HeaderText = "Tipo Moneda";
+            dgvAccounts.Columns[7].HeaderText = "Estado";
         }
     }
+
 }

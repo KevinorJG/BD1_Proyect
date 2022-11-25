@@ -1,8 +1,8 @@
 use Financiera
 go
 
-Create function CleanInput(@input nvarchar(20))
-RETURNS NVARCHAR(20)
+alter function CleanInput(@input nvarchar(50))
+RETURNS NVARCHAR(50)
 AS
 BEGIN
 	DECLARE @Output nvarchar(50)
@@ -10,6 +10,8 @@ BEGIN
 	FOR select @Output	
 	OPEN input
 	SET @Output = LTRIM(RTRIM(REPLACE(REPLACE(REPLACE(@input, char(34), ''), char(61), ''), 'select', '')))
+	SET @Output = LTRIM(RTRIM(REPLACE(REPLACE(REPLACE(@input, char(62), ''), char(124), ''), 'from', '')))
+	SET @Output = LTRIM(RTRIM(REPLACE(REPLACE(REPLACE(@input, char(60), ''), char(43), ''), 'where', '')))
 	if(@Output = null or @Output = '')
 		BEGIN
 			set @Output = null

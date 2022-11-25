@@ -11,8 +11,12 @@ C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Reports\bin\Debug\Micr
 C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Reports\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
 C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Reports\bin\Debug\Microsoft.ReportViewer.WinForms.dll
 C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Reports\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Reports\bin\Debug\System.Security.AccessControl.dll
+C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Reports\bin\Debug\System.Security.Principal.Windows.dll
 C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Reports\bin\Debug\EnvDTE.dll
 C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Reports\bin\Debug\stdole.dll
+C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Reports\bin\Debug\System.Security.AccessControl.xml
+C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Reports\bin\Debug\System.Security.Principal.Windows.xml
 C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Reports\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
 C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Reports\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
 C:\Users\Administrator\Source\Repos\KevinorJG\BD1_Proyect\Reports\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll

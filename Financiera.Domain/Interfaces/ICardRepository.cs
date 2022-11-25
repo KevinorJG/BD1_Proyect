@@ -10,7 +10,7 @@ namespace Financiera.Domain.Interfaces
 {
     public interface ICardRepository : IRepository<Card>
     {
-        Task<int> InsertCard(Card entity);       
+        Task<int> InsertCard(Card entity, string identi);       
         Task<bool> DeleteCard(int id);
         DataTable GetCardsByDni(string dni);
         DataTable GetCards();

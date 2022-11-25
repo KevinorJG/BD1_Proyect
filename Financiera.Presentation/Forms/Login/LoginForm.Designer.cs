@@ -39,7 +39,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.BorderlessFormLogin = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.btLogin = new RJCodeAdvance.RJControls.RJButton();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.txtUser = new RJCodeAdvance.RJControls.RJTextBox();
@@ -157,19 +156,6 @@
             this.btLogin.UseVisualStyleBackColor = false;
             this.btLogin.Click += new System.EventHandler(this.btLogin_Click_1);
             // 
-            // linkLabel1
-            // 
-            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.White;
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel1.LinkColor = System.Drawing.Color.Black;
-            this.linkLabel1.Location = new System.Drawing.Point(420, 324);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(128, 15);
-            this.linkLabel1.TabIndex = 8;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "¿Olvidó su contraseña?";
-            // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
@@ -241,7 +227,7 @@
             this.txtDni.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.txtDni.PasswordChar = false;
             this.txtDni.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtDni.PlaceholderText = "DNI";
+            this.txtDni.PlaceholderText = "Identificación ";
             this.txtDni.Size = new System.Drawing.Size(211, 31);
             this.txtDni.TabIndex = 11;
             this.txtDni.Texts = "";
@@ -269,7 +255,6 @@
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUser);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.btLogin);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -289,7 +274,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -303,7 +287,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private Guna.UI2.WinForms.Guna2BorderlessForm BorderlessFormLogin;
         private RJCodeAdvance.RJControls.RJButton btLogin;
-        private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private RJCodeAdvance.RJControls.RJTextBox txtUser;

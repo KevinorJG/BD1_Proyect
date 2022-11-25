@@ -39,9 +39,9 @@ namespace Financiera.AppCore.Services
             return repository.GetClientByDni(dni);
         }
 
-        public async Task<int> InsertCard(Card entity)
+        public async Task<int> InsertCard(Card entity, string identi)
         {
-            return await repository.InsertCard(entity);
+            return await repository.InsertCard(entity,identi);
         }
 
        

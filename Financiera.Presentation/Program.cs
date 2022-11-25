@@ -19,7 +19,7 @@ namespace Financiera.Presentation
         {
            
             try
-            {
+            {               
                 threadLog = new Thread(new ThreadStart(FormLog));
                 threadLog.SetApartmentState(ApartmentState.STA);
                 threadLog.Start();

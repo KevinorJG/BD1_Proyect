@@ -323,20 +323,21 @@ namespace Financiera.Domain.ContextDB
             }
             return data;
         }
-        public async Task<int> InsertCard(Card entity)
+        public async Task<int> InsertCard(Card entity,string identi)
         {
             Task<int> result = null;
             var consult = Cards.FirstOrDefaultAsync(x => x.NumerCard == entity.NumerCard);
             try
             {
-                if (consult != null) { throw new Exception("Ya existe este numero de tarjeta"); }
-                var execute = Database.ExecuteSqlRawAsync("[dbo].[sp_InsertCard] @identi,@NameCard,@TyperCard,@TypeCoin,@OpenDate,@ExpireDate,@MaxAmountD,@MaxAmountC,@BaseAmountD,@BaseAmountC,@FechaPago ,@FechaCorte,@NCard", new SqlParameter[] {
+                if (consult.Result != null) { throw new Exception("Ya existe este numero de tarjeta"); }
+               
+                    var execute = Database.ExecuteSqlRawAsync("[dbo].[sp_InsertCard] @identi,@NameCard,@TyperCard,@TypeCoin,@OpenDate,@ExpireDate,@MaxAmountD,@MaxAmountC,@BaseAmountD,@BaseAmountC,@FechaPago ,@FechaCorte,@NCard", new SqlParameter[] {
                         new SqlParameter() {
                             ParameterName = "@identi",
                             SqlDbType =  System.Data.SqlDbType.NVarChar,
                             Size= 20,
                             Direction = System.Data.ParameterDirection.Input,
-                            Value = entity.Identi
+                            Value = identi
                         },
                         new SqlParameter() {
                             ParameterName = "@NameCard",
@@ -429,8 +430,10 @@ namespace Financiera.Domain.ContextDB
                         }
 
                      });
-                await execute;
-                result = execute;
+                    await execute;
+                    result = execute;
+                
+               
             }
             catch (Exception ex)
             {
@@ -739,7 +742,7 @@ namespace Financiera.Domain.ContextDB
             {
                 entity.HasKey(e => e.IdCard)
                     .HasName("PK__Cards__A7B8DC5692306856");
-
+               
                 entity.Property(e => e.IdCard).HasColumnName("Id_Card");
 
                 entity.Property(e => e.AmounBaseDolar).HasColumnType("money");

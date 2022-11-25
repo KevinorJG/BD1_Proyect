@@ -48,7 +48,7 @@ namespace Financiera.Commons.Processes
                     if (connection.State == ConnectionState.Open)
                     {
                         State = ConnectionState.Open;//Indica que la conexion de abrio                      
-                        StringConnection = builder.ConnectionString;//obtiene la cadena de conexion para poder utilizarla luego
+                        StringConnection = builder.ConnectionString;//obtiene la cadena de conexion para poder utilizarla luego                                           
                         SqlCommand command = new SqlCommand(connection.ConnectionString, connection);
                         command.CommandText = "sp_ValidarAcceso";                       
                         command.CommandType = CommandType.StoredProcedure;                      

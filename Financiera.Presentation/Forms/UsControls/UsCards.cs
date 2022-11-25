@@ -1,8 +1,14 @@
 ﻿using Financiera.AppCore.IServices;
+using Financiera.AppCore.Services;
 using Financiera.Commons.Processes;
 using Financiera.Domain.Entities;
 using Financiera.Domain.Enums;
+using Reports.FormReports;
 using System;
+using System.Data;
+using System.Runtime.CompilerServices;
+using System.Security;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Financiera.Presentation.Forms.UsControls
@@ -70,33 +76,68 @@ namespace Financiera.Presentation.Forms.UsControls
 
         private async void btAddCard_Click(object sender, EventArgs e)
         {
-            if(decimal.Parse(txtMounOpen.Texts) < decimal.Parse(txtBaseC.Text))
+            if(indeti != string.Empty)
             {
-                MessageBox.Show($"El monto de apertura no debe de ser menor ha {txtBaseC.Text}");
-            }
-            if(decimal.Parse(txtMounOpenD.Texts) < decimal.Parse(txtBaseD.Text))
-            {
-                MessageBox.Show($"El monto de apertura no debe de ser menor ha {txtBaseD.Text}");
-            }
-            if (txtDniClient.Texts == string.Empty)
-            {
-                MessageBox.Show("Debe de aginar la cedula","Campo requerido",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
-                return;
-            }
-            else if(txtMounOpen.Texts == string.Empty || txtMounOpenD.Texts == string.Empty)
-            {
-                MessageBox.Show("Llene todo los espacios requeridos para registrar la tarjeta","Ocurrio un error",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                return;
-            }
-            else
+                if(cbTypeCoin.SelectedIndex  == -1)
+                {
+                    MessageBox.Show("Selecione el tipo de moneda");
+                }
+                if(cbTypeCard.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Selecione el tipo de cuenta");
+                }
+                if(cbTypeCard.SelectedIndex != -1)
+                {
+                    if (cbTypeCoin.SelectedIndex == 0)
+                    {
+                        if (txtMounOpenD.Texts == string.Empty)
+                        {
+                            MessageBox.Show("Llene todo los espacios requeridos para registrar la tarjeta", "Ocurrio un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                        else
+                        {
+                            decimal monto = decimal.Parse(txtMounOpenD.Texts);
+                            var value = txtBaseD.Text.Replace("$", string.Empty);
+                            decimal montoBase = decimal.Parse(value);
+                            if (monto < montoBase)
+                            {
+                                MessageBox.Show($"El monto de apertura no debe de ser menor ha {txtBaseD.Text}");
+                                return;
+                            }
+                        }
+                    }
+                    else if (cbTypeCoin.SelectedIndex == 1)
+                    {
+                        if (txtMounOpen.Texts == string.Empty)
+                        {
+                            MessageBox.Show("Llene todo los espacios requeridos para registrar la tarjeta", "Ocurrio un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                        else
+                        {
+                            decimal monto = decimal.Parse(txtMounOpen.Texts);
+                            var value = txtBaseC.Text.Replace("C$",string.Empty);
+                            decimal montoBase = decimal.Parse(value);
+                            if (monto < montoBase)
+                            {
+                                MessageBox.Show($"El monto de apertura no debe de ser menor ha {txtBaseC.Text}");
+                                return;
+                            }
+                        }
+                    }
+                }
+                
+                      
+            }                     
+            if(indeti.Length != 0)
             {
                 Object lockRegister = new object();
                 Card card = new Card()
-                {
-                    Identi = indeti,
+                {                  
                     NameCard = txtNameCard.Text,
-                    AmounBaseDolar = decimal.Parse(txtBaseD.Text),
-                    AmountBaseCordoba = decimal.Parse(txtBaseC.Text),
+                    AmounBaseDolar = Convert.ToDecimal(txtBaseD.Text.Replace("$","")),
+                    AmountBaseCordoba = Convert.ToDecimal(txtBaseC.Text.Replace("C$", "")),
                     TypeCard = cbTypeCard.SelectedItem.ToString(),
                     TypeCoin = cbTypeCoin.SelectedItem.ToString(),
                     OpenDate = DateTime.Parse(PickerOpenDate.Text),
@@ -108,18 +149,32 @@ namespace Financiera.Presentation.Forms.UsControls
                 };
                 if (txtMounOpen.Texts == string.Empty)
                 {
-                    card.MaxAmountCordoba = decimal.Parse("0");
+                    card.MaxAmountCordoba = 0;
+                }
+                else
+                {
+                    card.MaxAmountCordoba = Convert.ToDecimal(txtMounOpen.Texts.Replace("C$", ""));
                 }
                 if (txtMounOpenD.Texts == string.Empty)
                 {
-                    card.MaxAmountDolar = decimal.Parse("0");
+                    card.MaxAmountDolar = 0;
+
                 }
-                var result = CardServices.InsertCard(card);
+                else
+                {
+                    card.MaxAmountDolar = Convert.ToDecimal(txtMounOpenD.Texts.Replace("$", ""));
+                }
+                var result = CardServices.InsertCard(card,indeti);
                 await result;
                 lock (lockRegister)
                 {
                     if (result.IsCompleted) { GetCards(); CleanInputs(); }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Debe de aginar la cedula", "Campo requerido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
             }                     
         }
 
@@ -144,6 +199,7 @@ namespace Financiera.Presentation.Forms.UsControls
         public void GetCards()
         {
             dgvCards.DataSource = CardServices.GetCards();
+            SetColumns();
         }
 
         private void btSearchCard_Click(object sender, EventArgs e)
@@ -152,6 +208,8 @@ namespace Financiera.Presentation.Forms.UsControls
             if (ls != null)
             {
                 dgvCards.DataSource = ls;
+                SetColumns();
+
             }
             else
             {
@@ -163,13 +221,13 @@ namespace Financiera.Presentation.Forms.UsControls
         {
             if(cbTypeCoin.SelectedIndex == 0)
             {
-                txtMounOpenD.Visible = false;
-                txtMounOpen.Visible = true;
+                txtMounOpenD.Visible = true;
+                txtMounOpen.Visible = false;
             }
             if(cbTypeCoin.SelectedIndex == 1)
             {
-                txtMounOpen.Visible = false;
-                txtMounOpenD.Visible = true;
+                txtMounOpen.Visible = true;
+                txtMounOpenD.Visible = false;
             }
         }
 
@@ -177,9 +235,12 @@ namespace Financiera.Presentation.Forms.UsControls
         {
             try
             {
+                
                 var identi = int.Parse(Convert.ToString(dgvCards.Rows[e.RowIndex].Cells[0].Value));
-                Reports.FormReports.FmCardReport Reporte = new Reports.FormReports.FmCardReport(identi, Connection.StringConnection);
-                Reporte.Show();
+                FmCardReport Reporte = new FmCardReport(identi, Connection.StringConnection);
+                Thread thread = new Thread(new ThreadStart(Reporte.Show));
+                //Reporte.ShowDialog();
+                thread.Start();
             }
             catch (Exception ex)
             {
@@ -207,5 +268,16 @@ namespace Financiera.Presentation.Forms.UsControls
         {
             CleanInputs();
         }
+        private void SetColumns()
+        {        
+            dgvCards.Columns[4].HeaderText = "Fecha Emisión";
+            dgvCards.Columns[5].HeaderText = "Fecha Expiración";
+            dgvCards.Columns[6].HeaderText = "TMax Córdobas";
+            dgvCards.Columns[7].HeaderText = "TMax Dólares";
+            dgvCards.Columns[8].HeaderText = "Fecha Corte";
+            dgvCards.Columns[9].HeaderText = "Fecha Pago";
+
+        }
     }
+   
 }

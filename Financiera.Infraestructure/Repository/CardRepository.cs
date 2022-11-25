@@ -33,9 +33,9 @@ namespace Financiera.Infraestructure.Repository
            return Db.GetCards();
         }
 
-        public async Task<int> InsertCard(Card entity)
+        public async Task<int> InsertCard(Card entity, string identi)
         {
-            return await Db.InsertCard(entity);
+            return await Db.InsertCard(entity,identi);
         }
         public Client GetClientByDni(string dni)
         {

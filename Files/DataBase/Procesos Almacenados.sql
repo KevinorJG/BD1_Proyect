@@ -1,6 +1,6 @@
 	/****** Script for SelectTopNRows command from SSMS  ******/
 
-create procedure sp_InsertClient
+alter procedure sp_InsertClient
 @names nvarchar(50),
 @lastnames nvarchar(50),
 @Direction nvarchar(50),
@@ -11,20 +11,21 @@ create procedure sp_InsertClient
 as		
 	insert into Clients(Names,LastNames,Direction,Phone,Birthdate,Nacionality,Identification)
 	values (@names,@lastnames,@Direction,@phone,@Birth,@Nation,@dni)
-	go
+go
   
 alter procedure [dbo].[sp_ValidarAcceso]
 @usuario varchar(50)
 as
 if exists (Select DNI from Employees
             where DNI = @Usuario and Status_ = 'Habilitado' )
-			 select 'Acceso Exitoso' as Resultado, (E.Names +' '+E.Surnames) as NameEmployee, E.Roll
+				select 'Acceso Exitoso' as Resultado, (E.Names +' '+E.Surnames) as NameEmployee, E.Roll
 			 from Employees E
 			 where DNI = @usuario
 			 else
-			 RAISERROR('Acceso denegado',11,1)
+				RAISERROR('Acceso denegado',11,1)
+go
 
-create procedure sp_InsertEmployee
+alter procedure sp_InsertEmployee
 @Dni nvarchar(20),
 @Names nvarchar(20),
 @Surnames nvarchar(20),
@@ -34,30 +35,30 @@ as
 if not exists(select EM.DNI,EM.Roll from Employees AS EM
 			where Em.DNI = @Dni and EM.Roll = @Roll)
 			BEGIN
-			insert into Employees(DNI,Names,Surnames,Roll,Status_) values(@Dni,@Names,@Surnames,@Roll,@Status)
-			print 'Empleado añadido'
+				insert into Employees(DNI,Names,Surnames,Roll,Status_) values(@Dni,@Names,@Surnames,@Roll,@Status)
+				print 'Empleado añadido'
 			END
 			else
 			BEGIN
-			RAISERROR ('Empleado ya existe',11,1)
+				RAISERROR ('Empleado ya existe',11,1)
 			END
 go
 
-create procedure sp_BuscarClient
+alter procedure sp_BuscarClient
 @Identification nvarchar(20)
 as
 if exists(select C.Id_Client from Clients as C
 			where C.Identification = @Identification)
 			BEGIN
-			select * from ClientsView where Identificación = @Identification
+				select * from ClientsView where Identificación = @Identification
 			END
 			else
 			BEGIN
-			RAISERROR ('Cliente no existe',11,1)
+				RAISERROR ('Cliente no existe',11,1)
 			END
 go
 
-create procedure sp_InsertCard(
+alter procedure sp_InsertCard(
 @identi nvarchar(20),
 @NameCard nvarchar(10),
 @TypeCard nvarchar(15),
@@ -81,7 +82,7 @@ DECLARE @identify int
 		values(@identify,@NameCard,@TypeCard,@TypeCoin,@OpenDate,@ExpireDate,@MaxAmountD,@MaxAmountC,@BaseAmountD,@BaseAmountC,@FechaCorte,@FechaPago,@NCard)
 go
 
-create procedure sp_InsertAccount(
+alter procedure sp_InsertAccount(
 @identify nvarchar(20),
 @id_Hideline int,
 @TypeAccount nvarchar(15),
@@ -94,10 +95,10 @@ as
 DECLARE @id int
 	SET @id = (select Id_Client from Clients where Identification = @identify)
 insert into Accounts (id_Client,id_Hideline,Type_Account,Type_Coin,Saldo,OpenDate,Status_)
-values(@id,@id_Hideline,dbo.CleanInput(@TypeAccount),dbo.CleanInput(@TypeCoin),@saldo,@OpenDate,@Status)
+values(@id,@id_Hideline,@TypeAccount,@TypeCoin,@saldo,@OpenDate,@Status)
 go
 
-create procedure sp_UpdateClient(
+alter procedure sp_UpdateClient(
 @id_Client int,
 @Direction nvarchar(50),
 @Phone nvarchar(10),
@@ -111,24 +112,22 @@ set Direction = @Direction, Phone = @Phone, Nacionality = @Nationality, Identifi
 where Id_Client = @id_Client
 go
 
-create procedure sp_BuscarTarjeta(
+alter procedure sp_BuscarTarjeta(
 @Identification nvarchar(20)
 )
 as
 if exists(select C.id_Client from Clients as C
 			where C.Identification = @Identification)
 			BEGIN
-			DECLARE @id int
-			SET @id = (select Id_Client from Clients where Clients.Identification = @Identification)
-			select * from CardsView where CardsView.Identification = @Identification
+				select * from CardsView where CardsView.Identification = @Identification
 			END
 			else
 			BEGIN
-			RAISERROR ('Tarjeta no existe',11,1)
+				RAISERROR ('Tarjeta no existe',11,1)
 			END
-
 go
-create procedure sp_BuscarCuenta(
+
+alter procedure sp_BuscarCuenta(
 @Identification nvarchar(20)
 )
 as
@@ -143,7 +142,7 @@ if exists(select C.id_Client from Clients as C
 			END
 go
 
-create procedure ReporteCuenta(
+alter procedure ReporteCuenta(
 @Id_ACC int
 )
 as 
@@ -162,7 +161,7 @@ inner join Clients as CL on AC.id_Client = CL.Id_Client
 where AC.Id_Account = @Id_ACC
 go
 
-create procedure ReporteTarjeta(
+alter procedure ReporteTarjeta(
 @Id_Card int
 )
 as
