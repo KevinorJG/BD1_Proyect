@@ -11,6 +11,8 @@ create user User2 from login Administrador
 
 grant insert,select,update on Clients to User1,User2
 grant insert,select,update,delete on Clients to User2
+grant insert,select,delete on Cards to User1,User2
+grant insert,select,delete on Accounts to User1,User2
 grant select on ClientsView to User1,User2
 grant select on CardsView to User1,User2
 grant select on AccountsView to User1,User2
